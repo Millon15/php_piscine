@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Mendeleiv Pereodic table</title>
+		<style>
+			#mendeleevimg{
+				margin: 0 auto;
+				margin-left: 12%;
+				width: 10%;
+				height: 15%;
+				display: block;
+			}
+			body { font-size: 100%; }
+			#heading{ font-size: 2em; }
+			#table{
+				text-align: center;
+				width: 76%;
+				margin-top: 1%;
+				margin-left: 12%;
+			}
+			.element{
+				border: 0.5px solid black;
+				width: 4vw;!important
+				color: black;
+			}
+			.elem_weight{
+				text-align: right;
+				margin-right: 0.2vw;
+				color: black;
+			}
+			.elem_number{
+				text-align: left;
+				margin-left: 0.2vw;
+				color: black;
+			}
+			.hiddenelem{
+				margin: 2vh 0;
+			}
+			#zvezda{
+				font-weight: bold;
+				font-size: 2em;
+			}
+			#legend{
+				text-align: left;
+				padding: 5vh 1vw;
+			}
+			#legend .legendSon{
+				padding: 0 0.2vw;
+				text-align: center;
+				font-size: 1.2em;
+				border: 0.5px solid #484848;
+			}
+			.transmet{ background-color: #a7c0cd; }
+			.alkmet{ background-color: #e0e0e0; }
+			.alkearthmet{ background-color: #d3b8ae; }
+			.metaloid{ background-color: #d2ce56; }
+			.polyatnonmet{ background-color: #52c7b8; }
+			.diatnonmet{ background-color: #ffeb3b; }
+			.noblegas{ background-color: #4dd0e1; }
+			.lactin{ background-color: #ee98fb; }
+			.actin{ background-color: #ff94c2; }
+			.posttransmet{ background-color: #a4a4a4; }
+		</style>
+	</head>
+	<body>
+		<img id="mendeleevimg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/DIMendeleevCab.jpg/640px-DIMendeleevCab.jpg" alt="Mendeleiv portrait" title="Mendeleiv himself" />
+		<table id="table" contentEditable="true">
+			<th colspan="18" id="heading"><h1>Mendeleïev Table</h1></th>
+			<tr>
+				<td>
+					<div class="element diatnonmet">
+					<p class="elem_weight">1.008</p>
+					<h2 class="elem_symbol">H</h2>
+					<p class="elem_number">1</p>
+					</div>
+				</td>
+				<td colspan="16"></td>
+				<td>
+					<div class="element noblegas">
+					<p class="elem_weight">4.003</p>
+					<h2 class="elem_symbol">He</h2>
+					<p class="elem_number">2</p>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="element alkmet">
+					<p class="elem_weight">6.941</p>
+					<h2 class="elem_symbol">Li</h2>
+					<p class="elem_number">3</p>
+					</div>
+				</td>
+				<td>
+					<div class="element alkearthmet">
+					<p class="elem_weight">9.012</p>
+					<h2 class="elem_symbol">Be</h2>
+					<p class="elem_number">4</p>
+					</div>
+				</td>
+				<td colspan="10"></td>
+				<td>
+					<div class="element metaloid">
+					<p class="elem_weight">10.811</p>
+					<h2 class="elem_symbol">B</h2>
+					<p class="elem_number">5</p>
+					</div>
+				</td>
+				<td>
+					<div class="element polyatnonmet">
+					<p class="elem_weight">12.011</p>
+					<h2 class="elem_symbol">C</h2>
+					<p class="elem_number">6</p>
+					</div>
+				</td>
+				<td>
+					<div class="element diatnonmet">
+					<p class="elem_weight">14.007</p>
+					<h2 class="elem_symbol">N</h2>
+					<p class="elem_number">7</p>
+					</div>
+				</td>
+				<td>
+					<div class="element diatnonmet">
+					<p class="elem_weight">15.999</p>
+					<h2 class="elem_symbol">O</h2>
+					<p class="elem_number">8</p>
+					</div>
+				</td>
+				<td>
+					<div class="element diatnonmet">
+					<p class="elem_weight">18.998</p>
+					<h2 class="elem_symbol">F</h2>
+					<p class="elem_number">9</p>
+					</div>
+				</td>
+				<td>
+					<div class="element noblegas">
+					<p class="elem_weight">20.18</p>
+					<h2 class="elem_symbol">Ne</h2>
+					<p class="elem_number">10</p>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="element alkmet">
+					<p class="elem_weight">22.99</p>
+					<h2 class="elem_symbol">Na</h2>
+					<p class="elem_number">11</p>
+					</div>
+				</td>
+				<td>
+					<div class="element alkearthmet">
+					<p class="elem_weight">24.305</p>
+					<h2 class="elem_symbol">Mg</h2>
+					<p class="elem_number">12</p>
+					</div>
+				</td>
+				<td colspan="10"></td>
+				<td>
+					<div class="element posttransmet">
+					<p class="elem_weight">26.982</p>
+					<h2 class="elem_symbol">Al</h2>
+					<p class="elem_number">13</p>
+					</div>
+				</td>
+				<td>
+					<div class="element metaloid">
+					<p class="elem_weight">28.086</p>
+					<h2 class="elem_symbol">Si</h2>
+					<p class="elem_number">14</p>
+					</div>
+				</td>
+				<td>
+					<div class="element polyatnonmet">
+					<p class="elem_weight">30.974</p>
+					<h2 class="elem_symbol">P</h2>
+					<p class="elem_number">15</p>
+					</div>
+				</td>
+				<td>
+					<div class="element polyatnonmet">
+					<p class="elem_weight">32.065</p>
+					<h2 class="elem_symbol">S</h2>
+					<p class="elem_number">16</p>
+					</div>
+				</td>
+				<td>
+					<div class="element diatnonmet">
+					<p class="elem_weight">35.453</p>
+					<h2 class="elem_symbol">Cl</h2>
+					<p class="elem_number">17</p>
+					</div>
+				</td>
+				<td>
+					<div class="element noblegas">
+					<p class="elem_weight">39.948</p>
+					<h2 class="elem_symbol">Ar</h2>
+					<p class="elem_number">18</p>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="element alkmet">
+					<p class="elem_weight">39.098</p>
+					<h2 class="elem_symbol">K</h2>
+					<p class="elem_number">19</p>
+					</div>
+				</td>
+				<td>
+					<div class="element alkearthmet">
+					<p class="elem_weight">40.078</p>
+					<h2 class="elem_symbol">Ca</h2>
+					<p class="elem_number">20</p>
+					</div>
+				</td>
+				<td>
+					<div class="element transmet">
+					<p class="elem_weight">44.956</p>
+					<h2 class="elem_symbol">Sc</h2>
+					<p class="elem_number">21</p>
+					</div>
+				</td>
+				<td>
+					<div class="element transmet">
+					<p class="elem_weight">47.867</p>
+					<h2 class="elem_symbol">Ti</h2>
+					<p class="elem_number">22</p>
+					</div>
+				</td>
+				<td>
+					<div class="element transmet">
+					<p class="elem_weight">50.942</p>
+					<h2 class="elem_symbol">V</h2>
+					<p class="elem_number">23</p>
+					</div>
+				</td>
+				<td>
+					<div class="element transmet">
+					<p class="elem_weight">51.996</p>
+					<h2 class="elem_symbol">Cr</h2>
+					<p class="elem_number">24</p>
+					</div>
+				</td>
+				<td>
+					<div class="element transmet">
+					<p class="elem_weight">54.938</p>
+					<h2 class="elem_symbol">Mn</h2>
+					<p class="elem_number">25</p>
+					</div>
+				</td>
+				<td>
+					<div class="element transmet">
+					<p class="elem_weight">55.845</p>
+					<h2 class="elem_symbol">Fe</h2>
+					<p class="elem_number">26</p>
+					</div>
+				</td>
+				<td>
+					<div class="element transmet">
+					<p class="elem_weight">58.933</p>
+					<h2 class="elem_symbol">Co</h2>
+					<p class="elem_number">27</p>
+					</div>
+				</td>
+				<td>
+					<div class="element transmet">
+					<p class="elem_weight">58.693</p>
+					<h2 class="elem_symbol">Ni</h2>
+					<p class="elem_number">28</p>
+					</div>
+				</td>
+				<td>
+					<div class="element transmet">
+					<p class="elem_weight">63.546</p>
+					<h2 class="elem_symbol">Cu</h2>
+					<p class="elem_number">29</p>
+					</div>
+				</td>
+				<td>
+					<div class="element posttransmet">
+					<p class="elem_weight">65.38</p>
+					<h2 class="elem_symbol">Zn</h2>
+					<p class="elem_number">30</p>
+					</div>
+				</td>
+				<td>
+					<div class="element posttransmet">
+					<p class="elem_weight">69.723</p>
+					<h2 class="elem_symbol">Ga</h2>
+					<p class="elem_number">31</p>
+					</div>
+				</td>
+				<td>
+					<div class="element metaloid">
+					<p class="elem_weight">72.64</p>
+					<h2 class="elem_symbol">Ge</h2>
+					<p class="elem_number">32</p>
+					</div>
+				</td>
+				<td>
+					<div class="element metaloid">
+					<p class="elem_weight">74.922</p>
+					<h2 class="elem_symbol">As</h2>
+					<p class="elem_number">33</p>
+					</div>
+				</td>
+				<td>
+					<div class="element polyatnonmet">
+					<p class="elem_weight">78.96</p>
+					<h2 class="elem_symbol">Se</h2>
+					<p class="elem_number">34</p>
+					</div>
+				</td>
+				<td>
+					<div class="element diatnonmet">
+					<p class="elem_weight">79.904</p>
+					<h2 class="elem_symbol">Br</h2>
+					<p class="elem_number">35</p>
+					</div>
+				</td>
+				<td>
+					<div class="element noblegas">
+					<p class="elem_weight">83.798</p>
+					<h2 class="elem_symbol">Kr</h2>
+					<p class="elem_number">36</p>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="element alkmet">
+					<p class="elem_weight">85.468</p>
+					<h2 class="elem_symbol">Rb</h2>
+					<p class="elem_number">37</p>
+					</div>
+				</td>
+				<td>
+					<div class="element alkearthmet">
+					<p class="elem_weight">87.62</p>
+					<h2 class="elem_symbol">Sr</h2>
+					<p class="elem_number">38</p>
+					</div>
+				</td>
+				<td>
+					<div class="element transmet">
+					<p class="elem_weight">88.906</p>
+					<h2 class="elem_symbol">Y</h2>
+					<p class="elem_number">39</p>
+					</div>
+				</td>
+				<td>
+					<div class="element transmet">
+					<p class="elem_weight">91.224</p>
+					<h2 class="elem_symbol">Zr</h2>
+					<p class="elem_number">40</p>
+					</div>
+				</td>
+				<td>
+					<div class="element transmet">
+					<p class="elem_weight">92.906</p>
+					<h2 class="elem_symbol">Nb</h2>
+					<p class="elem_number">41</p>
+					</div>
+				</td>
+				<td>
+					<div class="element transmet">
+					<p class="elem_weight">95.96</p>
+					<h2 class="elem_symbol">Mo</h2>
+					<p class="elem_number">42</p>
+					</div>
+				</td>
+				<td>
+					<div class="element transmet">
+					<p class="elem_weight">98</p>
+					<h2 class="elem_symbol">Tc</h2>
+					<p class="elem_number">43</p>
+					</div>
+				</td>
+				<td>
+					<div class="element transmet">
+					<p class="elem_weight">101.07</p>
+					<h2 class="elem_symbol">Ru</h2>
+					<p class="elem_number">44</p>
+					</div>
+				</td>
+				<td>
+					<div class="element transmet">
+					<p class="elem_weight">102.906</p>
+					<h2 class="elem_symbol">Rh</h2>
+					<p class="elem_number">45</p>
+					</div>
+				</td>
+				<td>
+					<div class="element transmet">
+					<p class="elem_weight">106.42</p>
+					<h2 class="elem_symbol">Pd</h2>
+					<p class="elem_number">46</p>
+					</div>
+				</td>
+				<td>
+					<div class="element transmet">
+					<p class="elem_weight">107.868</p>
+					<h2 class="elem_symbol">Ag</h2>
+					<p class="elem_number">47</p>
+					</div>
+				</td>
+				<td>
+					<div class="element posttransmet">
+					<p class="elem_weight">112.411</p>
+					<h2 class="elem_symbol">Cd</h2>
+					<p class="elem_number">48</p>
+					</div>
+				</td>
+				<td>
+					<div class="element posttransmet">
+					<p class="elem_weight">114.818</p>
+					<h2 class="elem_symbol">In</h2>
+					<p class="elem_number">49</p>
+					</div>
+				</td>
+				<td>
+					<div class="element posttransmet">
+					<p class="elem_weight">118.71</p>
+					<h2 class="elem_symbol">Sn</h2>
+					<p class="elem_number">50</p>
+					</div>
+				</td>
+				<td>
+					<div class="element metaloid">
+					<p class="elem_weight">121.76</p>
+					<h2 class="elem_symbol">Sb</h2>
+					<p class="elem_number">51</p>
+					</div>
+				</td>
+				<td>
+					<div class="element metaloid">
+					<p class="elem_weight">127.6</p>
+					<h2 class="elem_symbol">Te</h2>
+					<p class="elem_number">52</p>
+					</div>
+				</td>
+				<td>
+					<div class="element diatnonmet">
+					<p class="elem_weight">126.904</p>
+					<h2 class="elem_symbol">I</h2>
+					<p class="elem_number">53</p>
+					</div>
+				</td>
+				<td>
+					<div class="element noblegas">
+					<p class="elem_weight">131.293</p>
+					<h2 class="elem_symbol">Xe</h2>
+					<p class="elem_number">54</p>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="element alkmet">
+					<p class="elem_weight">132.905</p>
+					<h2 class="elem_symbol">Cs</h2>
+					<p class="elem_number">55</p>
+					</div>
+				</td>
+				<td>
+					<div class="element alkearthmet">
+					<p class="elem_weight">137.327</p>
+					<h2 class="elem_symbol">Ba</h2>
+					<p class="elem_number">56</p>
+					</div>
+				</td>
+				<td><p>Lactinoids*</p></td>
+				<td>
+					<div class="element transmet">
+					<p class="elem_weight">178.49</p>
+					<h2 class="elem_symbol">Hf</h2>
+					<p class="elem_number">72</p>
+					</div>
+				</td>
+				<td>
+					<div class="element transmet">
+					<p class="elem_weight">180.948</p>
+					<h2 class="elem_symbol">Ta</h2>
+					<p class="elem_number">73</p>
+					</div>
+				</td>
+				<td>
+					<div class="element transmet">
+					<p class="elem_weight">183.84</p>
+					<h2 class="elem_symbol">W</h2>
+					<p class="elem_number">74</p>
+					</div>
+				</td>
+				<td>
+					<div class="element transmet">
+					<p class="elem_weight">186.207</p>
+					<h2 class="elem_symbol">Re</h2>
+					<p class="elem_number">75</p>
+					</div>
+				</td>
+				<td>
+					<div class="element transmet">
+					<p class="elem_weight">190.23</p>
+					<h2 class="elem_symbol">Os</h2>
+					<p class="elem_number">76</p>
+					</div>
+				</td>
+				<td>
+					<div class="element transmet">
+					<p class="elem_weight">192.217</p>
+					<h2 class="elem_symbol">Ir</h2>
+					<p class="elem_number">77</p>
+					</div>
+				</td>
+				<td>
+					<div class="element transmet">
+					<p class="elem_weight">195.084</p>
+					<h2 class="elem_symbol">Pt</h2>
+					<p class="elem_number">78</p>
+					</div>
+				</td>
+				<td>
+					<div class="element transmet">
+					<p class="elem_weight">196.967</p>
+					<h2 class="elem_symbol">Au</h2>
+					<p class="elem_number">79</p>
+					</div>
+				</td>
+				<td>
+					<div class="element posttransmet">
+					<p class="elem_weight">200.59</p>
+					<h2 class="elem_symbol">Hg</h2>
+					<p class="elem_number">80</p>
+					</div>
+				</td>
+				<td>
+					<div class="element posttransmet">
+					<p class="elem_weight">204.383</p>
+					<h2 class="elem_symbol">Tl</h2>
+					<p class="elem_number">81</p>
+					</div>
+				</td>
+				<td>
+					<div class="element posttransmet">
+					<p class="elem_weight">207.2</p>
+					<h2 class="elem_symbol">Pb</h2>
+					<p class="elem_number">82</p>
+					</div>
+				</td>
+				<td>
+					<div class="element posttransmet">
+					<p class="elem_weight">208.98</p>
+					<h2 class="elem_symbol">Bi</h2>
+					<p class="elem_number">83</p>
+					</div>
+				</td>
+				<td>
+					<div class="element posttransmet">
+					<p class="elem_weight">210</p>
+					<h2 class="elem_symbol">Po</h2>
+					<p class="elem_number">84</p>
+					</div>
+				</td>
+				<td>
+					<div class="element metaloid">
+					<p class="elem_weight">210</p>
+					<h2 class="elem_symbol">At</h2>
+					<p class="elem_number">85</p>
+					</div>
+				</td>
+				<td>
+					<div class="element noblegas">
+					<p class="elem_weight">222</p>
+					<h2 class="elem_symbol">Rn</h2>
+					<p class="elem_number">86</p>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="element alkmet">
+					<p class="elem_weight">223</p>
+					<h2 class="elem_symbol">Fr</h2>
+					<p class="elem_number">87</p>
+					</div>
+				</td>
+				<td>
+					<div class="element alkearthmet">
+					<p class="elem_weight">226</p>
+					<h2 class="elem_symbol">Ra</h2>
+					<p class="elem_number">88</p>
+					</div>
+				</td>
+				<td><p>Actinoids**</p></td>
+				<td>
+					<div class="element transmet">
+					<p class="elem_weight">261</p>
+					<h2 class="elem_symbol">Rf</h2>
+					<p class="elem_number">104</p>
+					</div>
+				</td>
+				<td>
+					<div class="element transmet">
+					<p class="elem_weight">262</p>
+					<h2 class="elem_symbol">Db</h2>
+					<p class="elem_number">105</p>
+					</div>
+				</td>
+				<td>
+					<div class="element transmet">
+					<p class="elem_weight">266</p>
+					<h2 class="elem_symbol">Sg</h2>
+					<p class="elem_number">106</p>
+					</div>
+				</td>
+				<td>
+					<div class="element transmet">
+					<p class="elem_weight">264</p>
+					<h2 class="elem_symbol">Bh</h2>
+					<p class="elem_number">107</p>
+					</div>
+				</td>
+				<td>
+					<div class="element transmet">
+					<p class="elem_weight">267</p>
+					<h2 class="elem_symbol">Hs</h2>
+					<p class="elem_number">108</p>
+					</div>
+				</td>
+				<td>
+					<div class="element">
+					<p class="elem_weight">268</p>
+					<h2 class="elem_symbol">Mt</h2>
+					<p class="elem_number">109</p>
+					</div>
+				</td>
+				<td>
+					<div class="element">
+					<p class="elem_weight">271</p>
+					<h2 class="elem_symbol">Ds</h2>
+					<p class="elem_number">110</p>
+					</div>
+				</td>
+				<td>
+					<div class="element">
+					<p class="elem_weight">272</p>
+					<h2 class="elem_symbol">Rg</h2>
+					<p class="elem_number">111</p>
+					</div>
+				</td>
+				<td>
+					<div class="element posttransmet">
+					<p class="elem_weight">285</p>
+					<h2 class="elem_symbol">Cn</h2>
+					<p class="elem_number">112</p>
+					</div>
+				</td>
+				<td>
+					<div class="element">
+					<p class="elem_weight">286</p>
+					<h2 class="elem_symbol">Nh</h2>
+					<p class="elem_number">113</p>
+					</div>
+				</td>
+				<td>
+					<div class="element">
+					<p class="elem_weight">289</p>
+					<h2 class="elem_symbol">Fl</h2>
+					<p class="elem_number">114</p>
+					</div>
+				</td>
+				<td>
+					<div class="element">
+					<p class="elem_weight">290</p>
+					<h2 class="elem_symbol">Mc</h2>
+					<p class="elem_number">115</p>
+					</div>
+				</td>
+				<td>
+					<div class="element">
+					<p class="elem_weight">293</p>
+					<h2 class="elem_symbol">Lv</h2>
+					<p class="elem_number">116</p>
+					</div>
+				</td>
+				<td>
+					<div class="element">
+					<p class="elem_weight">294</p>
+					<h2 class="elem_symbol">Ts</h2>
+					<p class="elem_number">117</p>
+					</div>
+				</td>
+				<td>
+					<div class="element">
+					<p class="elem_weight">294</p>
+					<h2 class="elem_symbol">Og</h2>
+					<p class="elem_number">118</p>
+					</div>
+				</td>
+			</tr>
+
+			<tr>
+			<td>
+				<div class="hiddenelem">
+				</div>
+			</td>
+			</tr>
+
+			<tr>
+				<td colspan="2"></td>
+				<td><p id="zvezda">*</p></td>
+				<td>
+					<div class="element lactin">
+					<p class="elem_weight">138.905</p>
+					<h2 class="elem_symbol">La</h2>
+					<p class="elem_number">57</p>
+					</div>
+				</td>
+				<td>
+					<div class="element lactin">
+					<p class="elem_weight">140.116</p>
+					<h2 class="elem_symbol">Ce</h2>
+					<p class="elem_number">58</p>
+					</div>
+				</td>
+				<td>
+					<div class="element lactin">
+					<p class="elem_weight">140.908</p>
+					<h2 class="elem_symbol">Pr</h2>
+					<p class="elem_number">59</p>
+					</div>
+				</td>
+				<td>
+					<div class="element lactin">
+					<p class="elem_weight">144.242</p>
+					<h2 class="elem_symbol">Nd</h2>
+					<p class="elem_number">60</p>
+					</div>
+				</td>
+				<td>
+					<div class="element lactin">
+					<p class="elem_weight">145</p>
+					<h2 class="elem_symbol">Pm</h2>
+					<p class="elem_number">61</p>
+					</div>
+				</td>
+				<td>
+					<div class="element lactin">
+					<p class="elem_weight">150.36</p>
+					<h2 class="elem_symbol">Sm</h2>
+					<p class="elem_number">62</p>
+					</div>
+				</td>
+				<td>
+					<div class="element lactin">
+					<p class="elem_weight">151.964</p>
+					<h2 class="elem_symbol">Eu</h2>
+					<p class="elem_number">63</p>
+					</div>
+				</td>
+				<td>
+					<div class="element lactin">
+					<p class="elem_weight">157.25</p>
+					<h2 class="elem_symbol">Gd</h2>
+					<p class="elem_number">64</p>
+					</div>
+				</td>
+				<td>
+					<div class="element lactin">
+					<p class="elem_weight">158.925</p>
+					<h2 class="elem_symbol">Tb</h2>
+					<p class="elem_number">65</p>
+					</div>
+				</td>
+				<td>
+					<div class="element lactin">
+					<p class="elem_weight">162.5</p>
+					<h2 class="elem_symbol">Dy</h2>
+					<p class="elem_number">66</p>
+					</div>
+				</td>
+				<td>
+					<div class="element lactin">
+					<p class="elem_weight">164.93</p>
+					<h2 class="elem_symbol">Ho</h2>
+					<p class="elem_number">67</p>
+					</div>
+				</td>
+				<td>
+					<div class="element lactin">
+					<p class="elem_weight">167.259</p>
+					<h2 class="elem_symbol">Er</h2>
+					<p class="elem_number">68</p>
+					</div>
+				</td>
+				<td>
+					<div class="element lactin">
+					<p class="elem_weight">168.934</p>
+					<h2 class="elem_symbol">Tm</h2>
+					<p class="elem_number">69</p>
+					</div>
+				</td>
+				<td>
+					<div class="element lactin">
+					<p class="elem_weight">173.054</p>
+					<h2 class="elem_symbol">Yb</h2>
+					<p class="elem_number">70</p>
+					</div>
+				</td>
+				<td>
+					<div class="element lactin">
+					<p class="elem_weight">174.967</p>
+					<h2 class="elem_symbol">Lu</h2>
+					<p class="elem_number">71</p>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"></td>
+				<td><p id="zvezda">**</p></td>
+				<td>
+					<div class="element actin">
+					<p class="elem_weight">227</p>
+					<h2 class="elem_symbol">Ac</h2>
+					<p class="elem_number">89</p>
+					</div>
+				</td>
+				<td>
+					<div class="element actin">
+					<p class="elem_weight">232.038</p>
+					<h2 class="elem_symbol">Th</h2>
+					<p class="elem_number">90</p>
+					</div>
+				</td>
+				<td>
+					<div class="element actin">
+					<p class="elem_weight">231.036</p>
+					<h2 class="elem_symbol">Pa</h2>
+					<p class="elem_number">91</p>
+					</div>
+				</td>
+				<td>
+					<div class="element actin">
+					<p class="elem_weight">238.029</p>
+					<h2 class="elem_symbol">U</h2>
+					<p class="elem_number">92</p>
+					</div>
+				</td>
+				<td>
+					<div class="element actin">
+					<p class="elem_weight">237</p>
+					<h2 class="elem_symbol">Np</h2>
+					<p class="elem_number">93</p>
+					</div>
+				</td>
+				<td>
+					<div class="element actin">
+					<p class="elem_weight">244</p>
+					<h2 class="elem_symbol">Pu</h2>
+					<p class="elem_number">94</p>
+					</div>
+				</td>
+			
+				<td>
+					<div class="element actin">
+					<p class="elem_weight">243</p>
+					<h2 class="elem_symbol">Am</h2>
+					<p class="elem_number">95</p>
+					</div>
+				</td>
+				<td>
+					<div class="element actin">
+					<p class="elem_weight">247</p>
+					<h2 class="elem_symbol">Cm</h2>
+					<p class="elem_number">96</p>
+					</div>
+				</td>
+				<td>
+					<div class="element actin">
+					<p class="elem_weight">247</p>
+					<h2 class="elem_symbol">Bk</h2>
+					<p class="elem_number">97</p>
+					</div>
+				</td>
+				<td>
+					<div class="element actin">
+					<p class="elem_weight">251</p>
+					<h2 class="elem_symbol">Cf</h2>
+					<p class="elem_number">98</p>
+					</div>
+				</td>
+				<td>
+					<div class="element actin">
+					<p class="elem_weight">252</p>
+					<h2 class="elem_symbol">Es</h2>
+					<p class="elem_number">99</p>
+					</div>
+				</td>
+				<td>
+					<div class="element actin">
+					<p class="elem_weight">257</p>
+					<h2 class="elem_symbol">Fm</h2>
+					<p class="elem_number">100</p>
+					</div>
+				</td>
+				<td>
+					<div class="element actin">
+					<p class="elem_weight">258</p>
+					<h2 class="elem_symbol">Md</h2>
+					<p class="elem_number">101</p>
+					</div>
+				</td>
+				<td>
+					<div class="element actin">
+					<p class="elem_weight">259</p>
+					<h2 class="elem_symbol">No</h2>
+					<p class="elem_number">102</p>
+					</div>
+				</td>
+				<td>
+					<div class="element actin">
+					<p class="elem_weight">262</p>
+					<h2 class="elem_symbol">Lr</h2>
+					<p class="elem_number">103</p>
+					</div>
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					<div class="hiddenelem">
+					</div>
+				</td>
+			</tr>
+
+			<tr id="legend">
+				<td colspan="2" class="legendHead"><h2>Legend: </h2></td>
+				<td class="legendSon alkmet">Alkali metals</td>
+				<td class="legendSon alkearthmet">Alkaline earth metals</td>
+				<td class="legendSon lactin">Lactinoids</td>
+				<td class="legendSon actin">Actinoids</td>
+				<td class="legendSon transmet">Transition metals</td>
+				<td class="legendSon posttransmet">Post-transition metals</td>
+				<td class="legendSon metaloid">Metalloids</td>
+				<td class="legendSon polyatnonmet">Polyatomic nonmetals</td>
+				<td class="legendSon diatnonmet">Diatomic nonmetals</td>
+				<td class="legendSon noblegas">Noble Gases</td>
+				<td class="legendSon">Unknown properties</td>
+			</tr>
+		</table>
+	</body>
+</html>
