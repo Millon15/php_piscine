@@ -42,10 +42,11 @@ header {
 }
 
 #delim {
-	height: 15px;
+	height: 0.5%;
 }
 
 .left, .right {
+	z-index: 1;
 	width: 7%;
 	border-radius: 10px;
 	padding-top: 10px;
@@ -91,6 +92,7 @@ header {
 }
 
 .cluster {
+	z-index: 1;
 	float: left;
 	display: inline-block;
 	width: 53%;
@@ -101,4 +103,40 @@ header {
 .cluster img {
 	width: 98%;
 	padding: 1%;
+}
+
+.abs{
+	position: absolute;
+	bottom: 13%;
+	left: 12%;
+	z-index: 2;
+	width: 24%;
+	height: 15%;
+	padding: 0 1%;
+	background-color: #88FF89;
+}
+
+.abs p {
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 1.5em;
+	margin-bottom: 0;
+}
+
+.abs p strong {
+	font-size: 1.6em;
+	font-weight: bolder;
+	font-family: Palatino, serif;
+}
+
+.abs_shadow_text {
+	text-shadow: 7px 4px 4px rgba(255,0,0,0.6);
+}
+
+.abs input {
+	font-size: 1.1em;
+	width: 80%;
+}
+
+.abs button {
+	font-size: 1.1em;
 }
