@@ -1,0 +1,25 @@
+
+body {
+	background-color: #505050;
+}
+
+#header {
+	background-color: #909090;
+	border-radius: 20px;
+	width: 80%;
+	margin-left: 10%;
+	margin-top: 2%;
+	border: 50px solid black;
+}
+
+#leftbar {
+	background-color: #909090;
+}
+
+#center {
+	background-color: #909090;
+}
+
+#rightbar {
+	background-color: #909090;
+}
