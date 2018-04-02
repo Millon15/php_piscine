@@ -1,0 +1,147 @@
+
+body {
+	background-color: #555555;
+}
+
+header {
+	margin: 0 auto;
+	position: relative;
+	width: 960px;
+	height: 88px;
+	border-radius: 10px;
+	background-color: #909090;
+	box-shadow: 0.3em 0.3em 1em black;
+}
+
+.content {
+	margin: 0 auto;
+	position: relative;
+	width: 960px;
+}
+
+#separator {
+	height: 13px;
+}
+
+#header_logo {
+	border-radius: 10px;
+	height: 100%;
+}
+
+#header_loupe {
+	float: right;
+	padding-top: 1%;
+	margin-right: 3%;
+	height: 100%;
+}
+
+#header_reload {
+	position: absolute;
+	right: 0.5%;
+	top: 7%;
+	width: 2%;
+}
+
+#header_close {
+	position: absolute;
+	right: 0.5%;
+	bottom: 7%;
+	width: 2%;
+}
+
+.left_side, .main, .right_side {
+	background-color: #909090;
+	box-shadow: 0.3em 0.3em 1em black;
+}
+
+.left_side, .right_side {
+	width: 10%;
+	height: 270px;
+	border-radius: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;	
+}
+
+.left_side {
+	float: left;
+	margin-left: 2%;
+	margin-right: 1%;
+}
+
+.right_side {
+	float: right;
+	margin-left: 1%;
+	margin-right: 2%;	
+}
+
+.main {
+	float: left;
+	width: 72%;
+	height: 100%;
+	border-radius: 10px;
+	margin-right: 1%;
+	margin-left: 1%;
+}
+
+.left_side img {
+	width: 50%;
+	margin-left: 25%;
+}
+
+.right_side img {
+	width: 50%;
+	margin-left: 25%;
+}
+
+.main img {
+	width: 98%;
+	padding: 1%;
+}
+
+#red_border {
+	border: 3px solid red;
+	border-radius: 3px;
+}
+
+#bricks {
+	width: 90%;
+	margin-left: 5%;
+	height: 20%;
+	background-image: url("resources/brick.jpg");
+	background-repeat: repeat;
+}
+
+.reply {
+	position: absolute;
+	background-color: #80F190;
+	border-radius: 10px;
+	width: 36%;
+	height: 130px;
+	margin-top: 310px;
+	padding: 1px;
+	box-shadow: 0.3em 0.3em 1em black;
+}
+
+#red {
+	font-family: monospace;
+	font-size: 1em;
+	padding:  2% 0px 0px 5%;
+	margin: 0 auto;
+	text-shadow: 3px 3px 3px red, 0 0 1em red;	
+}
+
+p {
+	font-family: monospace;
+	font-size: 1em;
+	padding:  2% 0px 0px 5%;
+	margin: 0 auto;
+}
+
+#input {
+	margin: 3% 0px 0px 2%;
+	width: 66%;
+}
+
+button {
+	width: 25%;
+}

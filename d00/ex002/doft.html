@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Day of the 42</title>
+	<link rel="stylesheet" type="text/css" href="doft.css"/>
+</head>
+<body>
+	<header>
+		<img id="header_logo" src="resources/day_of_the_42.png">
+		<img id="header_loupe" src="resources/loupe.png">
+		<a href="http://www.disney.com" title="Start from the beginning"><img id="header_reload" alt="Start from the beginning" src="resources/reload.png"></a>
+		<a href = "http://www.relaischateaux.com" title="Disconnect"><img id="header_close" alt="Disconnect" src="resources/close.gif"></a>
+	</header>
+	<div id="separator"></div>
+	<div class="content">
+		<div class="left_side">
+			<img title="Advance" src="resources/arrow.png"/>
+			<img title="Take" src="resources/main.png"/>
+			<img id="red_border" title="Look" src="resources/oeil.png"/>
+			<img title="Use" src="resources/outil.png"/>
+			<img title="Speak" src="resources/chat-icon.png"/>
+		</div>
+		<div class="main">
+			<img src="resources/cluster.jpg" usemap="#links">
+			<map name="links">
+				<area shape="rect" coords="230,230,320,380" title="IKEA" href="http://www.ikea.com">
+				<area shape="rect" coords="540,220,670,320" title="APPLE" href="http://www.apple.com">
+			</map>
+		</div>
+		<div class="right_side">
+			<img title="Book" src="resources/book.png">
+			<img title="Towel" src="resources/towel.png">
+			<div id="bricks" title="bricks"></div>		
+		</div>
+		<div class="reply">
+			<p>You have just <b>entered</b> a large room filled with <span id="red">computers.</span></p>
+			<p><i>-Hello! Are you new here?</i></p>
+			<div>
+				<input id="input" type="text" name="reply">
+				<button>Reply</button>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

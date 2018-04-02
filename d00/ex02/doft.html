@@ -1,28 +1,57 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Day of 42</title>
-		<link rel="stylesheet" type="text/css" href="./doft.css">
-	</head>
-	<body>
-		<div id="heaader">
-			<img src="resources/day_of_the_42.png" alt="Day of the 42" title="Day of the 42" />
-			<img src="resources/loupe.png" alt="Day of the 42" title="Day of the 42" />
-			<a href="http://www.disney.com"><img src="resources/reload.png" alt="Start from the beginning" title="Start from the beginning" /></a>
-			<a href="http://www.relaischateaux.com"><img src="resources/close.gif" alt="Disconnect" title="Disconnect" /></a>
-		</div>
-		<div id="leftbar">
 
+<head>
+	<title>Day of 42</title>
+	<link rel="stylesheet" type="text/css" href="./doft.css">
+</head>
+<body>
+	<header class="container">
+		<img id="header_logo" src="resources/day_of_the_42.png">
+		<img id="header_loupe" src="resources/loupe.png">
+		<a href="http://www.disney.com" title="Start from the beginning">
+		<img id="header_reload" title="Start from the beginning" alt="Start from the beginning" src="resources/reload.png"></a>
+		<a href="http://www.relaischateaux.com" title="Disconnect">
+		<img id="header_close" title="Disconnect" alt="Disconnect" src="resources/close.gif"></a>
+	</header>
+	<div id="delim"></div>
+	<div class="content">
+		<div class="left container">
+			<img src="resources/arrow.png" alt="Advance" title="Advance" />
+			<img src="resources/main.png" alt="Take" title="Take" />
+			<img id="left_look" src="resources/oeil.png" alt="Look" title="Look" />
+			<img src="resources/outil.png" alt="Use" title="Use" />
+			<img src="resources/chat-icon.png" alt="Speak" title="Speak" />
 		</div>
-
-		<div id="center">
-
+		<div class="cluster container">
+			<img src="resources/cluster.jpg" usemap="#image-map" alt="Cluster" title="Cluster" />
+			<map name="image-map">
+				<area target="" alt="IKEA" title="IKEA" href="http://www.ikea.com" coords="480,561,324,326" shape="rect">
+				<area target="" alt="APPLE" title="APPLE" href="http://www.apple.com" coords="1008,315,803,499" shape="rect">
+			</map>
 		</div>
-		<div id="rightbar">
-
+		<div class="right container">
+			<img src="resources/book.png" alt="Help" title="Help" />
+			<img src="resources/towel.png" alt="Wipe off" title="Wipe off" />
+			<div id="bricks" title="Come to rest"></div>		
 		</div>
-		<div id="window">
+	</div>
+	
+	<!--	<div class="container cluster">
+		<div>
+			<img src="resources/cluster.jpg" alt="Help" title="Help" />
+		</div>
+	</div>
+	<div class="container rightbar">
 			
+	</div>
+	<div class="container abs">
+		<p>Vous <strong>entrez</strong> alors dans une grande piece remplie d'<br /><span class="floaty_text">ordinateurs</span>...<br />
+		<i>- Bonjour, vous &ecirc;tes nouveau ici ?</i></p>
+		<div>
+			<input id="input" type="text" name="reply" />
+			<button>Repondre</button>
 		</div>
-	</body>
+	</div> -->
+</body>
 </html>
