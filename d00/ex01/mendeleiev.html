@@ -3,12 +3,15 @@
 	<head>
 		<title>Mendeleiv Pereodic table</title>
 		<style>
-			#mendeleev{
+			#mendeleevimg{
 				margin: 0 auto;
+				margin-left: 12%;
 				width: 10%;
 				height: 15%;
 				display: block;
 			}
+			body { font-size: 100%; }
+			#heading{ font-size: 2em; }
 			#table{
 				text-align: center;
 				width: 76%;
@@ -30,23 +33,27 @@
 				margin-left: 0.2vw;
 				color: black;
 			}
-			.legend{
+			.hiddenelem{
+				margin: 2vh 0;
+			}
+			#zvezda{
+				font-weight: bold;
+				font-size: 2em;
+			}
+			#legend{
 				text-align: left;
 				padding: 5vh 1vw;
 			}
-			.legend td{
-				font-size: 1.5em;
-			}
-			.legend h2{
-				display: inline-block;
-				font-size: 2.5em;
-				margin: 0 0;
-				font-weight: bold;
+			#legend .legendSon{
+				padding: 0 0.2vw;
+				text-align: center;
+				font-size: 1.2em;
+				border: 0.5px solid #484848;
 			}
 			.transmet{ background-color: #a7c0cd; }
 			.alkmet{ background-color: #e0e0e0; }
 			.alkearthmet{ background-color: #d3b8ae; }
-			.metalloid{ background-color: #d2ce56; }
+			.metaloid{ background-color: #d2ce56; }
 			.polyatnonmet{ background-color: #52c7b8; }
 			.diatnonmet{ background-color: #ffeb3b; }
 			.noblegas{ background-color: #4dd0e1; }
@@ -56,8 +63,9 @@
 		</style>
 	</head>
 	<body>
-		<img id="mendeleev" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/DIMendeleevCab.jpg/640px-DIMendeleevCab.jpg" alt="Mendeleiv portrait" title="Mendeleiv himself" />
+		<img id="mendeleevimg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/DIMendeleevCab.jpg/640px-DIMendeleevCab.jpg" alt="Mendeleiv portrait" title="Mendeleiv himself" />
 		<table id="table" contentEditable="true">
+			<th colspan="18" id="heading"><h1>Mendeleïev Table</h1></th>
 			<tr>
 				<td>
 					<div class="element diatnonmet">
@@ -92,7 +100,7 @@
 				</td>
 				<td colspan="10"></td>
 				<td>
-					<div class="element metalloid">
+					<div class="element metaloid">
 					<p class="elem_weight">10.811</p>
 					<h2 class="elem_symbol">B</h2>
 					<p class="elem_number">5</p>
@@ -158,7 +166,7 @@
 					</div>
 				</td>
 				<td>
-					<div class="element metalloid">
+					<div class="element metaloid">
 					<p class="elem_weight">28.086</p>
 					<h2 class="elem_symbol">Si</h2>
 					<p class="elem_number">14</p>
@@ -286,14 +294,14 @@
 					</div>
 				</td>
 				<td>
-					<div class="element metalloid">
+					<div class="element metaloid">
 					<p class="elem_weight">72.64</p>
 					<h2 class="elem_symbol">Ge</h2>
 					<p class="elem_number">32</p>
 					</div>
 				</td>
 				<td>
-					<div class="element metalloid">
+					<div class="element metaloid">
 					<p class="elem_weight">74.922</p>
 					<h2 class="elem_symbol">As</h2>
 					<p class="elem_number">33</p>
@@ -421,14 +429,14 @@
 					</div>
 				</td>
 				<td>
-					<div class="element metalloid">
+					<div class="element metaloid">
 					<p class="elem_weight">121.76</p>
 					<h2 class="elem_symbol">Sb</h2>
 					<p class="elem_number">51</p>
 					</div>
 				</td>
 				<td>
-					<div class="element metalloid">
+					<div class="element metaloid">
 					<p class="elem_weight">127.6</p>
 					<h2 class="elem_symbol">Te</h2>
 					<p class="elem_number">52</p>
@@ -464,7 +472,7 @@
 					<p class="elem_number">56</p>
 					</div>
 				</td>
-				<td colspan="1"></td>
+				<td><p>Lactinoids*</p></td>
 				<td>
 					<div class="element transmet">
 					<p class="elem_weight">178.49</p>
@@ -557,7 +565,7 @@
 					</div>
 				</td>
 				<td>
-					<div class="element metalloid">
+					<div class="element metaloid">
 					<p class="elem_weight">210</p>
 					<h2 class="elem_symbol">At</h2>
 					<p class="elem_number">85</p>
@@ -586,7 +594,7 @@
 					<p class="elem_number">88</p>
 					</div>
 				</td>
-				<td colspan="1"></td>
+				<td><p>Actinoids**</p></td>
 				<td>
 					<div class="element transmet">
 					<p class="elem_weight">261</p>
@@ -693,17 +701,17 @@
 					</div>
 				</td>
 			</tr>
-		
+
 			<tr>
 			<td>
-				<div class="hiddenelement">
+				<div class="hiddenelem">
 				</div>
 			</td>
 			</tr>
-		
-			
+
 			<tr>
-				<td colspan="3"></td>
+				<td colspan="2"></td>
+				<td><p id="zvezda">*</p></td>
 				<td>
 					<div class="element lactin">
 					<p class="elem_weight">138.905</p>
@@ -811,7 +819,8 @@
 				</td>
 			</tr>
 			<tr>
-				<td colspan="3"></td>
+				<td colspan="2"></td>
+				<td><p id="zvezda">**</p></td>
 				<td>
 					<div class="element actin">
 					<p class="elem_weight">227</p>
@@ -919,20 +928,27 @@
 					</div>
 				</td>
 			</tr>
+
 			<tr>
-				<div class="legend">
-					<td colspan="18">
-						<h2>Legend: </h2>
-						<p>Alkali metals </p>
-						<p>Alkaline earth metals </p>
-						<p>Transition metals </p>
-						<p>Post-transition metals </p>
-						<p>Metalloids </p>
-						<p>Polyatomic nonmetals </p>
-						<p>Diatomic nonmetals </p>
-						<p>Noble Gases </p>
-					</td>
-				</div>
+				<td>
+					<div class="hiddenelem">
+					</div>
+				</td>
+			</tr>
+
+			<tr id="legend">
+				<td colspan="2" class="legendHead"><h2>Legend: </h2></td>
+				<td class="legendSon alkmet">Alkali metals</td>
+				<td class="legendSon alkearthmet">Alkaline earth metals</td>
+				<td class="legendSon lactin">Lactinoids</td>
+				<td class="legendSon actin">Actinoids</td>
+				<td class="legendSon transmet">Transition metals</td>
+				<td class="legendSon posttransmet">Post-transition metals</td>
+				<td class="legendSon metaloid">Metalloids</td>
+				<td class="legendSon polyatnonmet">Polyatomic nonmetals</td>
+				<td class="legendSon diatnonmet">Diatomic nonmetals</td>
+				<td class="legendSon noblegas">Noble Gases</td>
+				<td class="legendSon">Unknown properties</td>
 			</tr>
 		</table>
 	</body>
