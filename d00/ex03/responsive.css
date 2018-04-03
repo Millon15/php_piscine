@@ -11,7 +11,7 @@ body {
 	font-size: 100%;
 }
 
-#heading {
+#heading h1 {
 	font-size: 2vw;
 }
 
@@ -24,29 +24,29 @@ body {
 
 .element {
 	border: 0.5px solid black;
-	width: calc((4vw + 4vw) / 2);
-	height: calc((4.7vw + 4.7vw) / 2);
+	width: 4vw;
+	height: 4.7vw;
 	color: black;
 }
 
 .element p {
-	margin-top: calc((0.2vw + 0.2vw) / 2);
-	margin-bottom: calc((0.1vw + 0.1vw) / 2);
+	margin-top: 0.2vw;
+	margin-bottom: 0.1vw;
 }
 
 .element .elem_symbol {
-	font-size: calc((1.1vw + 1.1vw) / 2);
+	font-size: 1.1vw;
 }
 
 .elem_weight {
-	font-size: calc((0.5vw + 0.5vw) / 2);
+	font-size: 0.5vw;
 	text-align: right;
 	margin-right: 0.2vw;
 	color: black;
 }
 
 .elem_number {
-	font-size: calc((0.5vw + 0.5vw) / 2);
+	font-size: 0.5vw;
 	text-align: left;
 	margin-left: 0.2vw;
 	color: black;
@@ -57,20 +57,30 @@ body {
 }
 
 #zvezda {
-	font-weight: bold;
-	font-size: 2.5vh;
+	font-size: 2vw;
+	font-weight: 500;
+	padding: 0;
+	margin: 0;
+}
+
+#actinoids{
+	padding: 0.2vh 0.2vw;
+	font-size: 1vw;
 }
 
 #legend {
-	text-align: left;
-	padding: 5vh 1vw;
+	padding: 0;
+	margin: 0;
 }
 
-#legend .legendSon {
-	padding: 0 0.2vw;
-	text-align: center;
-	font-size: 1.2em;
-	border: 0.5px solid #484848;
+#legend td {
+	font-size: 0.7vw;
+	height: 4vh;
+	margin: 0;
+}
+
+#legend td h2 {
+	margin: 0;
 }
 
 .transmet {
