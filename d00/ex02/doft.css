@@ -95,8 +95,6 @@ header {
 	margin-left: 5%;
 }
 
-
-
 .cluster {
 	z-index: 1;
 	float: left;
@@ -116,27 +114,33 @@ header {
 	bottom: 13%;
 	left: 12%;
 	z-index: 2;
-	width: 24%;
-	height: 15%;
+	width: 23%;
+	height: 16%;
 	padding: 0 1%;
 	background-color: #88FF89;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .abs p {
-	font-size: 1.35em;
-	margin-bottom: 0;
+	font-size: calc((1vh + 1vw) / 2);
+	font-weight: 500;
+	margin-top: 0.2em;
 	margin-bottom: 1%;
 }
 
-.abs p #abs_strong_text {
-	font-size: 1.8em;
-	font-weight: 300;
-	font-family: Georgia, 'Times New Roman', Times, serif;
+#abs_strong_text {
+	font-size: 2em;
+	font-weight: 700;
+	font-family: 'Times New Roman', Times, serif;
 }
 
-.abs p .abs_shadow_text {
-	text-shadow: 7px 4px 4px rgba(255,0,0,0.6);
+#abs_shadow_text {
+	text-shadow: 7px 4px 4px #DC143C;
+}
+
+#abs_italic_text {
+	font-style: italic;
+	font-size: calc((0.9vh + 0.9vw) / 2);
 }
 
 .abs input {
