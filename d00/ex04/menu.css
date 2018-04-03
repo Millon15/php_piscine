@@ -1,15 +1,64 @@
 
 #drop-down {
-	width: auto;
-	height: auto;
+	display: inline-block;
+	cursor: pointer;
+	width: 100px;
+	height: 100px;
 	margin: 20px 20px;
 }
 
 .stick {
-	width: 37px;
+	cursor: pointer;
+	width: 35px;
 	height: 5px;
 	margin-bottom: 5px;
 	background-color: #37474f;
+	transition: 0.4s;
 }
 
+#drop-down:hover .st0 { transform: rotate(-45deg) translate(-8px, 8px); }
 
+#drop-down:hover .st1 { opacity: 0; }
+
+#drop-down:hover .st2 { transform: rotate(45deg) translate(-8px, -8px); }
+
+a {	color: black; }
+
+a:link {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+a:link:active, a:visited:active { color: black; }
+
+#drop-down ul {
+	visibility: hidden;
+	display: none;
+	width: 150px;
+	height: auto;
+	background-color: #f9f9f9;
+}
+
+#drop-down:hover ul {
+	visibility: visible;
+	display: block;
+	list-style: none;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	font-size: 1vw;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+#drop-down:hover .listelem {
+	padding-top: 1vh;
+	height: 40px;
+	width: 100%;
+}
+
+#drop-down:hover .listelem:hover {
+	cursor: pointer;
+	background-color: #f1f1f1;
+}
