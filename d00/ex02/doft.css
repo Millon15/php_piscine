@@ -12,7 +12,7 @@ header {
 .container {
 	border-radius: 10px;
 	background-color: #909090;
-	box-shadow: 15px 14px 20px 1px rgba(0,0,0,0.75);
+	box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.8);
 }
 
 #header_logo {
@@ -86,16 +86,16 @@ header {
 }
 
 #bricks {
-	width: 140px;
-	height: 76px;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
 	margin-top: 14.5em;
+	width: 90%;
+	height: 20%;
 	background-image: url("resources/brick.jpg");
 	background-repeat: repeat;
-	background-size: 40px 40px;
+	background-size: 35% 45%;
+	margin-left: 5%;
 }
+
+
 
 .cluster {
 	z-index: 1;
