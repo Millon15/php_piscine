@@ -45,12 +45,12 @@ header {
 }
 
 main {
-    position: relative;
-    margin: 27px auto;
-    position: relative;
-    width: 1846px;
-    height: auto;
-    overflow: initial;
+	position: relative;
+	margin: 27px auto;
+	position: relative;
+	width: 1846px;
+	height: auto;
+	overflow: initial;
 }
 
 .left,
@@ -59,29 +59,27 @@ main {
 	width: 200px;
 }
 
-
-
 .left {
-    float: left;
-    width: 181px;
-    margin-left: 40px;
-    margin-right: 40px;
-    padding: 15px 0;
+	float: left;
+	width: 181px;
+	margin-left: 40px;
+	margin-right: 40px;
+	padding: 15px 0;
 }
 
 .left img {
-    width: 89px;
-    margin-left: 42px;
-    margin-top: 10px;
+	width: 89px;
+	margin-left: 42px;
+	margin-top: 10px;
 }
 
 #left_look {
-    position: relative;
-    top: -11px;
-    left: -8px;
-    width: 90px;
-    border-radius: 6px;
-    border: 7px solid red;
+	position: relative;
+	top: -11px;
+	left: -8px;
+	width: 90px;
+	border-radius: 6px;
+	border: 7px solid red;
 }
 
 #left_use {
@@ -93,14 +91,12 @@ main {
 	margin-bottom: 20px;
 }
 
-
-
 .right {
-    float: right;
+	float: right;
 	width: 180px;
-    height: 522px;
-    margin-right: 40px;
-    padding: 15px 0;
+	height: 522px;
+	margin-right: 40px;
+	padding: 15px 0;
 }
 
 .right img {
@@ -111,14 +107,14 @@ main {
 }
 
 #bricks {
-    position: absolute;
-    width: 156px;
-    height: 92px;
-    top: 230px;
-    left: 12px;
-    background-image: url(resources/brick.jpg);
-    background-repeat: repeat;
-    background-size: 35% 45%;
+	position: absolute;
+	width: 156px;
+	height: 92px;
+	top: 230px;
+	left: 12px;
+	background-image: url(resources/brick.jpg);
+	background-repeat: repeat;
+	background-size: 35% 45%;
 }
 
 .cluster {
@@ -134,16 +130,17 @@ main {
 }
 
 .abs {
-    position: absolute;
-    bottom: -113px;
-    left: -58px;
-    z-index: 2;
-    width: 640px;
-    height: 200px;
-    padding: 10px 18px;
-    background-color: #88FF89;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+	position: absolute;
+	bottom: -113px;
+	left: -58px;
+	z-index: 2;
+	width: 640px;
+	height: 200px;
+	padding: 10px 18px;
+	background-color: #88FF89;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 .abs p {
 	font-size: 22px;
 	font-weight: 500;
