@@ -3,7 +3,6 @@
 	if ($argc != 2) {
 		exit (1);
 	}
-	$file = file_get_contents($argv[1]);
 	if (($file = file_get_contents($argv[1]))) {
 		preg_match_all("/(<a.*title=)(\".*\")(.*>.*<\/a>)/", $file, $mat);
 		$i = 0;
