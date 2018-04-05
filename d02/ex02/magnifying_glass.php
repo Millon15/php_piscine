@@ -4,7 +4,7 @@
 		exit (1);
 	}
 	if (($file = file_get_contents($argv[1]))) {
-		preg_match_all("/(<a.*title=)(\".*\")(.*>.*<\/a>)/", $file, $mat);
+		preg_match_all("/(<a.*title=)(\".*\")(.*>.*<\/a>)/i", $file, $mat);
 		$i = 0;
 		foreach ($mat[0] as $val) {
 			$upp = $mat[1][$i].strtoupper($mat[2][$i]).$mat[3][$i];
