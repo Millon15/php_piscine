@@ -3,24 +3,36 @@
 	if ($argc != 3) {
 		exit (1);
 	}
-	if ($argv[2] != "pseudo" && $argv[2] != "surname") {
-		exit (2);
-	}
 	if (file_exists($argv[1]) === FALSE) {
-		exit (3);
+		exit (2);
 	}
 
 	$end = array();
 	if (($file = file_get_contents($argv[1])) === FALSE) {
-		exit (4);
+		exit (3);
 	}
 	$arr = explode("\n", $file);
+
+	$i = 0;
 	foreach ($arr as $val) {
 		$res = explode(";", $val);
-		$name["$res[4]"] = $res[0];
-		$surname["$res[1]"] = $res[1];
-		$last_name["$res[1]"] = $res[0];
-		$IP["$res[1]"] = $res[3];
+		if ($i === 0) {
+			if ($argv[2] != $res[0] &&
+				$argv[2] != $res[1] &&
+				$argv[2] != $res[2] &&
+				$argv[2] != $res[3] &&
+				$argv[2] != $res[4]) {
+					exit (4);
+			}
+		}
+		else {
+			$name["$res[4]"] = $res[0];
+			$surname["$res[1]"] = $res[1];
+			$last_name["$res[1]"] = $res[0];
+			$IP["$res[1]"] = $res[3];
+			$mail["$res[1]"] = $res[2];
+		}
+		$i++;
 	}
 
 	echo "Enter your command: ";
