@@ -28,14 +28,14 @@ day_location = "../../d03/"
 # run_command("cp " + day_location + "ex00/httpd-vhosts.conf " + expanduser("/Users/vbrazas/http/MyWebSite/d03"))
 # run_command("cp " + expanduser("~/mamp/apps/demo/conf/httpd-prefix.conf") + " " + expanduser("/Users/vbrazas/http/MyWebSite/d03"))
 
+# print("")
+
+# print("Tests for ex00:")
+# print("NOTE: We could move the bitnami-apps-vhosts.conf file to the right place, but it's better to just check by hand...")
+# print("cat " + day_location + " ex00/bitnami-apps-vhosts.conf")
+# print("cat ~/mamp/apache2/conf/bitnami/bitnami-apps-vhosts.conf")
+
 # START OF TRUE TESTS  START OF TRUE TESTS  START OF TRUE TESTS  START OF TRUE TESTS
-
-print("")
-
-print("Tests for ex00:")
-print("NOTE: We could move the bitnami-apps-vhosts.conf file to the right place, but it's better to just check by hand...")
-print("cat " + day_location + " ex00/bitnami-apps-vhosts.conf")
-print("cat ~/mamp/apache2/conf/bitnami/bitnami-apps-vhosts.conf")
 
 # ex01
 print("\nTests for ex01:")
