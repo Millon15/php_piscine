@@ -8,7 +8,7 @@ from os.path import expanduser
 from os.path import isfile
 from os.path import isdir
 
-day_location = "../../d03/"
+# day_location = "../../d03/"
 
 # START OF TESTS  START OF TESTS  START OF TESTS  START OF TESTS
 
@@ -40,7 +40,7 @@ day_location = "../../d03/"
 # ex01
 print("\nTests for ex01:")
 def test_ex01():
-    exitcode, out, err = run_command("curl 'http://localhost:8100/ex01/phpinfo.php'")
+    exitcode, out, err = run_command("curl 'http://localhost:8100/d03/ex01/phpinfo.php'")
     test_boolean("<!DOCTYPE html PUBLIC" in out, "is it an html?")
     test_boolean('name="ROBOTS"' in out, "does it contain ROBOTS?")
 test_ex01()
@@ -48,20 +48,20 @@ test_ex01()
 # ex02
 print("\nTests for ex02:")
 
-test_command("curl 'http://localhost:8100/ex02/print_get.php?login=mmontinet'", """\
+test_command("curl 'http://localhost:8100/d03/ex02/print_get.php?login=mmontinet'", """\
 login: mmontinet
 """, 0)
 
-test_command("curl 'http://localhost:8100/ex02/print_get.php?gdb=pied2biche&barry=barreamine'", """\
+test_command("curl 'http://localhost:8100/d03/ex02/print_get.php?gdb=pied2biche&barry=barreamine'", """\
 gdb: pied2biche
 barry: barreamine
 """, 0)
 
-test_command("curl 'http://localhost:8100/ex02/print_get.php?say_hello=Hello+World%21'", """\
+test_command("curl 'http://localhost:8100/d03/ex02/print_get.php?say_hello=Hello+World%21'", """\
 say_hello: Hello World!
 """, 0)
 
-test_command("curl 'http://localhost:8100/ex02/print_get.php?say_hello=Hello+World%21&a=arctic&b=butt&c=cat&d=ding&e=elephant&f=fling&g=generous'", """\
+test_command("curl 'http://localhost:8100/d03/ex02/print_get.php?say_hello=Hello+World%21&a=arctic&b=butt&c=cat&d=ding&e=elephant&f=fling&g=generous'", """\
 say_hello: Hello World!
 a: arctic
 b: butt
@@ -74,58 +74,58 @@ g: generous
 
 # ex03
 print("\nTests for ex03:")
-test_command("curl -c cook.txt 'http://localhost:8100/ex03/cookie_crisp.php?action=set&name=plat&value=choucroute'", """\
+test_command("curl -c cook.txt 'http://localhost:8100/d03/ex03/cookie_crisp.php?action=set&name=plat&value=choucroute'", """\
 """, 0)
-test_command("curl -b cook.txt 'http://localhost:8100/ex03/cookie_crisp.php?action=get&name=plat'", """\
+test_command("curl -b cook.txt 'http://localhost:8100/d03/ex03/cookie_crisp.php?action=get&name=plat'", """\
 choucroute
 """, 0)
-test_command("curl -c cook.txt 'http://localhost:8100/ex03/cookie_crisp.php?action=del&name=plat'", """\
+test_command("curl -c cook.txt 'http://localhost:8100/d03/ex03/cookie_crisp.php?action=del&name=plat'", """\
 """, 0)
-test_command("curl -b cook.txt 'http://localhost:8100/ex03/cookie_crisp.php?action=get&name=plat'", """\
+test_command("curl -b cook.txt 'http://localhost:8100/d03/ex03/cookie_crisp.php?action=get&name=plat'", """\
 """, 0)
 # ex03 "Empty" Value Tests
-test_command("curl -c cook.txt 'http://localhost:8100/ex03/cookie_crisp.php?action=set&name=empty&value=_'", """\
+test_command("curl -c cook.txt 'http://localhost:8100/d03/ex03/cookie_crisp.php?action=set&name=empty&value=_'", """\
 """, 0)
-test_command("curl -b cook.txt 'http://localhost:8100/ex03/cookie_crisp.php?action=get&name=empty'", """\
+test_command("curl -b cook.txt 'http://localhost:8100/d03/ex03/cookie_crisp.php?action=get&name=empty'", """\
 _
 """, 0)
-test_command("curl -c cook.txt 'http://localhost:8100/ex03/cookie_crisp.php?action=set&name=empty&value=null'", """\
+test_command("curl -c cook.txt 'http://localhost:8100/d03/ex03/cookie_crisp.php?action=set&name=empty&value=null'", """\
 """, 0)
-test_command("curl -b cook.txt 'http://localhost:8100/ex03/cookie_crisp.php?action=get&name=empty'", """\
+test_command("curl -b cook.txt 'http://localhost:8100/d03/ex03/cookie_crisp.php?action=get&name=empty'", """\
 null
 """, 0)
-test_command("curl -c cook.txt 'http://localhost:8100/ex03/cookie_crisp.php?action=del&name=empty'", """\
+test_command("curl -c cook.txt 'http://localhost:8100/d03/ex03/cookie_crisp.php?action=del&name=empty'", """\
 """, 0)
-test_command("curl -b cook.txt 'http://localhost:8100/ex03/cookie_crisp.php?action=get&name=empty'", """\
+test_command("curl -b cook.txt 'http://localhost:8100/d03/ex03/cookie_crisp.php?action=get&name=empty'", """\
 """, 0)
 # ex03 Array Tests
-test_command("curl -c cook.txt 'http://localhost:8100/ex03/cookie_crisp.php?action=set&name=array\[one\]&value=first'", """\
+test_command("curl -c cook.txt 'http://localhost:8100/d03/ex03/cookie_crisp.php?action=set&name=array\[one\]&value=first'", """\
 """, 0)
-test_command("curl -b cook.txt 'http://localhost:8100/ex03/cookie_crisp.php?action=get&name=array\[one\]'", """\
+test_command("curl -b cook.txt 'http://localhost:8100/d03/ex03/cookie_crisp.php?action=get&name=array\[one\]'", """\
 """, 0)
-test_command("curl -b cook.txt 'http://localhost:8100/ex03/cookie_crisp.php?action=get&name=array'", """\
+test_command("curl -b cook.txt 'http://localhost:8100/d03/ex03/cookie_crisp.php?action=get&name=array'", """\
 Array
 """, 0)
-test_command("curl -c cook.txt 'http://localhost:8100/ex03/cookie_crisp.php?action=del&name=array'", """\
+test_command("curl -c cook.txt 'http://localhost:8100/d03/ex03/cookie_crisp.php?action=del&name=array'", """\
 """, 0)
-test_command("curl -b cook.txt 'http://localhost:8100/ex03/cookie_crisp.php?action=get&name=array'", """\
+test_command("curl -b cook.txt 'http://localhost:8100/d03/ex03/cookie_crisp.php?action=get&name=array'", """\
 """, 0)
 # ex03 Broken Tests
-test_command("curl -c cook.txt 'http://localhost:8100/ex03/cookie_crisp.php?action=set&name=NAME&value=VALUE'", """\
+test_command("curl -c cook.txt 'http://localhost:8100/d03/ex03/cookie_crisp.php?action=set&name=NAME&value=VALUE'", """\
 """, 0)
-test_command("curl -b cook.txt 'http://localhost:8100/ex03/cookie_crisp.php?action=get'", """\
+test_command("curl -b cook.txt 'http://localhost:8100/d03/ex03/cookie_crisp.php?action=get'", """\
 """, 0)
-test_command("curl -b cook.txt 'http://localhost:8100/ex03/cookie_crisp.php?name=NAME'", """\
+test_command("curl -b cook.txt 'http://localhost:8100/d03/ex03/cookie_crisp.php?name=NAME'", """\
 """, 0)
-test_command("curl -b cook.txt 'http://localhost:8100/ex03/cookie_crisp.php?action=get&name=NAME&value=BAD'", """\
+test_command("curl -b cook.txt 'http://localhost:8100/d03/ex03/cookie_crisp.php?action=get&name=NAME&value=BAD'", """\
 VALUE
 """, 0)
-test_command("curl -b cook.txt 'http://localhost:8100/ex03/cookie_crisp.php?action=get&name=NAME'", """\
+test_command("curl -b cook.txt 'http://localhost:8100/d03/ex03/cookie_crisp.php?action=get&name=NAME'", """\
 VALUE
 """, 0)
-test_command("curl -c cook.txt 'http://localhost:8100/ex03/cookie_crisp.php?action=del&name=NAME'", """\
+test_command("curl -c cook.txt 'http://localhost:8100/d03/ex03/cookie_crisp.php?action=del&name=NAME'", """\
 """, 0)
-test_command("curl -b cook.txt 'http://localhost:8100/ex03/cookie_crisp.php?action=get&name=NAME'", """\
+test_command("curl -b cook.txt 'http://localhost:8100/d03/ex03/cookie_crisp.php?action=get&name=NAME'", """\
 """, 0)
 try:
     os.remove("cook.txt")
@@ -134,39 +134,39 @@ except:
 
 # ex04
 print("\nTests for ex04:")
-test_command("curl 'http://localhost:8100/ex04/raw_text.php'", "<html><body>Hello</body></html>\n", 0)
+test_command("curl 'http://localhost:8100/d03/ex04/raw_text.php'", "<html><body>Hello</body></html>\n", 0)
 def lynx_tests():
     # needs function because we're not sure if lynx is installed
-    command = "lynx -dump 'http://localhost:8100/ex04/raw_text.php'"
+    command = "lynx -dump 'http://localhost:8100/d03/ex04/raw_text.php'"
     try:
         exitcode, out, err = run_command(command)
     except:
         print("NOTE: lynx is not installed, meaning we don't know if the Content-Type was set correctly...")
         print("brew install links")
         return
-    test_command("lynx -dump 'http://localhost:8100/ex04/raw_text.php'", "<html><body>Hello</body></html>\n\n")
-    test_command("lynx -source 'http://localhost:8100/ex04/raw_text.php'", "<html><body>Hello</body></html>\n")
+    test_command("lynx -dump 'http://localhost:8100/d03/ex04/raw_text.php'", "<html><body>Hello</body></html>\n\n")
+    test_command("lynx -source 'http://localhost:8100/d03/ex04/raw_text.php'", "<html><body>Hello</body></html>\n")
 lynx_tests()
 
 # ex05
 print("\nTests for ex05:")
 def test_ex05():
-    command = "curl --head http://localhost:8100/ex05/read_img.php"
+    command = "curl --head http://localhost:8100/d03/ex05/read_img.php"
     exitcode, out, err = run_command(command);
     test_boolean("Content-Type: image/png" in out, "content type test")
-    command = "curl http://localhost:8100/ex05/read_img.php"
+    command = "curl http://localhost:8100/d03/ex05/read_img.php"
     exitcode, out, err = run_command(command);
     test_boolean(out == open(expanduser('/Users/vbrazas/http/MyWebSite/d03/img/42.png'), 'r').read(), "image content test")
 
 test_ex05()
 
 print("\nTests for ex06:")
-exitcode, out, err = run_command("curl -v --user root:root http://localhost:8100/ex06/members_only.php")
+exitcode, out, err = run_command("curl -v --user root:root http://localhost:8100/d03/ex06/members_only.php")
 test_boolean("HTTP 1.0, assume close after body" in err, "assume close after body")
 test_boolean("HTTP/1.0 401 Unauthorized" in err, "unauthorized header")
 test_boolean("WWW-Authenticate: Basic realm=''Member area''" in err, "English Basic realm name for WWW-Authenticate header")
 test_boolean("<html><body>That area is accessible for members only</body></html>" in out, "actual body part for unauthorized page")
-exitcode, out, err = run_command("curl --user zaz:jaimelespetitsponeys http://localhost:8100/ex06/members_only.php")
+exitcode, out, err = run_command("curl --user zaz:jaimelespetitsponeys http://localhost:8100/d03/ex06/members_only.php")
 test_boolean("<html><body>\nHello Zaz<br />" in out, "hello zaz")
 test_boolean("<img src='data:image/png;base64,iVBORw0KGgoAAAA" in out, "first image")
 test_boolean("6MIHnr2t+eeO4Fr+v/H80AmcVvzqAfAAAAAElFTkSuQmCC'>" in out, "second image")
