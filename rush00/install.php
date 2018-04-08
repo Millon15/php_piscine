@@ -1,8 +1,12 @@
 <?php
+	if ($_POST["msqlogin"] == FALSE || $_POST["msqpasswd"] == FALSE || $_POST["dbname"] == FALSE  || $_POST["submit"] != "OK") {
+		exit("BAD INPUT\n");
+	}
+	// echo "Connection died(maybe you have already created a new database?)".PHP_EOL;
 	$servername = "localhost";
-	$username = "root";
-	$password = "root"; //Пароль mysql, который ты задавал при установке МАМПА
-	$dbname = "ft_minishop";
+	$username = $_POST['msqlogin'];
+	$password = $_POST['msqpasswd']; //Пароль mysql, который ты задавал при установке МАМПА
+	$dbname = $_POST['dbname'];
 	// Create connection
 	$conn = mysqli_connect($servername, $username, $password);
 	// Check connection
@@ -95,7 +99,6 @@
 		die("Error filling users: " . mysqli_error($conn));
 	}
 
-	//Вывожу для дебаггинга, убрать на продукте
-	echo "Installation complited";
 	mysqli_close($conn);
+	header('Location: /rush00/_index.php?msqlogin='.$username.'&dbname='.$dbname.'&msqpasswd='.$password);
 ?>

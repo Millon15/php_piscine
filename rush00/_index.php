@@ -1,5 +1,18 @@
 <?php
-	//Подключаемся к mysql
+	if ($_GET['msqlogin'] == FALSE || $_GET['msqpasswd'] == FALSE || $_GET['dbname'] == FALSE) {
+		if ($GLOBALS['msqlogin'] == FALSE || $GLOBALS['msqpasswd'] == FALSE || $GLOBALS['dbname'] == FALSE) {
+			exit("BAD INPUT\n");
+		}
+	}
+	else {
+		$GLOBALS['msqlogin'] = $_GET['msqlogin'];
+		$GLOBALS['msqpasswd'] = $_GET['msqpasswd'];
+		$GLOBALS['dbname'] = $_GET['dbname'];
+	}
+	echo $GLOBALS['msqlogin'].PHP_EOL;
+	echo $GLOBALS['msqpasswd'].PHP_EOL;
+	echo $GLOBALS['dbname'].PHP_EOL;
+	// Подключаемся к mysql
 	$conn = mysqli_init();
 	if (!$conn) {
 		die('mysqli_init failed');
@@ -7,7 +20,7 @@
 	if (!mysqli_options($conn, MYSQLI_INIT_COMMAND, "SET AUTOCOMMIT = 0")) {
 		die('MYSQLI_INIT_COMMAND failed');
 	}
-	if (!mysqli_real_connect($conn,"localhost","root","4837gqHA","ft_minishop")){
+	if (!mysqli_real_connect($conn,"localhost", $_GET['msqlogin'], $_GET['msqpasswd'], $_GET['dbname'])) {
 		die("mysqli_real_connect failed: " . mysqli_connect_error());
 	}
 	//Наполняем массив категорий в зависимости от того, что записано в таблицу категорий
