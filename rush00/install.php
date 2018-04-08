@@ -91,19 +91,20 @@
 	$sql = "CREATE TABLE IF NOT EXISTS users (
 			id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 			username VARCHAR(255) NOT NULL,
-			password VARCHAR(256) NOT NULL,
+			password TEXT NOT NULL,
 			isadmin BOOLEAN NOT NULL
 			)";
 	if (!mysqli_query($conn, $sql)) {
 		die("Error creating users: " . mysqli_error($conn));
 	}
+	$adminPass = hash('whirlpool', 'admin');
 	$sql = "INSERT INTO users (id, username, password, isadmin)
-			VALUES (1, 'root', 'root', true)";
+		VALUES (1, 'admin', '" . $adminPass . "', true)";
 	if (!mysqli_query($conn, $sql)) {
 		die("Error filling users: " . mysqli_error($conn));
 	}
 
-	file_put_contents('shopdb.csv', "$username:$password:$dbname".PHP_EOL);
+	file_put_contents('shopdb.csv', "$username:$password:$dbname");
 	mysqli_close($conn);
 	header('Location: /rush00/index.php');
 ?>

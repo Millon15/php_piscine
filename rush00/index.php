@@ -18,13 +18,14 @@
 	}
 	if (!mysqli_real_connect($conn,"localhost", $cont[0], $cont[1], $cont[2])) {
 		// header('Location: /rush00/setup.html');
+		print_r($cont);
 		die("mysqli_real_connect failed: " . mysqli_connect_error());
 	}
 
 	//Наполняем массив категорий в зависимости от того, что записано в таблицу категорий
 	$categories = array();
 	if ($result = mysqli_query($conn, 'SELECT * FROM categories')) {
-		while($tmp = mysqli_fetch_assoc($result)) {
+		while ($tmp = mysqli_fetch_assoc($result)) {
 			$categories[] = $tmp;
 		}
 		mysqli_free_result($result);
@@ -38,7 +39,7 @@
 		$sql .= ' INNER JOIN categories_products AS cp ON cp.id_product=p.id AND cp.id_category=' . $cat;
 	}
 	if ($result = mysqli_query($conn, $sql)) {
-		while($tmp = mysqli_fetch_assoc($result)) {
+		while ($tmp = mysqli_fetch_assoc($result)) {
 			$products[] = $tmp;
 		}
 		mysqli_free_result($result);
@@ -47,12 +48,12 @@
 	//Выкачиваем юзеров
 	$users = array();
 	if ($result = mysqli_query($conn, 'SELECT * FROM users')) {
-		while($tmp = mysqli_fetch_assoc($result)) {
+		while ($tmp = mysqli_fetch_assoc($result)) {
 			$users[] = $tmp;
 		}
 		mysqli_free_result($result);
 	}
-	mysqli_close($conn);
+	// mysqli_close($conn);
 ?>
 <!DOCTYPE html>
 <html lang="en">
