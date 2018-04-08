@@ -53,10 +53,11 @@
 		}
 		mysqli_free_result($result);
 	}
-	// mysqli_close($conn);
+	mysqli_close($conn);
 	session_start();
-	if (!$_SESSION['cart'])
+	if (!$_SESSION['cart']) {
 		$_SESSION['cart'] = array();
+	}
 ?>
 <!DOCTYPE html>
 <html lang="en">

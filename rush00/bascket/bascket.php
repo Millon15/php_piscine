@@ -49,7 +49,7 @@
 	if ($_GET['item']) {
 		foreach ($products as $key => $val) {
 			if ($val['id'] == $_GET['item']) {
-				$_SESSION['cart'][$key] = 1;
+				$_SESSION['cart'][$key] = $_GET['item'];
 				break ;
 			}
 		}
