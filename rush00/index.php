@@ -59,6 +59,7 @@
 <head>
 	<meta name="description" content="Best Farm Products ever!">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/modal.css">
 	<title>Farmer's Bazaar</title>
 </head>
 <body>
@@ -75,8 +76,55 @@
 					break ;
 				}
 			}
-			if ($i)
-				echo '<a href="login_form/login.php">Log in!</a>';
+			if ($i) {
+				echo "
+				<!-- Trigger/Open The Modal -->
+				<button id=\"myBtn\">Log in!</button>
+				
+				<!-- The Modal -->
+				<div id=\"myModal\" class=\"modal\">
+					<!-- Modal content -->
+					<div class=\"modal-content\">
+						<div class=\"close\"><span>&times;</span></div>
+						<div class=\"si\">Sign in!</div>
+						<div class=\"ca\">...or <a href=\"#\">create an account</a></div>
+						<form action=\"/d04/ex01/create.php\" method=\"post\">
+							<div id=\"top-bar\"></div>
+							<input type=\"text\" name=\"login\" value=\"\" placeholder=\"Username\" /><br />
+							<input type=\"text\" name=\"passwd\" value=\"\" placeholder=\"Password\" /><br />
+							<input id=\"butt\" type=\"submit\" name=\"submit\" value=\"OK\" />
+						</form>
+					</div>
+				</div>
+
+				<script>
+				// Get the modal
+				var modal = document.getElementById('myModal');
+				
+				// Get the button that opens the modal
+				var btn = document.getElementById(\"myBtn\");
+				
+				// Get the <span> element that closes the modal
+				var span = document.getElementsByClassName(\"close\")[0];
+				
+				// When the user clicks the button, open the modal 
+				btn.onclick = function() {
+					modal.style.display = \"block\";
+				}
+				
+				// When the user clicks on <span> (x), close the modal
+				span.onclick = function() {
+					modal.style.display = \"none\";
+				}
+				
+				// When the user clicks anywhere outside of the modal, close it
+				window.onclick = function(event) {
+					if (event.target == modal) {
+						modal.style.display = \"none\";
+					}
+				}
+				</script>";
+			}
 		?>
 	</div>
 	<header>
@@ -95,6 +143,45 @@
 	</header>
 	<div class="content">
 		<div class="products-row">
+			<?php foreach($products as $product) {?>
+				<div class="product-card">
+					<div class="product-thumbnail">
+						<img src="<?php echo $product['img'];?>" alt="">
+						<div class="caption">
+							<div class="product-price"><h2>$<?php echo $product['price'];?></h2></div>
+							<div class="product-title"><h1><?php echo $product['title'];?></h1></div>
+							<div class="product-intro"><h4><?php echo $product['intro'];?></h4></div>
+							<div class="button"><button class="buy">BUY</button></div>
+						</div>
+					</div>
+				</div>
+			<?php } ?>
+			<?php foreach($products as $product) {?>
+				<div class="product-card">
+					<div class="product-thumbnail">
+						<img src="<?php echo $product['img'];?>" alt="">
+						<div class="caption">
+							<div class="product-price"><h2>$<?php echo $product['price'];?></h2></div>
+							<div class="product-title"><h1><?php echo $product['title'];?></h1></div>
+							<div class="product-intro"><h4><?php echo $product['intro'];?></h4></div>
+							<div class="button"><button class="buy">BUY</button></div>
+						</div>
+					</div>
+				</div>
+			<?php } ?>
+			<?php foreach($products as $product) {?>
+				<div class="product-card">
+					<div class="product-thumbnail">
+						<img src="<?php echo $product['img'];?>" alt="">
+						<div class="caption">
+							<div class="product-price"><h2>$<?php echo $product['price'];?></h2></div>
+							<div class="product-title"><h1><?php echo $product['title'];?></h1></div>
+							<div class="product-intro"><h4><?php echo $product['intro'];?></h4></div>
+							<div class="button"><button class="buy">BUY</button></div>
+						</div>
+					</div>
+				</div>
+			<?php } ?>
 			<?php foreach($products as $product) {?>
 				<div class="product-card">
 					<div class="product-thumbnail">

@@ -5,29 +5,49 @@ body {
 }
 
 .adm {
+	z-index: 2;
 	width: 100%;
 	height: auto;
-	padding: 10px;
 	background-color: #007c91;
 	text-align: right;
-	font-size: 0.vw;
 }
 
-.adm a {
-	padding-right: 1.5%;
+#myBtn {
+	height: 100%;
+	border: none;
+	display: inline-block;
+	padding: 10px 20px;
+	vertical-align: middle;
+	overflow: hidden;
+	text-decoration: none;
+	color: inherit;
+	background-color: inherit;
+	text-align: center;
+	cursor: pointer;
+	white-space: nowrap;
+	margin-right: 1%;
+	font-size: 0.5vw;
 	display: inline-block;
 	color: white;
 	text-decoration: none;
 	font-weight: 600;
 }
 
+#myBtn:hover {
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
 header {
+	z-index: 1;
 	background-color: #00acc1;
 	display: flex;
 	align-items: center;
 	/* horizontal */
 	justify-content: center;
 	width: 100%;
+	-webkit-box-shadow: 0px 15px 70px -25px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 15px 70px -25px rgba(0,0,0,0.75);
+	box-shadow: 0px 15px 70px -25px rgba(0,0,0,0.75);
 }
 
 .navbar {
@@ -64,7 +84,7 @@ header {
 .content {
 	display: block;
 	width: 75%;
-	margin: auto;
+	margin: 20px auto;
 }
 
 .products-row {
