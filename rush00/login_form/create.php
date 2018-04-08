@@ -1,6 +1,14 @@
 <?php
-	function auth($login, $passwd)
-	{
+	if ($_POST["login"] == FALSE || $_POST["passwd"] == FALSE || $_POST["submit"] != "OK") {
+		header('Location: /rush00/index.php?loginErr=1');
+		exit("ERROR\n");
+	}
+	else {
+		$new_user = array(
+			"login" => $_POST["login"],
+			"passwd" => hash('whirlpool', $_POST["passwd"])
+		);
+	}
 		// Берём данные о БД из shopdb.csv
 		$cont = file_get_contents('../shopdb.csv');
 		if (!$cont) {
@@ -40,5 +48,4 @@
 		}
 		mysqli_close($conn);
 		return FALSE;
-	}
 ?>

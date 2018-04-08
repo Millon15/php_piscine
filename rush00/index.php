@@ -67,17 +67,17 @@
 	<div class="adm">
 		<?php
 			session_start();
-			$i = TRUE;
+			$login = TRUE;
 			foreach ($users as $val) {
 				if ($val[username] == $_SESSION['loggued_on_user']) {
-					echo '<a href="login_form/logout.php">Log out</a>';
+					echo '<a href="login_form/logout.php"><button id="myBtn">Log out</button></a>';
 					if ($val[isadmin])
-						echo '<a href="http://localhost:8080//phpmyadmin/">ADM</a>';
-					$i = FALSE;
+						echo '<a href="http://localhost:8080//phpmyadmin/"><button id="myBtn">ADM</button></a>';
+					$login = FALSE;
 					break ;
 				}
 			}
-			if ($i || $_GET['loginErr']) {
+			if ($login || $_GET['loginErr']) {
 				?>
 				<!-- Trigger/Open The Modal -->
 				<button id="myBtn">Log in!</button>
@@ -88,7 +88,7 @@
 					<div class="modal-content">
 						<div class="close"><span>&times;</span></div>
 						<div class="si">Sign in!</div>
-						<div class="ca">...or <a href="#">create an account</a></div>
+						<div class="ca">...or <a href="login_form/create.html">create an account</a></div>
 						<?php
 							if ($_GET['loginErr']) 
 								echo "<div class=\"errvis\">Check the input fields!</div>";
@@ -103,35 +103,7 @@
 						</form>
 					</div>
 				</div>
-
-				<script>
-				// Get the modal
-				var modal = document.getElementById('myModal');
-				
-				// Get the button that opens the modal
-				var btn = document.getElementById("myBtn");
-				
-				// Get the <span> element that closes the modal
-				var span = document.getElementsByClassName("close")[0];
-				
-				// When the user clicks the button, open the modal 
-				btn.onclick = function() {
-					modal.style.display = "block";
-				}
-				
-				// When the user clicks on <span> (x), close the modal
-				span.onclick = function() {
-					modal.style.display = "none";
-				}
-				
-				// When the user clicks anywhere outside of the modal, close it
-				window.onclick = function(event) {
-					if (event.target == modal) {
-						modal.style.display = "none";
-					}
-				}
-				</script>
-		<?php } ?>
+			<?php } ?>
 	</div>
 	<header>
 		<nav class="navbar" role="navigation">
@@ -204,6 +176,33 @@
 		</div>
 	</div>
 	<footer>
+		<script>
+				// Get the modal
+				var modal = document.getElementById('myModal');
+				
+				// Get the button that opens the modal
+				var btn = document.getElementById("myBtn");
+				
+				// Get the <span> element that closes the modal
+				var span = document.getElementsByClassName("close")[0];
+				
+				// When the user clicks the button, open the modal 
+				btn.onclick = function() {
+					modal.style.display = "block";
+				}
+				
+				// When the user clicks on <span> (x), close the modal
+				span.onclick = function() {
+					modal.style.display = "none";
+				}
+				
+				// When the user clicks anywhere outside of the modal, close it
+				window.onclick = function(event) {
+					if (event.target == modal) {
+						modal.style.display = "none";
+					}
+				}
+		</script>
 	</footer>
 </body>
 </html>
