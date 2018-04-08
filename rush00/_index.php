@@ -1,28 +1,26 @@
 <?php
-	if ($_GET['msqlogin'] == FALSE || $_GET['msqpasswd'] == FALSE || $_GET['dbname'] == FALSE) {
-		if ($GLOBALS['msqlogin'] == FALSE || $GLOBALS['msqpasswd'] == FALSE || $GLOBALS['dbname'] == FALSE) {
-			exit("BAD INPUT\n");
-		}
+	// Берём данные о БД из shopdb.csv
+	$cont = file_get_contents('shopdb.csv');
+	$cont = explode(':', $cont);
+	if (!$cont) {
+		header('Location: /rush00/setup.html');
 	}
-	else {
-		$GLOBALS['msqlogin'] = $_GET['msqlogin'];
-		$GLOBALS['msqpasswd'] = $_GET['msqpasswd'];
-		$GLOBALS['dbname'] = $_GET['dbname'];
-	}
-	echo $GLOBALS['msqlogin'].PHP_EOL;
-	echo $GLOBALS['msqpasswd'].PHP_EOL;
-	echo $GLOBALS['dbname'].PHP_EOL;
+
 	// Подключаемся к mysql
 	$conn = mysqli_init();
 	if (!$conn) {
+		// header('Location: /rush00/setup.html');
 		die('mysqli_init failed');
 	}
 	if (!mysqli_options($conn, MYSQLI_INIT_COMMAND, "SET AUTOCOMMIT = 0")) {
+		// header('Location: /rush00/setup.html');
 		die('MYSQLI_INIT_COMMAND failed');
 	}
-	if (!mysqli_real_connect($conn,"localhost", $_GET['msqlogin'], $_GET['msqpasswd'], $_GET['dbname'])) {
+	if (!mysqli_real_connect($conn,"localhost", $cont[0], $cont[1], $cont[2])) {
+		// header('Location: /rush00/setup.html');
 		die("mysqli_real_connect failed: " . mysqli_connect_error());
 	}
+
 	//Наполняем массив категорий в зависимости от того, что записано в таблицу категорий
 	$categories = array();
 	if ($result = mysqli_query($conn, 'SELECT * FROM categories')) {
@@ -31,7 +29,7 @@
 		}
 		mysqli_free_result($result);
 	}
-	//print_r($categories);
+
 	//Наполняем массив продуктов и привязывем к категориям
 	$products = array();
 	$cat = isset($_REQUEST['cat']) ? (int) $_REQUEST['cat'] : 0;

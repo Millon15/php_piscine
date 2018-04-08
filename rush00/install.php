@@ -7,16 +7,20 @@
 	$username = $_POST['msqlogin'];
 	$password = $_POST['msqpasswd']; //Пароль mysql, который ты задавал при установке МАМПА
 	$dbname = $_POST['dbname'];
+
 	// Create connection
 	$conn = mysqli_connect($servername, $username, $password);
+
 	// Check connection
 	if (!$conn) {
 		die("Connection failed: " . mysqli_connect_error());
 	}
+
 	// Удаляем старую БД
+	// unlink('shopdb.csv');
 	$sql = "DROP DATABASE IF EXISTS $dbname";
 	if (!mysqli_query($conn, $sql)) {
-		die("Error killing db: " . mysqli_error($conn));
+		die("Error dropping db: " . mysqli_error($conn));
 	}
 	// Создаем БД
 	$sql = "CREATE DATABASE IF NOT EXISTS $dbname";
@@ -99,6 +103,7 @@
 		die("Error filling users: " . mysqli_error($conn));
 	}
 
+	file_put_contents('shopdb.csv', "$username:$password:$dbname");
 	mysqli_close($conn);
-	header('Location: /rush00/_index.php?msqlogin='.$username.'&dbname='.$dbname.'&msqpasswd='.$password);
+	header('Location: /rush00/_index.php');
 ?>
