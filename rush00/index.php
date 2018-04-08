@@ -88,7 +88,7 @@
 					<div class="modal-content">
 						<div class="close"><span>&times;</span></div>
 						<div class="si">Sign in!</div>
-						<div class="ca">...or <a href="login_form/create.html">create an account</a></div>
+						<div class="ca">...or <a href="login_form/create.php">create an account</a></div>
 						<?php
 							if ($_GET['loginErr']) 
 								echo "<div class=\"errvis\">Check the input fields!</div>";
@@ -121,32 +121,6 @@
 	</header>
 	<div class="content">
 		<div class="products-row">
-			<?php foreach($products as $product) {?>
-				<div class="product-card">
-					<div class="product-thumbnail">
-						<img src="<?php echo $product['img'];?>" alt="">
-						<div class="caption">
-							<div class="product-price"><h2>$<?php echo $product['price'];?></h2></div>
-							<div class="product-title"><h1><?php echo $product['title'];?></h1></div>
-							<div class="product-intro"><h4><?php echo $product['intro'];?></h4></div>
-							<div class="button"><button class="buy">BUY</button></div>
-						</div>
-					</div>
-				</div>
-			<?php } ?>
-			<?php foreach($products as $product) {?>
-				<div class="product-card">
-					<div class="product-thumbnail">
-						<img src="<?php echo $product['img'];?>" alt="">
-						<div class="caption">
-							<div class="product-price"><h2>$<?php echo $product['price'];?></h2></div>
-							<div class="product-title"><h1><?php echo $product['title'];?></h1></div>
-							<div class="product-intro"><h4><?php echo $product['intro'];?></h4></div>
-							<div class="button"><button class="buy">BUY</button></div>
-						</div>
-					</div>
-				</div>
-			<?php } ?>
 			<?php foreach($products as $product) {?>
 				<div class="product-card">
 					<div class="product-thumbnail">

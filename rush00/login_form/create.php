@@ -1,51 +1,25 @@
-<?php
-	if ($_POST["login"] == FALSE || $_POST["passwd"] == FALSE || $_POST["submit"] != "OK") {
-		header('Location: /rush00/index.php?loginErr=1');
-		exit("ERROR\n");
-	}
-	else {
-		$new_user = array(
-			"login" => $_POST["login"],
-			"passwd" => hash('whirlpool', $_POST["passwd"])
-		);
-	}
-		// Берём данные о БД из shopdb.csv
-		$cont = file_get_contents('../shopdb.csv');
-		if (!$cont) {
-			header('Location: /rush00/setup.html');
-		}
-		$cont = explode(':', $cont);
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Create account form</title>
+		<link rel="stylesheet" href="../css/modal.css">
+		<link rel="stylesheet" href="../css/plainw.css">
+	</head>
 
-		// Подключаемся к mysql
-		$conn = mysqli_init();
-		if (!$conn) {
-			// header('Location: /rush00/setup.html');
-			die('mysqli_init failed');
-		}
-		if (!mysqli_options($conn, MYSQLI_INIT_COMMAND, "SET AUTOCOMMIT = 0")) {
-			// header('Location: /rush00/setup.html');
-			die('MYSQLI_INIT_COMMAND failed');
-		}
-		if (!mysqli_real_connect($conn,"localhost", $cont[0], $cont[1], $cont[2])) {
-			// header('Location: /rush00/setup.html');
-			die("mysqli_real_connect failed: " . mysqli_connect_error());
-		}
-
-		//Выкачиваем юзеров
-		$users = array();
-		if ($result = mysqli_query($conn, 'SELECT * FROM users')) {
-			while ($tmp = mysqli_fetch_assoc($result)) {
-				$users[] = $tmp;
-			}
-			mysqli_free_result($result);
-		}
-
-		foreach ($users as $val) {
-			if ($val['username'] == $login && $val['password'] == $passwd) {
-				mysqli_close($conn);
-				return TRUE;
-			}
-		}
-		mysqli_close($conn);
-		return FALSE;
-?>
+	<body>
+		<form action="na_creation.php" method="post">
+			<div id="top-bar">Account setup</div>
+			<?php
+				if ($_GET['loginErr']) 
+					echo "<div class=\"errvis\">Check the input fields!</div>";
+				else
+					echo "<div class=\"errhide\">Check the input fields!</div>";
+			?>
+			<input type="text" name="login" value="" placeholder="Username" /><br />
+			<input type="text" name="passwd" value="" placeholder="Password" /><br />
+			<input type="text" name="passwd2" value="" placeholder="Same password again" /><br />
+			<input type="text" name="email" value="" placeholder="@email" /><br />
+			<input id="butt" type="submit" name="submit" value="OK" />
+		</form>
+	</body>
+</html>
