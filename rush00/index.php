@@ -70,9 +70,9 @@
 			$login = TRUE;
 			foreach ($users as $val) {
 				if ($val[username] == $_SESSION['loggued_on_user']) {
-					echo '<a href="login_form/logout.php"><button id="myBtn">Log out</button></a>';
+					echo '<a href="login_form/logout.php"><button class="headBtn" id="myBtn">Log out</button></a>';
 					if ($val[isadmin])
-						echo '<a href="http://localhost:8080//phpmyadmin/"><button id="myBtn">ADM</button></a>';
+						echo '<a href="http://localhost:8080//phpmyadmin/index.php?pma_username=root&pma_password=root"><button class="headBtn" id="myBtn">ADM</button></a>';
 					$login = FALSE;
 					break ;
 				}
@@ -80,7 +80,7 @@
 			if ($login || $_GET['loginErr']) {
 				?>
 				<!-- Trigger/Open The Modal -->
-				<button id="myBtn">Log in!</button>
+				<button class="headBtn" id="myBtn">Log in!</button>
 				
 				<!-- The Modal -->
 				<div id="myModal" class="modal">
@@ -126,27 +126,17 @@
 					<div class="product-thumbnail">
 						<img src="<?php echo $product['img'];?>" alt="">
 						<div class="caption">
-							<div class="product-price"><h2>$<?php echo $product['price'];?></h2></div>
+							<div class="product-price"><h2>&dollar;<?php echo $product['price'];?></h2></div>
 							<div class="product-title"><h1><?php echo $product['title'];?></h1></div>
 							<div class="product-intro"><h4><?php echo $product['intro'];?></h4></div>
-							<div class="button"><button class="buy">BUY</button></div>
+							<div class="button">
+								<a href="bascket/bascket.php"><button class="buy">BUY</button></a>
+							</div>
 						</div>
 					</div>
 				</div>
 			<?php } ?>
-			<?php foreach($products as $product) {?>
-				<div class="product-card">
-					<div class="product-thumbnail">
-						<img src="<?php echo $product['img'];?>" alt="">
-						<div class="caption">
-							<div class="product-price"><h2>$<?php echo $product['price'];?></h2></div>
-							<div class="product-title"><h1><?php echo $product['title'];?></h1></div>
-							<div class="product-intro"><h4><?php echo $product['intro'];?></h4></div>
-							<div class="button"><button class="buy">BUY</button></div>
-						</div>
-					</div>
-				</div>
-			<?php } ?>
+			
 		</div>
 	</div>
 	<footer>
