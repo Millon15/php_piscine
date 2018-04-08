@@ -76,23 +76,29 @@
 					break ;
 				}
 			}
-			if ($i) {
-				echo "
+			if ($i || $_GET['loginErr']) {
+				?>
 				<!-- Trigger/Open The Modal -->
-				<button id=\"myBtn\">Log in!</button>
+				<button id="myBtn">Log in!</button>
 				
 				<!-- The Modal -->
-				<div id=\"myModal\" class=\"modal\">
+				<div id="myModal" class="modal">
 					<!-- Modal content -->
-					<div class=\"modal-content\">
-						<div class=\"close\"><span>&times;</span></div>
-						<div class=\"si\">Sign in!</div>
-						<div class=\"ca\">...or <a href=\"#\">create an account</a></div>
-						<form action=\"/d04/ex01/create.php\" method=\"post\">
-							<div id=\"top-bar\"></div>
-							<input type=\"text\" name=\"login\" value=\"\" placeholder=\"Username\" /><br />
-							<input type=\"text\" name=\"passwd\" value=\"\" placeholder=\"Password\" /><br />
-							<input id=\"butt\" type=\"submit\" name=\"submit\" value=\"OK\" />
+					<div class="modal-content">
+						<div class="close"><span>&times;</span></div>
+						<div class="si">Sign in!</div>
+						<div class="ca">...or <a href="#">create an account</a></div>
+						<?php
+							if ($_GET['loginErr']) 
+								echo "<div class=\"errvis\">Check the input fields!</div>";
+							else
+								echo "<div class=\"errhide\">Check the input fields!</div>";
+						?>
+						<form action="login_form/login.php" method="get">
+							<div id="top-bar"></div>
+							<input type="text" name="login" value="" placeholder="Username" /><br />
+							<input type="text" name="passwd" value="" placeholder="Password" /><br />
+							<input id="butt" type="submit" name="submit" value="OK" />
 						</form>
 					</div>
 				</div>
@@ -102,30 +108,29 @@
 				var modal = document.getElementById('myModal');
 				
 				// Get the button that opens the modal
-				var btn = document.getElementById(\"myBtn\");
+				var btn = document.getElementById("myBtn");
 				
 				// Get the <span> element that closes the modal
-				var span = document.getElementsByClassName(\"close\")[0];
+				var span = document.getElementsByClassName("close")[0];
 				
 				// When the user clicks the button, open the modal 
 				btn.onclick = function() {
-					modal.style.display = \"block\";
+					modal.style.display = "block";
 				}
 				
 				// When the user clicks on <span> (x), close the modal
 				span.onclick = function() {
-					modal.style.display = \"none\";
+					modal.style.display = "none";
 				}
 				
 				// When the user clicks anywhere outside of the modal, close it
 				window.onclick = function(event) {
 					if (event.target == modal) {
-						modal.style.display = \"none\";
+						modal.style.display = "none";
 					}
 				}
-				</script>";
-			}
-		?>
+				</script>
+		<?php } ?>
 	</div>
 	<header>
 		<nav class="navbar" role="navigation">
