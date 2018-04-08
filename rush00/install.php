@@ -98,12 +98,12 @@
 		die("Error creating users: " . mysqli_error($conn));
 	}
 	$sql = "INSERT INTO users (id, username, password, isadmin)
-			VALUES (1, 'admin', 'admin', true)";
+			VALUES (1, 'root', 'root', true)";
 	if (!mysqli_query($conn, $sql)) {
 		die("Error filling users: " . mysqli_error($conn));
 	}
 
-	file_put_contents('shopdb.csv', "$username:$password:$dbname");
+	file_put_contents('shopdb.csv', "$username:$password:$dbname".PHP_EOL);
 	mysqli_close($conn);
-	header('Location: /rush00/_index.php');
+	header('Location: /rush00/index.php');
 ?>
