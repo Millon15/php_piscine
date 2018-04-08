@@ -46,8 +46,14 @@
 		}
 	}
 
-	$sql = "INSERT INTO users (id, username, password, isadmin)
-	VALUES ('" . $login . "', '" . $password . "', false)";
+	// $sql = "INSERT INTO users (username, password, isadmin)
+	// VALUES ('$login', '$password', false)";
+
+	$sql = "CREATE USER \'admin\'@\'localhost\'
+	IDENTIFIED VIA mysql_native_password USING \'***\'GRANT ALL PRIVILEGES ON *.*
+	TO \'admin\'@\'localhost\' REQUIRE NONE WITH GRANT OPTION MAX_QUERIES_PER_HOUR 0
+	MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0CREATE DATABASE IF NOT EXISTS `admin`GRANT
+	ALL PRIVILEGES ON `admin`.* TO \'admin\'@\'localhost\'";
 	if (!mysqli_query($conn, $sql)) {
 		mysqli_close($conn);
 		header('Location: create.php?loginErr=1');

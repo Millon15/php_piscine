@@ -54,6 +54,9 @@
 		mysqli_free_result($result);
 	}
 	// mysqli_close($conn);
+	session_start();
+	if (!$_SESSION['cart'])
+		$_SESSION['cart'] = array();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -64,9 +67,9 @@
 	<title>Farmer's Bazaar</title>
 </head>
 <body>
+
 	<div class="adm">
 		<?php
-			session_start();
 			$login = TRUE;
 			foreach ($users as $val) {
 				if ($val[username] == $_SESSION['loggued_on_user']) {
@@ -105,6 +108,7 @@
 				</div>
 			<?php } ?>
 	</div>
+
 	<header>
 		<nav class="navbar" role="navigation">
 			<div class="logo">
@@ -119,6 +123,7 @@
 			</div>
 		</nav>
 	</header>
+
 	<div class="content">
 		<div class="products-row">
 			<?php foreach($products as $product) {?>
@@ -130,15 +135,15 @@
 							<div class="product-title"><h1><?php echo $product['title'];?></h1></div>
 							<div class="product-intro"><h4><?php echo $product['intro'];?></h4></div>
 							<div class="button">
-								<a href="bascket/bascket.php"><button class="buy">BUY</button></a>
+								<a href="bascket/bascket.php?item=<?php echo $product['id']; ?>"><button class="buy">BUY</button></a>
 							</div>
 						</div>
 					</div>
 				</div>
 			<?php } ?>
-			
 		</div>
 	</div>
+
 	<footer>
 		<script>
 				// Get the modal
