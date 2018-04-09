@@ -1,0 +1,1 @@
+INSERT INTO `ft_table` (`login`, `group`, `creation_date`) SELECT * FROM 
