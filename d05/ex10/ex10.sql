@@ -1,0 +1,1 @@
+SELECT `title` AS `Title`, `summary` AS `Summary`, `prod_year` FROM db_vbrazas.film WHERE `id_genre` LIKE 25 ORDER BY `prod_year` DESC;
