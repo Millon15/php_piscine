@@ -8,9 +8,8 @@ from os.path import expanduser
 from os.path import isfile
 from os.path import isdir
 
-day_on_server_location = "http://localhost:8100/ios_del"
-location_of_private = "/Users/vbrazas/http/MyWebSite/ios_del/private"
-location_of_password = "/Users/vbrazas/http/MyWebSite/ios_del/private/passwd"
+day_on_server_location = "http://localhost:8100/test"
+location_of_private = "/Users/vbrazas/http/MyWebSite/test/private"
 
 # # START OF TESTS  START OF TESTS  START OF TESTS  START OF TESTS
 
@@ -41,6 +40,9 @@ location_of_password = "/Users/vbrazas/http/MyWebSite/ios_del/private/passwd"
 
 # ex00
 print("\nTests for ex00:")
+
+run_command("rm -f cook.txt")
+
 exitcode, out, err = run_command("curl -v -c cook.txt '" + day_on_server_location + "/ex00/index.php' | grep 'login'")
 test_boolean('name="login"' in out, "login named correctly")
 test_boolean(("value" not in out) or ('value=""' in out), "login set correctly")
@@ -91,7 +93,7 @@ exitcode, out, err = run_command("curl -v -c cook.txt '" + day_on_server_locatio
 test_boolean('name="submit"' in out, "submit named correctly after removing cookie file")
 test_boolean(("value" not in out) or ('value="OK"' in out), "submit set correctly after removing cookie file")
 
-run_command("rm -rf cook.txt")
+run_command("rm -f cook.txt")
 
 print("")
 
@@ -99,7 +101,7 @@ print("")
 print("Tests for ex01:")
 run_command("rm -rf " + expanduser(location_of_private))
 test_command("curl -d login=toto1 -d passwd=titi1 -d submit=OK '" + day_on_server_location + "/ex01/create.php'", "OK\n", 0)
-password_file = expanduser(location_of_password)
+password_file = expanduser(location_of_private + "/passwd")
 test_boolean('a:1:{' == get_file_contents(password_file)[:5]
                   , "begin part of serialized file (" + password_file + ")")
 test_command("curl -d login=toto1 -d passwd=titi1 -d submit=OK '" + day_on_server_location + "/ex01/create.php'", "ERROR\n", 0)
@@ -117,8 +119,8 @@ print("")
 print("Tests for ex02:")
 run_command("rm -rf " + expanduser(location_of_private))
 test_command("curl -d login=x -d passwd=21 -d submit=OK '" + day_on_server_location + "/ex01/create.php'", "OK\n", 0)
-password_file = location_of_password
-test_boolean('a:1:{' == get_file_contents(location_of_password)[:5]
+password_file = location_of_private + "/passwd"
+test_boolean('a:1:{' == get_file_contents(location_of_private + "/passwd")[:5]
                   , "begin part of serialized file (" + password_file + ")")
 test_command("curl -d login=x -d oldpw=21 -d newpw=42 -d submit=OK '" + day_on_server_location + "/ex02/modif.php'", "OK\n", 0) # change to 42
 test_command("curl -d login=x -d oldpw=42 -d newpw=hello -d submit=OK '" + day_on_server_location + "/ex02/modif.php'", "OK\n", 0) # change to hello
@@ -137,8 +139,8 @@ print("")
 print("Tests for ex03:")
 run_command("rm -rf " + expanduser(location_of_private))
 test_command("curl -d login=toto -d passwd=titi -d submit=OK '" + day_on_server_location + "/ex01/create.php'", "OK\n", 0)
-password_file = location_of_password
-test_boolean('a:1:{' == get_file_contents(location_of_password)[:5]
+password_file = location_of_private + "/passwd"
+test_boolean('a:1:{' == get_file_contents(location_of_private + "/passwd")[:5]
                   , "begin part of serialized file (" + password_file + ")")
 test_command("curl '" + day_on_server_location + "/ex03/login.php?login=toto&passwd=titi'", "OK\n", 0) # check login.php: correct
 
@@ -148,6 +150,8 @@ test_command("curl -c cook.txt '" + day_on_server_location + "/ex03/login.php?lo
 test_command("curl -b cook.txt '" + day_on_server_location + "/ex03/whoami.php'", "toto\n", 0)
 test_command("curl -b cook.txt '" + day_on_server_location + "/ex03/logout.php'", "", 0)
 test_command("curl -b cook.txt '" + day_on_server_location + "/ex03/whoami.php'", "ERROR\n", 0)
+
+run_command("rm -f cook.txt")
 
 # END OF TESTS  END OF TESTS  END OF TESTS  END OF TESTS  END OF TESTS
 
