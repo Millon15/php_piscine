@@ -1,0 +1,1 @@
+SELECT reverse(substring(`phone_number`, 2)) AS `rebmunenohp` FROM db_vbrazas.distrib WHERE `phone_number` LIKE '05%';
