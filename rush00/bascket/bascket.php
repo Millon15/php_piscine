@@ -2,9 +2,9 @@
 	// Берём данные о БД из shopdb.csv
 	$cont = file_get_contents('../shopdb.csv');
 	if (!$cont) {
-		header('Location: /rush00/setup.html');
+		header('Location: ../setup.html');
 	}
-	$cont = explode(':', $cont);
+	$cont = explode(';', $cont);
 
 	// Подключаемся к mysql
 	$conn = mysqli_init();
@@ -49,9 +49,20 @@
 	if ($_GET['item']) {
 		foreach ($products as $key => $val) {
 			if ($val['id'] == $_GET['item']) {
-				$_SESSION['cart'][$key] = $_GET['item'];
+				$_SESSION['cart'][$key] = array();
+				$_SESSION['cart'][$key]['id'] = $_GET['item'];
+				echo $_SESSION['cart'][$key]['quantity'];
+				if ($_SESSION['cart'][$key]['quantity'] >= 1) {
+					$_SESSION['cart'][$key]['quantity'] += 1;
+					break ;
+				}
+				if (!($_SESSION['cart'][$key]['quantity'])) {
+					$_SESSION['cart'][$key]['quantity'] = 1;
+					break ;
+				}
 				break ;
 			}
+			
 		}
 	}
 ?>
@@ -94,7 +105,7 @@ EOT;
 			$super_total = 0;
 			foreach($_SESSION['cart'] as $key => $value)
 			{
-				$quantity = $value;
+				$quantity = $_SESSION['cart'][$key]['quantity'];
 				$title = $products[$key]['title'];
 				$price = $products[$key]['price'];
 				$total_price = $quantity * $price;

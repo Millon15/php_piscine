@@ -4,6 +4,11 @@
 		<title>Create account form</title>
 		<link rel="stylesheet" href="../css/modal.css">
 		<link rel="stylesheet" href="../css/plainw.css">
+		<style>
+			#top-bar {
+				margin-bottom: 0;
+			}
+		</style>
 	</head>
 
 	<body>

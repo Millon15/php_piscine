@@ -81,7 +81,7 @@
 				if ($val[username] == $_SESSION['loggued_on_user']) {
 					echo '<a href="login_form/logout.php"><button class="headBtn" id="myBtn">Log out</button></a>';
 					if ($val[isadmin])
-						echo '<a href="http://localhost:8080/phpmyadmin/db_structure.php?db=mysql"><button class="headBtn" id="myBtn">ADM</button></a>';
+						echo '<a href="http://localhost:8080/phpmyadmin/db_structure.php?db=' . $cont[2] . '"><button class="headBtn" id="myBtn">ADM</button></a>';
 					$login = FALSE;
 					break ;
 				}
