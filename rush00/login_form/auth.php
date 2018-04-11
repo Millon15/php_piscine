@@ -6,7 +6,7 @@
 		if (!$cont) {
 			header('Location: /rush00/setup.html');
 		}
-		$cont = explode(':', $cont);
+		$cont = explode(';', $cont);
 
 		// Подключаемся к mysql
 		$conn = mysqli_init();

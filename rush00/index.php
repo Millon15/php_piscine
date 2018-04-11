@@ -2,23 +2,28 @@
 	// Берём данные о БД из shopdb.csv
 	$cont = file_get_contents('shopdb.csv');
 	if (!$cont) {
-		header('Location: /rush00/setup.html');
+		header('Location: ./setup.html');
 	}
-	$cont = explode(':', $cont);
-
+	// $cont = explode('\n', $cont);
+	// $cont = explode(';', $cont[0]);
+	$cont = explode(';', $cont);
+	
 	// Подключаемся к mysql
 	$conn = mysqli_init();
 	if (!$conn) {
-		// header('Location: /rush00/setup.html');
 		die('mysqli_init failed');
 	}
 	if (!mysqli_options($conn, MYSQLI_INIT_COMMAND, "SET AUTOCOMMIT = 0")) {
-		// header('Location: /rush00/setup.html');
 		die('MYSQLI_INIT_COMMAND failed');
 	}
-	if (!mysqli_real_connect($conn,"localhost", $cont[0], $cont[1], $cont[2])) {
-		// header('Location: /rush00/setup.html');
+	if (!mysqli_real_connect($conn, "localhost", $cont[0], $cont[1], $cont[2])) {
+		echo "Debug info :: ";
 		print_r($cont);
+		?>
+		<br />You, perhaps, have changed password and/or login and/or name of your mySQL database.<br />
+		Please check the shopdb.csv file in the root of your server directory.<br /><br />
+		shopdb.csv file has next syntax ::    login_to_your_mysql:password_to_your_mysql:name_of_your_database_on_mysql<br /><br />
+<?php
 		die("mysqli_real_connect failed: " . mysqli_connect_error());
 	}
 
@@ -76,7 +81,7 @@
 				if ($val[username] == $_SESSION['loggued_on_user']) {
 					echo '<a href="login_form/logout.php"><button class="headBtn" id="myBtn">Log out</button></a>';
 					if ($val[isadmin])
-						echo '<a href="http://localhost:8080//phpmyadmin/index.php?pma_username=root&pma_password=root"><button class="headBtn" id="myBtn">ADM</button></a>';
+						echo '<a href="http://localhost:8080/phpmyadmin/db_structure.php?db=mysql"><button class="headBtn" id="myBtn">ADM</button></a>';
 					$login = FALSE;
 					break ;
 				}
@@ -102,7 +107,7 @@
 						<form action="login_form/login.php" method="get">
 							<div id="top-bar"></div>
 							<input type="text" name="login" value="" placeholder="Username" /><br />
-							<input type="text" name="passwd" value="" placeholder="Password" /><br />
+							<input type="password" name="passwd" value="" placeholder="Password" /><br />
 							<input id="butt" type="submit" name="submit" value="OK" />
 						</form>
 					</div>

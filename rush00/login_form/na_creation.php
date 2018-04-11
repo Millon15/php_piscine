@@ -9,7 +9,7 @@
 	if (!$cont) {
 		header('Location: /rush00/setup.html');
 	}
-	$cont = explode(':', $cont);
+	$cont = explode(';', $cont);
 
 	$conn = mysqli_connect("localhost", $cont[0], $cont[1], $cont[2]);
 	if (!$conn) {

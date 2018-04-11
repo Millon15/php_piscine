@@ -1,5 +1,5 @@
 <?php
 	session_start();
-	$_SESSION['loggued_on_user'] = '';
+	$_SESSION = '';
 	header('Location: /rush00/index.php');
 ?>

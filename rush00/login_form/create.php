@@ -16,8 +16,8 @@
 					echo "<div class=\"errhide\">Check the input fields!</div>";
 			?>
 			<input type="text" name="login" value="" placeholder="Username" /><br />
-			<input type="text" name="passwd" value="" placeholder="Password" /><br />
-			<input type="text" name="passwd2" value="" placeholder="Same password again" /><br />
+			<input type="password" name="passwd" value="" placeholder="Password" /><br />
+			<input type="password" name="passwd2" value="" placeholder="Same password again" /><br />
 			<input type="text" name="email" value="" placeholder="@email" /><br />
 			<input id="butt" type="submit" name="submit" value="OK" />
 		</form>

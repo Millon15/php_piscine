@@ -19,9 +19,10 @@
 	// Удаляем старую БД
 	// unlink('shopdb.csv');
 	$sql = "DROP DATABASE IF EXISTS $dbname";
-	if (!mysqli_query($conn, $sql)) {
-		die("Error dropping db: " . mysqli_error($conn));
-	}
+	mysqli_query($conn, $sql);
+	// if (!mysqli_query($conn, $sql)) {
+	// 	die("Error dropping db: " . mysqli_error($conn));
+	// }
 	// Создаем БД
 	$sql = "CREATE DATABASE IF NOT EXISTS $dbname";
 	if (!mysqli_query($conn, $sql)) {
@@ -37,7 +38,7 @@
 	
 	// Создаем таблицу категории
 	$sql = "CREATE TABLE IF NOT EXISTS categories (
-			id INT(11) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY, 
+			id INT(11) UNSIGNED NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY, 
 			title VARCHAR(255) NOT NULL
 			)";
 	if (!mysqli_query($conn, $sql)) {
@@ -53,7 +54,7 @@
 
 	// Создаем таблицу продуктов
 	$sql = "CREATE TABLE IF NOT EXISTS products (
-			id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY, 
+			id INT(11) UNSIGNED NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY, 
 			title VARCHAR(255) NOT NULL,
 			img VARCHAR(255) DEFAULT NULL,
 			category VARCHAR(255) DEFAULT NULL,
@@ -89,10 +90,12 @@
 
 	// Создаем таблицу юзеров и добавляем админа
 	$sql = "CREATE TABLE IF NOT EXISTS users (
-			id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+			id INT(11) UNSIGNED NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY, 
 			username VARCHAR(255) NOT NULL,
 			password TEXT NOT NULL,
-			isadmin BOOLEAN NOT NULL
+			isadmin BOOLEAN NOT NULL,
+			email VARCHAR(255),
+			addres VARCHAR(255)
 			)";
 	if (!mysqli_query($conn, $sql)) {
 		die("Error creating users: " . mysqli_error($conn));
@@ -104,7 +107,7 @@
 		die("Error filling users: " . mysqli_error($conn));
 	}
 
-	file_put_contents('shopdb.csv', "$username:$password:$dbname");
+	file_put_contents('shopdb.csv', "$username;$password;$dbname");
 	mysqli_close($conn);
 	header('Location: /rush00/index.php');
 ?>
