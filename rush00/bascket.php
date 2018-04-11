@@ -2,12 +2,12 @@
 	include('main.php');
 	$categories = FALSE;
 	session_start();
-	// var_dump($_SESSION);
 	if ($_GET['item']) {
 		foreach ($products as $key => $val) {
 			if ($val['id'] == $_GET['item']) {
 				$_SESSION['cart'][$key] = array();
 				$_SESSION['cart'][$key]['id'] = $_GET['item'];
+				var_dump($_SESSION['cart'][$key]['quantity']);
 				$_SESSION['cart'][$key]['quantity'] += 1;
 				break ;
 			}
@@ -76,7 +76,7 @@
 					</table>
 				<?php
 					if ($_SESSION['loggued_on_user'] != "")
-						echo '<a href="archive_cart.php">Validate cart</a>';
+						echo '<a href="archive_bascket.php">Validate cart</a>';
 					else
 						echo "Please login to validate your cart.";
 				}

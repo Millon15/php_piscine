@@ -51,7 +51,6 @@
 		}
 		mysqli_free_result($result);
 	}
-	mysqli_close($conn);
 	session_start();
 	if (!$_SESSION['cart']) {
 		$_SESSION['cart'] = array();
