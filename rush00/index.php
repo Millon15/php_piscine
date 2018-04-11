@@ -1,125 +1,28 @@
-<?php
-	// Берём данные о БД из shopdb.csv
-	$cont = file_get_contents('shopdb.csv');
-	if (!$cont) {
-		header('Location: ./setup.html');
-	}
-	// $cont = explode('\n', $cont);
-	// $cont = explode(';', $cont[0]);
-	$cont = explode(';', $cont);
-	
-	// Подключаемся к mysql
-	$conn = mysqli_init();
-	if (!$conn) {
-		die('mysqli_init failed');
-	}
-	if (!mysqli_options($conn, MYSQLI_INIT_COMMAND, "SET AUTOCOMMIT = 0")) {
-		die('MYSQLI_INIT_COMMAND failed');
-	}
-	if (!mysqli_real_connect($conn, "localhost", $cont[0], $cont[1], $cont[2])) {
-		echo "Debug info :: ";
-		print_r($cont);
-		?>
-		<br />You, perhaps, have changed password and/or login and/or name of your mySQL database.<br />
-		Please check the shopdb.csv file in the root of your server directory.<br /><br />
-		shopdb.csv file has next syntax ::    login_to_your_mysql:password_to_your_mysql:name_of_your_database_on_mysql<br /><br />
-<?php
-		die("Connection failed: " . mysqli_connect_error());
-	}
-
-	//Наполняем массив категорий в зависимости от того, что записано в таблицу категорий
-	$categories = array();
-	if ($result = mysqli_query($conn, 'SELECT * FROM categories')) {
-		while ($tmp = mysqli_fetch_assoc($result)) {
-			$categories[] = $tmp;
-		}
-		mysqli_free_result($result);
-	}
-
-	//Наполняем массив продуктов и привязывем к категориям
-	$products = array();
-	$cat = isset($_REQUEST['cat']) ? (int) $_REQUEST['cat'] : 0;
-	$sql = 'SELECT p.* FROM products AS p ';
-	if ($cat) {
-		$sql .= ' INNER JOIN categories_products AS cp ON cp.id_product=p.id AND cp.id_category=' . $cat;
-	}
-	if ($result = mysqli_query($conn, $sql)) {
-		while ($tmp = mysqli_fetch_assoc($result)) {
-			$products[] = $tmp;
-		}
-		mysqli_free_result($result);
-	}
-
-	//Выкачиваем юзеров
-	$users = array();
-	if ($result = mysqli_query($conn, 'SELECT * FROM users')) {
-		while ($tmp = mysqli_fetch_assoc($result)) {
-			$users[] = $tmp;
-		}
-		mysqli_free_result($result);
-	}
-	mysqli_close($conn);
-	session_start();
-	if (!$_SESSION['cart']) {
-		$_SESSION['cart'] = array();
-	}
-?>
+<?php include('main.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta name="description" content="Best Farm Products ever!">
+	<title>Farmer's Bazaar</title>
 	<link rel="stylesheet" href="css/modal.css">
 	<link rel="stylesheet" href="css/style.css">
-	<title>Farmer's Bazaar</title>
+	<style>
+		table {
+			width: 80%;
+		}
+
+		.title {
+			font-style: oblique;
+		}
+
+		table, th, td {
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+	</style>
 </head>
 <body>
-
-	<div class="adm">
-		<?php
-			$login = TRUE;
-			foreach ($users as $val) {
-				if ($val[username] == $_SESSION['loggued_on_user']) {
-					echo '<span class="h_span">Logged as ' . $_SESSION['loggued_on_user']. '</span>';
-					echo '<a href="login_form/logout.php"><button class="headBtn">log out</button></a>';
-					if ($val[isadmin])
-						echo '<a href="http://localhost:8080/phpmyadmin/db_structure.php?db=' . $cont[2] . '"><button class="headBtn">ADM</button></a>';
-					$login = FALSE;
-					break ;
-				}
-			}
-			// if ($login || $_GET['loginErr']) {
-			if ($login) {
-				?>
-				<a href="login_form/login.php"><button class="headBtn">Log in!</button></a>
-				<a href="login_form/create.php"><button class="headBtn">Create an account</button></a>
-			<?php } ?>
-			<!-- Trigger/Open The Modal -->
-			<button class="cart" id="myBtn"><img src="img/cart.png">C</button>
-			<!-- The Modal -->
-			<div id="myModal" class="modal">
-				<!-- Modal content -->
-				<div class="modal-content">
-					<div class="close"><span>&times;</span></div>
-					<div class="si">Sign in!</div>
-					<div class="ca">...or <a href="login_form/create.php">create an account</a></div>
-					<?php
-						if ($_GET['loginErr'] == 1) 
-							echo "<div class=\"errvis\">Check the input fields!</div>";
-						else if ($_GET['loginErr'] == 2) 
-							echo "<div class=\"errvis\">ACHTUNG!!!</div>";
-						else
-							echo "<div class=\"errhide\">Check the input fields!</div>";
-					?>
-					<form action="login_form/login.php" method="get">
-						<div id="top-bar"></div>
-						<input type="text" name="login" value="" placeholder="Username" /><br />
-						<input type="password" name="passwd" value="" placeholder="Password" /><br />
-						<input id="butt" type="submit" name="submit" value="OK" />
-					</form>
-				</div>
-			</div>
-	</div>
-
+	<?php include('top_menu.php'); ?>
 	<header>
 		<nav class="navbar" role="navigation">
 			<div class="logo">
@@ -135,9 +38,9 @@
 		</nav>
 	</header>
 
-	<?php if (!$_GET)
-		echo '<div class="coverimg"><h1>Fresh products<br>from our farm<br>to your table!</h1></div>'
-	?>
+	<?php if (!$_GET) {
+		echo '<div class="coverimg"><h1>Fresh products<br>from our farm<br>to your table!</h1></div>';
+	}?>
 
 	<div class="content">
 		<div class="products-row">
@@ -150,7 +53,7 @@
 							<div class="product-title"><h1><?php echo $product['title'];?></h1></div>
 							<div class="product-intro"><h4><?php echo $product['intro'];?></h4></div>
 							<div class="button">
-								<a href="bascket/bascket.php?item=<?php echo $product['id']; ?>"><button class="buy">BUY</button></a>
+							<a href="bascket/bascket.php?item=<?php echo $product['id']; ?>"><button class="buy">BUY</button></a>
 							</div>
 						</div>
 					</div>
@@ -159,34 +62,5 @@
 		</div>
 	</div>
 
-	<footer>
-		<script>
-				// Get the modal
-				var modal = document.getElementById('myModal');
-				
-				// Get the button that opens the modal
-				var btn = document.getElementById("myBtn");
-				
-				// Get the <span> element that closes the modal
-				var span = document.getElementsByClassName("close")[0];
-				
-				// When the user clicks the button, open the modal 
-				btn.onclick = function() {
-					modal.style.display = "block";
-				}
-				
-				// When the user clicks on <span> (x), close the modal
-				span.onclick = function() {
-					modal.style.display = "none";
-				}
-				
-				// When the user clicks anywhere outside of the modal, close it
-				window.onclick = function(event) {
-					if (event.target == modal) {
-						modal.style.display = "none";
-					}
-				}
-		</script>
-	</footer>
 </body>
 </html>
