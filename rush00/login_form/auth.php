@@ -4,7 +4,7 @@
 		// Берём данные о БД из shopdb.csv
 		$cont = file_get_contents('../shopdb.csv');
 		if (!$cont) {
-			header('Location: /rush00/setup.html');
+			header('Location: ../setup.html');
 		}
 		$cont = explode(';', $cont);
 

@@ -20,7 +20,7 @@
 				else if ($_GET['loginErr'] == 2)
 					echo "<div class=\"errvis\">User with same account login exists. Please change your login!</div>";
 				else if ($_GET['loginErr'] == 3)
-					echo "<div class=\"errvis\">User with same account login exists. Please change your login!</div>";
+					echo "<div class=\"errvis\">ACHTUNG!</div>";
 				else
 					echo "<div class=\"errhide\">Check the input fields!</div>";
 			?>

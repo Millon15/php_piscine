@@ -3,5 +3,5 @@
 	foreach ($_SESSION as $key => $val) {
 		$_SESSION[$key] = '';
 	}
-	header('Location: /rush00/index.php');
+	header('Location: ../index.php');
 ?>

@@ -6,7 +6,7 @@
 
 	$cont = file_get_contents('../shopdb.csv');
 	if (!$cont) {
-		header('Location: /rush00/setup.html');
+		header('Location: ../setup.html');
 	}
 	$cont = explode(';', $cont);
 
@@ -38,7 +38,7 @@
 	foreach ($users as $val) {
 		if ($val['username'] == $login) {
 			mysqli_close($conn);
-			// header('Location: create.php?loginErr=2');
+			header('Location: create.php?loginErr=2');
 			exit("ERROR\n");
 		}
 	}
@@ -51,5 +51,5 @@
 		die("Error ADDING USER: " . mysqli_error($conn));
 	}
 	mysqli_close($conn);
-	header("Location: login.php?login=". $login. "&passwd=" . $_POST["passwd"] . "&submit=OK");
+	header("Location: login.php?login=". $login. "&passwd=" . $password . "&submit=OK&get=1");
 ?>

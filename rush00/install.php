@@ -17,7 +17,7 @@
 	}
 
 	// Удаляем старую БД
-	// unlink('shopdb.csv');
+	unlink('shopdb.csv');
 	$sql = "DROP DATABASE IF EXISTS $dbname";
 	mysqli_query($conn, $sql);
 	// if (!mysqli_query($conn, $sql)) {
@@ -64,11 +64,18 @@
 	if (!mysqli_query($conn, $sql)) {
 		die("Error creating products: " . mysqli_error($conn));
 	}
+
 	// Наполняем таблицу продуктов
 	$sql = "INSERT INTO products (id, title, img, intro, price, category)
 			VALUES (1, 'Apples', 'http://faynofruit.com.ua/wp-content/uploads/2015/02/01-apple-mutsu.png', 'Apples are cool', '12', 'Fruits'),
 			(2, 'Onions', 'http://spicexpert.ru/files/Image/luk-rep.jpg', 'Onions are awful', '15', 'Greens'),
-			(3, 'Deer', 'http://arvi.by/wp-content/uploads/2017/12/%D0%B31-1-300x300.jpg', 'Deers lives matter', '50', 'Meat')";
+			(3, 'Deer', 'http://arvi.by/wp-content/uploads/2017/12/%D0%B31-1-300x300.jpg', 'Deers lives matter', '50', 'Meat'),
+			(4, 'Carrot', 'https://freshproducegroup.us/wp-content/uploads/2018/02/CARROT-FRESH-PRODUCE-GROUP-LLC.jpg', 'Carrot is super-duper', '5', 'Greens'),
+			(5, 'Chicken', 'http://cdn.shopify.com/s/files/1/1090/8304/products/whole_chicken_with_skinCompressed_grande.jpg?v=1449925650', 'Nom-nom chicken', '150', 'Meat'),
+			(6, 'Grape', 'https://hmarapara.com/media/2018/03/Grape-Candy-300x300.jpg', 'Graaaaape', '500', 'Fruits'),
+			(7, 'Banana', 'https://images-na.ssl-images-amazon.com/images/I/41JvAoqeMfL._SY300_QL70_.jpg', 'Bananas are whoaaa', '55', 'Fruits'),
+			(8, 'Pork', 'http://www.deltameatdeli.net/wp-content/uploads/2014/11/four-boneless-pork-steak-112-p.jpg', 'Nom-nom chicken', '175', 'Meat'),
+			(9, 'Cabbage', 'https://images-na.ssl-images-amazon.com/images/I/416Xjyn1R6L._SY300_QL70_.jpg', 'Cabbage helps with health issues', '1', 'Greens')";
 	if (!mysqli_query($conn, $sql)) {
 		die("Error filling products: " . mysqli_error($conn));
 	}
@@ -83,7 +90,7 @@
 		die("Error creating categories_products: " . mysqli_error($conn));
 	}
 	$sql = "INSERT INTO categories_products (id_category, id_product)
-			VALUES (1, 1), (2, 2), (3, 3)";
+			VALUES (1, 1), (2, 2), (3, 3), (1, 6), (2, 4), (3, 5), (1, 7), (2, 9), (3, 8)";
 	if (!mysqli_query($conn, $sql)) {
 		die("Error filling categories: " . mysqli_error($conn));
 	}

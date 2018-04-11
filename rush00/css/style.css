@@ -16,7 +16,7 @@ body {
 	height: 100%;
 	border: none;
 	display: inline-block;
-	padding: 10px 20px;
+	padding: 0.4% 0.5%;
 	vertical-align: middle;
 	overflow: hidden;
 	text-decoration: none;
@@ -26,7 +26,7 @@ body {
 	cursor: pointer;
 	white-space: nowrap;
 	margin-right: 1%;
-	font-size: 0.5vw;
+	font-size: 0.6vw;
 	display: inline-block;
 	color: white;
 	text-decoration: none;
@@ -34,7 +34,31 @@ body {
 }
 
 .headBtn:hover {
-	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+	-webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	-moz-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.h_span {
+	height: 100%;
+	border: none;
+	display: inline-block;
+	padding-top: 0.45%;
+	padding-bottom: 0.35%;
+	vertical-align: middle;
+	overflow: hidden;
+	text-decoration: none;
+	color: inherit;
+	background-color: inherit;
+	text-align: center;
+	cursor: pointer;
+	white-space: nowrap;
+	margin-right: 1%;
+	font-size: 0.6vw;
+	display: inline-block;
+	color: white;
+	text-decoration: none;
+	font-weight: 600;
 }
 
 header {
@@ -45,9 +69,9 @@ header {
 	/* horizontal */
 	justify-content: center;
 	width: 100%;
-	-webkit-box-shadow: 0px 15px 70px -25px rgba(0,0,0,0.75);
-	-moz-box-shadow: 0px 15px 70px -25px rgba(0,0,0,0.75);
-	box-shadow: 0px 15px 70px -25px rgba(0,0,0,0.75);
+	-webkit-box-shadow: 0px 15px 35px -25px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 15px 35px -25px rgba(0,0,0,0.75);
+	box-shadow: 0px 15px 35px -25px rgba(0,0,0,0.75);
 }
 
 .navbar {
@@ -69,7 +93,7 @@ header {
 	-webkit-margin-end: 0px;
 	text-decoration: none;
 	font-size: 1.5vw;
-	color: mediumturquoise;
+	color: white;
 	padding: 5px;
 	font-weight: 600;
 }
@@ -122,4 +146,22 @@ header {
 	text-align: center;
 	cursor: pointer;
 	color: white;
+}
+
+.coverimg {
+	height: 40vw;
+	background-size: cover;
+	background-position: center, right;
+	background-image: url(https://www.webberrestaurantgroup.com/wp-content/uploads/2016/08/GHG-scene-1600x934.jpg);
+	-webkit-box-shadow: 0px 15px 35px -25px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 15px 35px -25px rgba(0,0,0,0.75);
+	box-shadow: 0px 15px 35px -25px rgba(0,0,0,0.75);
+}
+
+.coverimg h1{
+	margin:0px;
+	padding: 30px 10%;
+	color: white; 
+	font-size: 5vw;
+	text-shadow: 1px 1px 2px black, 0 0 1em lightgray;
 }

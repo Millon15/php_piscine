@@ -63,13 +63,14 @@
 	if (!$_SESSION['cart']) {
 		$_SESSION['cart'] = array();
 	}
+	// echo "AAAAA    ".$_SESSION['loggued_on_user'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta name="description" content="Best Farm Products ever!">
-	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/modal.css">
+	<link rel="stylesheet" href="css/style.css">
 	<title>Farmer's Bazaar</title>
 </head>
 <body>
@@ -79,41 +80,47 @@
 			$login = TRUE;
 			foreach ($users as $val) {
 				if ($val[username] == $_SESSION['loggued_on_user']) {
-					echo '<a href="login_form/logout.php"><button class="headBtn" id="myBtn">Log out</button></a>';
+					echo '<span class="h_span">Logged as ' . $_SESSION['loggued_on_user']. '</span>';
+					echo '<a href="login_form/logout.php"><button class="headBtn">log out</button></a>';
 					if ($val[isadmin])
-						echo '<a href="http://localhost:8080/phpmyadmin/db_structure.php?db=' . $cont[2] . '"><button class="headBtn" id="myBtn">ADM</button></a>';
+						echo '<a href="http://localhost:8080/phpmyadmin/db_structure.php?db=' . $cont[2] . '"><button class="headBtn">ADM</button></a>';
 					$login = FALSE;
 					break ;
 				}
 			}
-			if ($login || $_GET['loginErr']) {
+			// if ($login || $_GET['loginErr']) {
+			if ($login) {
 				?>
 				<!-- Trigger/Open The Modal -->
-				<button class="headBtn" id="myBtn">Log in!</button>
-				
-				<!-- The Modal -->
-				<div id="myModal" class="modal">
-					<!-- Modal content -->
-					<div class="modal-content">
-						<div class="close"><span>&times;</span></div>
-						<div class="si">Sign in!</div>
-						<div class="ca">...or <a href="login_form/create.php">create an account</a></div>
-						<?php
-							if ($_GET['loginErr'] == 1) 
-								echo "<div class=\"errvis\">Check the input fields!</div>";
-							else if ($_GET['loginErr'] == 2) 
-								echo "<div class=\"errvis\">ACHTUNG!!!</div>";
-							else
-								echo "<div class=\"errhide\">Check the input fields!</div>";
+				<a href="login_form/login.php"><button class="headBtn">Log in!</button></a>
+				<a href="login_form/create.php"><button class="headBtn">Create an account</button></a>
+				<?php
+				// <!-- The Modal -->
+				// <div id="myModal" class="modal">
+				// 	<!-- Modal content -->
+				// 	<div class="modal-content">
+				// 		<div class="close"><span>&times;</span></div>
+				// 		<div class="si">Sign in!</div>
+				// 		<div class="ca">...or <a href="login_form/create.php">create an account</a></div>
 						?>
-						<form action="login_form/login.php" method="get">
-							<div id="top-bar"></div>
-							<input type="text" name="login" value="" placeholder="Username" /><br />
-							<input type="password" name="passwd" value="" placeholder="Password" /><br />
-							<input id="butt" type="submit" name="submit" value="OK" />
-						</form>
-					</div>
-				</div>
+						<?php
+							// if ($_GET['loginErr'] == 1) 
+							// 	echo "<div class=\"errvis\">Check the input fields!</div>";
+							// else if ($_GET['loginErr'] == 2) 
+							// 	echo "<div class=\"errvis\">ACHTUNG!!!</div>";
+							// else
+							// 	echo "<div class=\"errhide\">Check the input fields!</div>";
+						?>
+						<?php
+				// 		<!-- <form action="login_form/login.php" method="get">
+				// 			<div id="top-bar"></div>
+				// 			<input type="text" name="login" value="" placeholder="Username" /><br />
+				// 			<input type="password" name="passwd" value="" placeholder="Password" /><br />
+				// 			<input id="butt" type="submit" name="submit" value="OK" />
+				// 		</form>
+				// 	</div>
+				// </div> -->
+				?>
 			<?php } ?>
 	</div>
 
@@ -131,6 +138,10 @@
 			</div>
 		</nav>
 	</header>
+
+	<?php if (!$_GET)
+		echo '<div class="coverimg"><h1>Fresh products<br>from our farm<br>to your table!</h1></div>'
+	?>
 
 	<div class="content">
 		<div class="products-row">
@@ -153,6 +164,7 @@
 	</div>
 
 	<footer>
+		
 		<script>
 				// Get the modal
 				var modal = document.getElementById('myModal');
