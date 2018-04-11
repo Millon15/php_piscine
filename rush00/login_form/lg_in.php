@@ -14,7 +14,7 @@
 		$ses = $_POST['login'];
 	}
 
-	include('logout.php');
+	// include('logout.php');
 	include('auth.php');
 
 	if (auth($login, $password) === TRUE) {
