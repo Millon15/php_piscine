@@ -63,7 +63,6 @@
 	if (!$_SESSION['cart']) {
 		$_SESSION['cart'] = array();
 	}
-	// echo "AAAAA    ".$_SESSION['loggued_on_user'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -91,37 +90,34 @@
 			// if ($login || $_GET['loginErr']) {
 			if ($login) {
 				?>
-				<!-- Trigger/Open The Modal -->
 				<a href="login_form/login.php"><button class="headBtn">Log in!</button></a>
 				<a href="login_form/create.php"><button class="headBtn">Create an account</button></a>
-				<?php
-				// <!-- The Modal -->
-				// <div id="myModal" class="modal">
-				// 	<!-- Modal content -->
-				// 	<div class="modal-content">
-				// 		<div class="close"><span>&times;</span></div>
-				// 		<div class="si">Sign in!</div>
-				// 		<div class="ca">...or <a href="login_form/create.php">create an account</a></div>
-						?>
-						<?php
-							// if ($_GET['loginErr'] == 1) 
-							// 	echo "<div class=\"errvis\">Check the input fields!</div>";
-							// else if ($_GET['loginErr'] == 2) 
-							// 	echo "<div class=\"errvis\">ACHTUNG!!!</div>";
-							// else
-							// 	echo "<div class=\"errhide\">Check the input fields!</div>";
-						?>
-						<?php
-				// 		<!-- <form action="login_form/login.php" method="get">
-				// 			<div id="top-bar"></div>
-				// 			<input type="text" name="login" value="" placeholder="Username" /><br />
-				// 			<input type="password" name="passwd" value="" placeholder="Password" /><br />
-				// 			<input id="butt" type="submit" name="submit" value="OK" />
-				// 		</form>
-				// 	</div>
-				// </div> -->
-				?>
 			<?php } ?>
+			<!-- Trigger/Open The Modal -->
+			<button class="cart" id="myBtn"><img src="img/cart.png">C</button>
+			<!-- The Modal -->
+			<div id="myModal" class="modal">
+				<!-- Modal content -->
+				<div class="modal-content">
+					<div class="close"><span>&times;</span></div>
+					<div class="si">Sign in!</div>
+					<div class="ca">...or <a href="login_form/create.php">create an account</a></div>
+					<?php
+						if ($_GET['loginErr'] == 1) 
+							echo "<div class=\"errvis\">Check the input fields!</div>";
+						else if ($_GET['loginErr'] == 2) 
+							echo "<div class=\"errvis\">ACHTUNG!!!</div>";
+						else
+							echo "<div class=\"errhide\">Check the input fields!</div>";
+					?>
+					<form action="login_form/login.php" method="get">
+						<div id="top-bar"></div>
+						<input type="text" name="login" value="" placeholder="Username" /><br />
+						<input type="password" name="passwd" value="" placeholder="Password" /><br />
+						<input id="butt" type="submit" name="submit" value="OK" />
+					</form>
+				</div>
+			</div>
 	</div>
 
 	<header>
@@ -164,7 +160,6 @@
 	</div>
 
 	<footer>
-		
 		<script>
 				// Get the modal
 				var modal = document.getElementById('myModal');

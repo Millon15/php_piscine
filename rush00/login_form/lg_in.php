@@ -14,10 +14,10 @@
 		$ses = $_POST['login'];
 	}
 
-	// include('logout.php');
 	include('auth.php');
 
 	if (auth($login, $password) === TRUE) {
+		session_start();
 		$_SESSION['loggued_on_user'] = $ses;
 		header('Location: ../index.php');
 		exit("OK\n");

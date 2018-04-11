@@ -1,7 +1,7 @@
 <?php
 	session_start();
-	foreach ($_SESSION as $key => $val) {
-		$_SESSION[$key] = '';
+	foreach ($_SESSION as $key => $value) {
+		$_SESSION[$key] = FALSE;
 	}
 	header('Location: ../index.php');
 ?>

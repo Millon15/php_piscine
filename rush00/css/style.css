@@ -39,6 +39,30 @@ body {
 	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.cart {
+	height: 100%;
+	border: none;
+	display: inline-block;
+	padding: 0.4% 0.5%;
+	vertical-align: middle;
+	overflow: hidden;
+	text-decoration: none;
+	color: inherit;
+	background-color: inherit;
+	text-align: center;
+	cursor: pointer;
+	white-space: nowrap;
+	margin-right: 1%;
+	font-size: 0.6vw;
+	display: inline-block;
+	text-decoration: none;
+	color: #007c91;
+}
+
+.cart img {
+	width: 1.5em;
+}
+
 .h_span {
 	height: 100%;
 	border: none;
