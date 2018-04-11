@@ -6,20 +6,6 @@
 	<title>Farmer's Bazaar</title>
 	<link rel="stylesheet" href="css/modal.css">
 	<link rel="stylesheet" href="css/style.css">
-	<style>
-		table {
-			width: 80%;
-		}
-
-		.title {
-			font-style: oblique;
-		}
-
-		table, th, td {
-			border: 1px solid black;
-			border-collapse: collapse;
-		}
-	</style>
 </head>
 <body>
 	<?php include('top_menu.php'); ?>

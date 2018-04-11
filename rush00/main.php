@@ -9,17 +9,10 @@
 	$cont = explode(';', $cont);
 	
 	// Подключаемся к mysql
-	$conn = mysqli_init();
-	if (!$conn) {
-		die('mysqli_init failed');
-	}
-	if (!mysqli_options($conn, MYSQLI_INIT_COMMAND, "SET AUTOCOMMIT = 0")) {
-		die('MYSQLI_INIT_COMMAND failed');
-	}
-	if (!mysqli_real_connect($conn, "localhost", $cont[0], $cont[1], $cont[2])) {
+	if (!($conn = mysqli_connect("localhost", $cont[0], $cont[1], $cont[2]))) {
 		echo "Debug info :: ";
 		print_r($cont);
-		?>
+?>
 		<br />You, perhaps, have changed password and/or login and/or name of your mySQL database.<br />
 		Please check the shopdb.csv file in the root of your server directory.<br /><br />
 		shopdb.csv file has next syntax ::    login_to_your_mysql:password_to_your_mysql:name_of_your_database_on_mysql<br /><br />
