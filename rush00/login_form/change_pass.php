@@ -15,7 +15,7 @@
 		<form action="chn_ps.php" method="post">
 			<div id="top-bar">Change your password</div>
 			<?php
-				if ($_GET['loginErr'] == 1)
+				if ($_GET['loginErr'])
 					echo "<div class=\"errvis\">Check the input fields!</div>";
 				else
 					echo "<div class=\"errhide\">Check the input fields!</div>";

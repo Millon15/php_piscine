@@ -1,39 +1,43 @@
 <?php
-	if ($_POST["login"] == FALSE || $_POST["oldpasswd"] == FALSE || $_POST["oldpasswd"] == FALSE || $_POST["submit"] != 'OK') {
-		header('Location: login.php?loginErr=1');
+	if ($_POST["login"] == FALSE || $_POST["oldpasswd"] == FALSE || $_POST["passwd"] == FALSE || $_POST["newpasswd"] == FALSE || $_POST["newpasswd"] != $_POST["passwd"] || $_POST["submit"] != 'OK') {
+		header('Location: change_pass.php?chaErr=1');
 		exit("ERROR\n");
 	}
+
 	$login = $_POST['login'];
-	$password = hash('whirlpool', $_POST['passwd']);
+	$password = hash('whirlpool', $_POST["oldpasswd"]);
 
 	include('auth.php');
 
 	if (auth($login, $password) === TRUE) {
-		
-		header('Location: ../index.php');
-		exit("OK\n");
-	}
-	header('Location: login.php?loginErr=1');
-	exit("ERROR\n");
-		/*
-	if ($_POST["login"] == FALSE || $_POST["passwd"] == FALSE || $_POST["submit"] != 'OK') {
-			header('Location: login.php?loginErr=1');
-			exit("ERROR\n");
+		$cont = file_get_contents('../shopdb.csv');
+		if (!$cont) {
+			header('Location: ../setup.html');
 		}
-		$login = $_POST['login'];
-		$password = hash('whirlpool', $_POST['passwd']);
-		$ses = $_POST['login'];
-	}
+		$cont = explode(';', $cont);
 
-	// include('logout.php');
-	include('auth.php');
+		// Подключаемся к mysql
+		$conn = mysqli_init();
+		if (!$conn) {
+			// header('Location: /rush00/setup.html');
+			die('mysqli_init failed');
+		}
+		if (!mysqli_options($conn, MYSQLI_INIT_COMMAND, "SET AUTOCOMMIT = 0")) {
+			// header('Location: /rush00/setup.html');
+			die('MYSQLI_INIT_COMMAND failed');
+		}
+		if (!mysqli_real_connect($conn,"localhost", $cont[0], $cont[1], $cont[2])) {
+			// header('Location: /rush00/setup.html');
+			die("mysqli_real_connect failed: " . mysqli_connect_error());
+		}
+		$passwd = hash('whirlpool', $_POST["newpasswd"]);
+		$sql = "UPDATE users SET password = '" . $passwd . "' WHERE login = '" . $login . "'";
 
-	if (auth($login, $password) === TRUE) {
-		$_SESSION['loggued_on_user'] = $ses;
-		header('Location: ../index.php');
-		exit("OK\n");
+		if (mysqli_query($conn, $sql)) {
+			header('Location: login.php');
+			exit("OK\n");
+		}
 	}
-	header('Location: login.php?loginErr=1');
+	header('Location: change_pass.php?loginErr=2');
 	exit("ERROR\n");
-	*/
 ?>

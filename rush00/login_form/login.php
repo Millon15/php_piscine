@@ -14,7 +14,6 @@
 	<body>
 		<form action="lg_in.php" method="post">
 			<div id="top-bar">Logging in</div>
-			<div class="close"><span>&times;</span></div>
 			<div class="si">Sign in!</div>
 			<div class="ca">...or you can <a href="change_pass.php">change password to an existing account</a></div>
 			<?php
