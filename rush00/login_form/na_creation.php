@@ -51,5 +51,5 @@
 		die("Error ADDING USER: " . mysqli_error($conn));
 	}
 	mysqli_close($conn);
-	header("Location: login.php?login=". $login. "&passwd=" . $password . "&submit=OK&get=1");
+	header("Location: lg_in.php?login=". $login. "&passwd=" . $password . "&submit=OK&get=1");
 ?>

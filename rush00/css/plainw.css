@@ -8,8 +8,9 @@ form {
 	box-shadow: 0px 10px 30px -8px rgba(0,0,0,0.8);
 	text-align: center;
 	width: 27%;
-	height: 30vh;
+	height: auto;
 	margin: 25vh auto;
+	padding-bottom: 5vh;
 }
 
 form input {
@@ -19,7 +20,7 @@ form input {
 	box-shadow: inset 0px 0px 25px -5px rgba(0,0,0,0.55);
 	cursor: grabbing;
 	width: 75%;
-	height: 12%;
+	height: 8%;
 	margin: 0.8vh auto;
 }
 
@@ -27,6 +28,60 @@ form input {
 	font-size: 0.7vw;
 	color: #b0bec5;
 	font-style: italic;
+}
+
+.main_text {
+	margin: 0 auto;
+	font-size: 2vw;
+	font-style: bold;
+	letter-spacing: 2px;
+	color: white;
+}
+
+.middle_text {
+	margin: 0 auto;
+	font-size: 0.75vw;
+	font-style: oblique;
+	color: white;
+}
+
+.middle_text a {
+	margin: 0 auto;
+	font-style: oblique;
+	color: yellow;
+	text-decoration: underline;
+}
+
+.middle_text a:hover {
+	font-style: normal;
+}
+
+.errhide {
+	font-size: 0.75vw;
+	visibility: hidden;
+}
+.errvis {
+	font-size: 0.75vw;
+	color: #7f0000;
+	font-style: bold;
+	visibility: initial;
+}
+
+/* The Close Button */
+.close {
+	float: right;
+	margin-right: 10px;
+	margin-top: -5px;
+	font-size: initial;
+	font-weight: bold;
+	color: white;
+	cursor: pointer;
+	text-decoration: none;
+}
+.close:hover,
+.close:focus {
+	text-decoration: none;
+	cursor: pointer;
 }
 
 #butt {
@@ -41,7 +96,7 @@ form input {
 	width: 100%;
 	height: auto;
 	color: white;
-	font-size: 10px;
+	font-size: 11px;
 	padding: 1% 0;
 	background-color: #006db3;
 }

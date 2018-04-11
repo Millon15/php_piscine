@@ -2,18 +2,17 @@
 <html>
 	<head>
 		<title>Change password!</title>
-		<link rel="stylesheet" href="../css/modal.css">
 		<link rel="stylesheet" href="../css/plainw.css">
 		<style>
 			#top-bar {
-				margin-bottom: 0vh;
+				margin-bottom: 1.5vh;
 			}
 		</style>
 	</head>
 
 	<body>
 		<form action="chn_ps.php" method="post">
-			<div id="top-bar">Change your password</div>
+			<div id="top-bar">Change your password<a href="../index.php" class="close">&times;</a></div>
 			<?php
 				if ($_GET['loginErr'])
 					echo "<div class=\"errvis\">Check the input fields!</div>";

@@ -2,18 +2,17 @@
 <html>
 	<head>
 		<title>Create an account!</title>
-		<link rel="stylesheet" href="../css/modal.css">
 		<link rel="stylesheet" href="../css/plainw.css">
 		<style>
 			#top-bar {
-				margin-bottom: 0;
+				margin-bottom: 1.5vh;
 			}
 		</style>
 	</head>
 
 	<body>
 		<form action="na_creation.php" method="post">
-			<div id="top-bar">Account setup</div>
+			<div id="top-bar">Account setup<a href="../index.php" class="close">&times;</a></div>
 			<?php
 				if ($_GET['loginErr'] == 1)
 					echo "<div class=\"errvis\">Check the input fields!</div>";

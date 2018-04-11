@@ -15,7 +15,8 @@
 			?>
 			<a href="login_form/login.php"><button class="headBtn">Log in!</button></a>
 			<a href="login_form/create.php"><button class="headBtn">Create an account</button></a>
-	<?php } ?>
+		<?php } ?>
+		<a href="bascket.php"><button class="cart"><img src="http://www.free-icons-download.net/images/shopping-cart-icon-7881.png"></button></a>
 </div>
 
 <header>
