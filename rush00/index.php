@@ -24,7 +24,7 @@
 		Please check the shopdb.csv file in the root of your server directory.<br /><br />
 		shopdb.csv file has next syntax ::    login_to_your_mysql:password_to_your_mysql:name_of_your_database_on_mysql<br /><br />
 <?php
-		die("mysqli_real_connect failed: " . mysqli_connect_error());
+		die("Connection failed: " . mysqli_connect_error());
 	}
 
 	//Наполняем массив категорий в зависимости от того, что записано в таблицу категорий
@@ -99,8 +99,10 @@
 						<div class="si">Sign in!</div>
 						<div class="ca">...or <a href="login_form/create.php">create an account</a></div>
 						<?php
-							if ($_GET['loginErr']) 
+							if ($_GET['loginErr'] == 1) 
 								echo "<div class=\"errvis\">Check the input fields!</div>";
+							else if ($_GET['loginErr'] == 2) 
+								echo "<div class=\"errvis\">ACHTUNG!!!</div>";
 							else
 								echo "<div class=\"errhide\">Check the input fields!</div>";
 						?>

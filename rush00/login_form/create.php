@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Create account form</title>
+		<title>Create an account!</title>
 		<link rel="stylesheet" href="../css/modal.css">
 		<link rel="stylesheet" href="../css/plainw.css">
 		<style>
@@ -15,15 +15,19 @@
 		<form action="na_creation.php" method="post">
 			<div id="top-bar">Account setup</div>
 			<?php
-				if ($_GET['loginErr']) 
+				if ($_GET['loginErr'] == 1)
 					echo "<div class=\"errvis\">Check the input fields!</div>";
+				else if ($_GET['loginErr'] == 2)
+					echo "<div class=\"errvis\">User with same account login exists. Please change your login!</div>";
+				else if ($_GET['loginErr'] == 3)
+					echo "<div class=\"errvis\">User with same account login exists. Please change your login!</div>";
 				else
 					echo "<div class=\"errhide\">Check the input fields!</div>";
 			?>
 			<input type="text" name="login" value="" placeholder="Username" /><br />
 			<input type="password" name="passwd" value="" placeholder="Password" /><br />
-			<input type="password" name="passwd2" value="" placeholder="Same password again" /><br />
-			<input type="text" name="email" value="" placeholder="@email" /><br />
+			<input type="text" name="addres" value="" placeholder="&Delta; addres" /><br />
+			<input type="text" name="email" value="" placeholder="&commat; email" /><br />
 			<input id="butt" type="submit" name="submit" value="OK" />
 		</form>
 	</body>

@@ -1,6 +1,6 @@
 <?php
 	if ($_GET["login"] == FALSE || $_GET["passwd"] == FALSE || $_GET["submit"] != 'OK') {
-		header('Location: /rush00/index.php?loginErr=1');
+		header('Location: ../index.php?loginErr=1');
 		exit("ERROR\n");
 	}
 
@@ -9,9 +9,9 @@
 	
 	if (auth($_GET['login'], hash('whirlpool', $_GET['passwd'])) === TRUE) {
 		$_SESSION['loggued_on_user'] = $_GET['login'];
-		header('Location: /rush00/index.php');
+		header('Location: ../index.php');
 		exit("OK\n");
 	}
-	header('Location: /rush00/index.php?loginErr=1');
+	header('Location: ../index.php?loginErr=2');
 	exit("ERROR\n");
 ?>

@@ -1,6 +1,5 @@
 <?php
-	if ($_POST["login"] == FALSE || $_POST["passwd"] == FALSE || $_POST["passwd2"] == FALSE ||
-	$_POST["submit"] != "OK" || $_POST["passwd"] != $_POST["passwd2"]) {
+	if ($_POST["login"] == FALSE || $_POST["passwd"] == FALSE || $_POST["submit"] != "OK") {
 		header('Location: create.php?loginErr=1');
 		exit("ERROR\n");
 	}
@@ -13,6 +12,13 @@
 
 	$conn = mysqli_connect("localhost", $cont[0], $cont[1], $cont[2]);
 	if (!$conn) {
+		echo "Debug info :: ";
+		print_r($cont);
+		?>
+		<br />You, perhaps, have changed password and/or login and/or name of your mySQL database.<br />
+		Please check the shopdb.csv file in the root of your server directory.<br /><br />
+		shopdb.csv file has next syntax ::    login_to_your_mysql:password_to_your_mysql:name_of_your_database_on_mysql<br /><br />
+<?php
 		die("Connection failed: " . mysqli_connect_error());
 	}
 
@@ -26,20 +32,24 @@
 
 	$login = $_POST["login"];
 	$password = hash('whirlpool', $_POST["passwd"]);
-
+	$addres = $_POST["addres"];
+	$email = $_POST["email"];
+	
 	foreach ($users as $val) {
-		if ($val['username'] == $login && $val['password'] == $passwd) {
+		if ($val['username'] == $login) {
 			mysqli_close($conn);
-			header('Location: create.php?loginErr=1');
+			// header('Location: create.php?loginErr=2');
 			exit("ERROR\n");
 		}
 	}
 
-	$sql = "INSERT INTO users (username, password, isadmin)
-		VALUES ('$login', '$password', false)";
+	$sql = "INSERT INTO users (username, password, isadmin, email, addres)
+		VALUES ('$login', '$password', false, '$email', '$addres')";
 	if (!mysqli_query($conn, $sql)) {
+		mysqli_close($conn);
+		header('Location: create.php?loginErr=3');
 		die("Error ADDING USER: " . mysqli_error($conn));
 	}
-	header('Location: /rush00/index.php');
 	mysqli_close($conn);
+	header("Location: login.php?login=". $login. "&passwd=" . $_POST["passwd"] . "&submit=OK");
 ?>

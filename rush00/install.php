@@ -109,5 +109,5 @@
 
 	file_put_contents('shopdb.csv', "$username;$password;$dbname");
 	mysqli_close($conn);
-	header('Location: /rush00/index.php');
+	header('Location: index.php');
 ?>
