@@ -1,7 +1,8 @@
 <?php
-	include('../main.php');
+	include('main.php');
+	$categories = FALSE;
 	session_start();
-	var_dump($_SESSION);
+	// var_dump($_SESSION);
 	if ($_GET['item']) {
 		foreach ($products as $key => $val) {
 			if ($val['id'] == $_GET['item']) {
@@ -16,6 +17,7 @@
 <html>
 	<head>
 		<title>Cart</title>
+		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/cart.css">
 		<style>
 			table {
@@ -33,6 +35,8 @@
 		</style>
 	</head>
 	<body>
+		<?php include('other/header.php'); ?>
+
 		<div style="margin-left: auto; margin-right: auto; max-width: 1280px; min-width:840px;">
 			<h1>Here are the items in your cart:</h1>
 			<?php

@@ -2,7 +2,7 @@
 	// Берём данные о БД из shopdb.csv
 	$cont = file_get_contents('shopdb.csv');
 	if (!$cont) {
-		header('Location: ./setup.html');
+		header('Location: setup.html');
 	}
 	// $cont = explode('\n', $cont);
 	// $cont = explode(';', $cont[0]);

@@ -7,7 +7,7 @@ body {
 .adm {
 	z-index: 2;
 	width: 100%;
-	height: auto;
+	height: 3vh;
 	background-color: #007c91;
 	text-align: right;
 }

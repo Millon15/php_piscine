@@ -8,21 +8,7 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<?php include('top_menu.php'); ?>
-	<header>
-		<nav class="navbar" role="navigation">
-			<div class="logo">
-				<a href="index.php"><p>Farmer's Bazaar</p></a>
-			</div>
-			<div class="header-categories">
-				<?php
-					foreach($categories as $category) {
-						echo ' <a href="?cat=' . $category['id'] . '" class="list-group-item">' . $category['title'] . '</a>';
-					}
-				?>
-			</div>
-		</nav>
-	</header>
+	<?php include('other/header.php'); ?>
 
 	<?php if (!$_GET) {
 		echo '<div class="coverimg"><h1>Fresh products<br>from our farm<br>to your table!</h1></div>';
@@ -39,7 +25,7 @@
 							<div class="product-title"><h1><?php echo $product['title'];?></h1></div>
 							<div class="product-intro"><h4><?php echo $product['intro'];?></h4></div>
 							<div class="button">
-							<a href="bascket/bascket.php?item=<?php echo $product['id']; ?>"><button class="buy">BUY</button></a>
+							<a href="bascket.php?item=<?php echo $product['id']; ?>"><button class="buy">BUY</button></a>
 							</div>
 						</div>
 					</div>

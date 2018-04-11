@@ -17,3 +17,18 @@
 			<a href="login_form/create.php"><button class="headBtn">Create an account</button></a>
 	<?php } ?>
 </div>
+
+<header>
+	<nav class="navbar" role="navigation">
+		<div class="logo">
+			<a href="index.php"><p>Farmer's Bazaar</p></a>
+		</div>
+		<div class="header-categories">
+			<?php
+				foreach($categories as $category) {
+					echo ' <a href="?cat=' . $category['id'] . '" class="list-group-item">' . $category['title'] . '</a>';
+				}
+			?>
+		</div>
+	</nav>
+</header>

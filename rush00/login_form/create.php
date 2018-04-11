@@ -26,7 +26,7 @@
 			?>
 			<input type="text" name="login" value="" placeholder="Username" /><br />
 			<input type="password" name="passwd" value="" placeholder="Password" /><br />
-			<input type="text" name="addres" value="" placeholder="&Delta; addres" /><br />
+			<input type="text" name="address" value="" placeholder="&Delta; address" /><br />
 			<input type="text" name="email" value="" placeholder="&commat; email" /><br />
 			<input id="butt" type="submit" name="submit" value="OK" />
 		</form>

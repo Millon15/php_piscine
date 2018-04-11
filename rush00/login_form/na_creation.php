@@ -32,7 +32,7 @@
 
 	$login = $_POST["login"];
 	$password = hash('whirlpool', $_POST["passwd"]);
-	$addres = $_POST["addres"];
+	$address = $_POST["address"];
 	$email = $_POST["email"];
 	
 	foreach ($users as $val) {
@@ -43,8 +43,8 @@
 		}
 	}
 
-	$sql = "INSERT INTO users (username, password, isadmin, email, addres)
-		VALUES ('$login', '$password', false, '$email', '$addres')";
+	$sql = "INSERT INTO users (username, password, isadmin, email, address)
+		VALUES ('$login', '$password', false, '$email', '$address')";
 	if (!mysqli_query($conn, $sql)) {
 		mysqli_close($conn);
 		header('Location: create.php?loginErr=3');
