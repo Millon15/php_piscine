@@ -7,8 +7,8 @@
 			if ($val['id'] == $_GET['item']) {
 				$_SESSION['cart'][$key] = array();
 				$_SESSION['cart'][$key]['id'] = $_GET['item'];
-				var_dump($_SESSION['cart'][$key]['quantity']);
-				$_SESSION['cart'][$key]['quantity'] += 1;
+				if (!($_SESSION['cart'][$key]['quantity']))
+					$_SESSION['cart'][$key]['quantity'] = 1;
 				break ;
 			}
 		}
@@ -21,12 +21,12 @@
 		<link rel="stylesheet" href="css/cart.css">
 	</head>
 	<body>
-		<?php include('header.php'); ?>
+		<?php include('other/header.php'); ?>
 
 		<div class="cart_main">
 			<?php
 				if (count($_SESSION['cart']) == 0) {
-					echo '<h3>There are no items in your cart. Maybe you want to go to <a href="/rush00/index.php">Main Page of our site</a></h3>';
+					echo '<h2>There are no items in your cart. Maybe you want to go to <a href="/rush00/index.php">Main Page of our site</a></h2>';
 					exit();
 				}
 			?>
@@ -49,7 +49,13 @@
 					<tr>
 						<td><?php echo $title; ?></td>
 						<td><?php printf("%d", $price); ?></td>
-						<td><?php echo $quantity; ?></td>
+						<td id="quantity">
+							<form id='myform' method='POST' action='#'>
+								<input type='button' value='&#5121;' class='qtyminus' field='quantity' />
+								<input type='text' name='quantity' value='<?php echo $_SESSION['cart'][$key]['quantity']; ?>' class='qty' />
+								<input type='button' value='&#5123;' class='qtyplus' field='quantity' />
+							</form>
+						</td>
 						<td><?php echo $total_price; ?></td>
 					</tr>
 			<?php
@@ -70,5 +76,45 @@
 					echo '<p class="validate">Please <a href="login_form/login.php">login</a> to validate your cart.</p>';
 			?>
 		</div>
+		<footer>
+			<script src="other/jquery-3.3.1.min.js">
+				jQuery(document).ready(function(){
+					// This button will increment the value
+					$('.qtyplus').click(function(e){
+						// Stop acting like a button
+						e.preventDefault();
+						// Get the field name
+						fieldName = $(this).attr('field');
+						// Get its current value
+						var currentVal = parseInt($('input[name='+fieldName+']').val());
+						// If is not undefined
+						if (!isNaN(currentVal)) {
+							// Increment
+							$('input[name='+fieldName+']').val(currentVal + 1);
+						} else {
+							// Otherwise put a 0 there
+							$('input[name='+fieldName+']').val(0);
+						}
+					});
+					// This button will decrement the value till 0
+					$(".qtyminus").click(function(e) {
+						// Stop acting like a button
+						e.preventDefault();
+						// Get the field name
+						fieldName = $(this).attr('field');
+						// Get its current value
+						var currentVal = parseInt($('input[name='+fieldName+']').val());
+						// If it isn't undefined or its greater than 0
+						if (!isNaN(currentVal) && currentVal > 0) {
+							// Decrement one
+							$('input[name='+fieldName+']').val(currentVal - 1);
+						} else {
+							// Otherwise put a 0 there
+							$('input[name='+fieldName+']').val(0);
+						}
+					});
+				});
+			</script>
+		</footer>
 	</body>
 </html>

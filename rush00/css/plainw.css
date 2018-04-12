@@ -10,7 +10,7 @@ form {
 	width: 27%;
 	height: auto;
 	margin: 25vh auto;
-	padding-bottom: 5vh;
+	padding-bottom: 3vh;
 }
 
 form input {
@@ -25,14 +25,14 @@ form input {
 }
 
 ::placeholder {
-	font-size: 0.7vw;
+	font-size: 0.5vw;
 	color: #b0bec5;
 	font-style: italic;
 }
 
 .main_text {
 	margin: 0 auto;
-	font-size: 2vw;
+	font-size: 1.8vw;
 	font-style: bold;
 	letter-spacing: 2px;
 	color: white;
@@ -40,18 +40,16 @@ form input {
 
 .middle_text {
 	margin: 0 auto;
-	font-size: 0.75vw;
+	font-size: 0.7vw;
 	font-style: oblique;
 	color: white;
 }
-
 .middle_text a {
 	margin: 0 auto;
 	font-style: oblique;
 	color: yellow;
 	text-decoration: underline;
 }
-
 .middle_text a:hover {
 	font-style: normal;
 }

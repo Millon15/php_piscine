@@ -127,5 +127,9 @@
 
 	file_put_contents('shopdb.csv', "$username;$password;$dbname");
 	mysqli_close($conn);
+	session_start();
+	foreach ($_SESSION as $key => $value) {
+		$_SESSION[$key] = FALSE;
+	}
 	header('Location: index.php');
 ?>

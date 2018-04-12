@@ -6,7 +6,9 @@ table {
 	font-style: oblique;
 }
 
-table, th, td {
+table,
+th,
+td {
 	border: 1px solid black;
 	border-collapse: collapse;
 }
@@ -14,10 +16,33 @@ table, th, td {
 .cart_main {
 	margin-left: auto;
 	margin-right: auto;
-	max-width: 1280px; 
+	max-width: 1280px;
 	min-width: 840px;
 }
 
 .validate {
 	margin: 1vh auto;
+}
+
+#myform {
+	text-align: center;
+	padding: 5px;
+	border: 1px dotted #ccc;
+	margin: 2%;
+}
+
+.qty {
+	width: 40px;
+	height: 25px;
+	text-align: center;
+}
+
+input.qtyplus {
+	width: 25px;
+	height: 25px;
+}
+
+input.qtyminus {
+	width: 25px;
+	height: 25px;
 }
