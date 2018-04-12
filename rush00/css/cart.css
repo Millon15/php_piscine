@@ -41,8 +41,25 @@ input.qtyplus {
 	width: 25px;
 	height: 25px;
 }
-
 input.qtyminus {
 	width: 25px;
 	height: 25px;
+}
+
+.exit {
+	width: 120px;
+	height: auto;
+	text-align: center;
+}
+.exit input {
+	width: 100px;
+	height: 35px;
+	padding: 5px 10px;
+	margin-top: 15px;
+	background-color: mediumseagreen;
+	font-size: 0.7vw;
+	font-weight: 800;
+	text-align: center;
+	cursor: pointer;
+	color: white;
 }
