@@ -1,6 +1,6 @@
 <?php
 	if ($_POST["login"] == FALSE || $_POST["passwd"] == FALSE || $_POST["submit"] != "OK") {
-		header('Location: create.php?loginErr=1');
+		header("Location: create.php?loginErr=1&login=" . $_POST["login"] . "&address=" . $_POST["address"] . "&email=" . $_POST["email"]);
 		exit("ERROR\n");
 	}
 
@@ -38,7 +38,7 @@
 	foreach ($users as $val) {
 		if ($val['username'] == $login) {
 			mysqli_close($conn);
-			header('Location: create.php?loginErr=2');
+			header("Location: create.php?loginErr=2&login=" . $_POST["login"] . "&address=" . $_POST["address"] . "&email=" . $_POST["email"]);
 			exit("ERROR\n");
 		}
 	}
@@ -47,7 +47,7 @@
 		VALUES ('$login', '$password', false, '$email', '$address')";
 	if (!mysqli_query($conn, $sql)) {
 		mysqli_close($conn);
-		header('Location: create.php?loginErr=3');
+		header("Location: create.php?loginErr=3&login=" . $_POST["login"] . "&address=" . $_POST["address"] . "&email=" . $_POST["email"]);
 		die("Error ADDING USER: " . mysqli_error($conn));
 	}
 	mysqli_close($conn);

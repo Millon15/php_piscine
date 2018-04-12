@@ -26,6 +26,7 @@
 							<div class="product-intro"><h4><?php echo $product['intro'];?></h4></div>
 							<div class="button">
 							<a href="bascket.php?item=<?php echo $product['id']; ?>"><button class="buy">BUY</button></a>
+							<a href="bascket.php?additem=<?php echo $product['id']; ?>"><button class="buy">Add to cart</button></a>
 							</div>
 						</div>
 					</div>

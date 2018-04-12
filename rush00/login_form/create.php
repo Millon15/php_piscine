@@ -19,14 +19,14 @@
 				else if ($_GET['loginErr'] == 2)
 					echo "<div class=\"errvis\">User with same account login exists. Please change your login!</div>";
 				else if ($_GET['loginErr'] == 3)
-					echo "<div class=\"errvis\">ACHTUNG!</div>";
+					echo "<div class=\"errvis\">ACHTUNG!!!</div>";
 				else
 					echo "<div class=\"errhide\">Check the input fields!</div>";
 			?>
-			<input type="text" name="login" value="" placeholder="Username" /><br />
+			<input type="text" name="login" value="<?php echo $_GET['login']; ?>" placeholder="Username" /><br />
 			<input type="password" name="passwd" value="" placeholder="Password" /><br />
-			<input type="text" name="address" value="" placeholder="&Delta; address" /><br />
-			<input type="text" name="email" value="" placeholder="&commat; email" /><br />
+			<input type="text" name="address" value="<?php echo $_GET['address']; ?>" placeholder="&Delta; address" /><br />
+			<input type="email" name="email" value="<?php echo $_GET['email']; ?>" placeholder="&commat; email" /><br />
 			<input id="butt" type="submit" name="submit" value="OK" />
 		</form>
 	</body>

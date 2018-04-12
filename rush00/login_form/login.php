@@ -22,7 +22,7 @@
 				else
 					echo "<div class=\"errhide\">Check the input fields!</div>";
 			?>
-			<input type="text" name="login" value="" placeholder="Username" /><br />
+			<input type="text" name="login" value="<?php echo $_GET['login']; ?>" placeholder="Username" /><br />
 			<input type="password" name="passwd" value="" placeholder="Password" /><br />
 			<input id="butt" type="submit" name="submit" value="OK" />
 		</form>

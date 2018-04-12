@@ -36,9 +36,6 @@
 			die("Error creating order: " . mysqli_error($conn));
 		}
 	}
-	session_start();
-	foreach ($_SESSION as $key => $value) {
-		$_SESSION[$key] = FALSE;
-	}
+	$_SESSION['cart'] = FALSE;
 	header('Location: index.php');
 ?>
