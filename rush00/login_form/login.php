@@ -14,7 +14,8 @@
 		<form action="lg_in.php" method="post">
 			<div id="top-bar">Logging in<a href="../index.php" class="close">&times;</a></div>
 			<div class="main_text">Sign in!</div>
-			<div class="middle_text">...or you can <a href="change_pass.php">change password to an existing account</a></div>
+			<div class="middle_text">...or you can <a href="create.php">create an account</a><br />
+			or <a href="change_pass.php">change password to an existing account</a></div>
 			<?php
 				if ($_GET['loginErr'] == 1)
 					echo "<div class=\"errvis\">Check the input fields!</div>";

@@ -41,9 +41,6 @@ body {
 }
 
 .h_span {
-	height: 100%;
-	max-height: 34px;
-	min-height: 2.55vh;
 	border: none;
 	display: inline-block;
 	vertical-align: middle;

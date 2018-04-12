@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<?php include('other/header.php'); ?>
+	<?php include('header.php'); ?>
 
 	<?php if (!$_GET) {
 		echo '<div class="coverimg"><h1>Fresh products<br>from our farm<br>to your table!</h1></div>';

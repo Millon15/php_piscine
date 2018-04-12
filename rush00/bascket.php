@@ -21,7 +21,7 @@
 		<link rel="stylesheet" href="css/cart.css">
 	</head>
 	<body>
-		<?php include('other/header.php'); ?>
+		<?php include('header.php'); ?>
 
 		<div class="cart_main">
 			<?php
