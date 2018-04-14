@@ -1,0 +1,74 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Ballon</title>
+	<style>
+		#balloon {
+			width: 200px;
+			height: 200px;
+			border-radius: 100%;
+			background-color: red;
+			margin: auto;
+			margin-top: 500px;
+		}
+	</style>
+	<script>
+		function balloonClick() {
+			var ballon = document.getElementById('balloon'),
+				curWidth = balloon.offsetWidth,
+				colors = ['red', 'green', 'blue'];
+			if (typeof balloonClick.c == 'undefied') {
+				balloonClick.c = 0;
+			}
+
+			if (++balloonClick.c < 3) {
+				ballon.style.backgroundColor = colors[balloonClick.c];
+			}
+			else {
+				balloonClick.c = 0;
+				ballon.style.backgroundColor = colors[balloonClick.c];
+			}
+
+			if (curWidth < 420) {
+				ballon.style.width = curWidth + 10;
+				ballon.style.height = curWidth + 10;
+			}
+			else {
+				ballon.style.width = "200px";
+				ballon.style.height = "200px";
+			}
+		}
+
+		function balloonHover() {
+			var ballon = document.getElementById('balloon'),
+				curWidth = balloon.offsetWidth,
+				colors = ['red', 'green', 'blue'];
+			if (typeof balloonHover.c == 'undefied') {
+				balloonHover.c = 3;
+			}
+
+			if (--balloonHover.c >= 0) {
+				ballon.style.backgroundColor = colors[balloonHover.c];
+			}
+			else {
+				balloonHover.c = 2;
+				ballon.style.backgroundColor = colors[balloonHover.c];
+			}
+
+			if (curWidth > 200) {
+				ballon.style.width = curWidth - 5;
+				ballon.style.height = curWidth - 5;
+			}
+			else {
+				ballon.style.width = "200px";
+				ballon.style.height = "200px";
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="balloon" onclick="balloonClick()" onmouseover="balloonHover()"></div>
+</body>
+</html>
