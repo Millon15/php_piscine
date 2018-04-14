@@ -62,7 +62,7 @@
 					alert("It’s over 9000!");
 					console.log("It’s over 9000!");
 				}
-				else if (parseInt(l) < 0 || parseInt(r) < 0) {
+				else if (parseInt(l) < 0 || parseInt(r) < 0 || isNaN(parseInt(l)) || isNaN(parseInt(r))) {
 					alert("Error :(");
 					console.log("Error :(");
 				}
@@ -71,7 +71,6 @@
 					alert(res);
 					console.log(res);
 				}
-				
 			}
 		</script>
 	</head>
