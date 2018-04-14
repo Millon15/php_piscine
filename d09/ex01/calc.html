@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Simple Calculator</title>
+
+		<style>
+			body {
+				background-color: #ffd149;
+			}
+
+			form {
+				font-family: Georgia, 'Times New Roman', Times, serif;
+				background-color: #039be5;
+				box-shadow: 0px 10px 30px -8px rgba(0,0,0,0.8);
+				text-align: center;
+				width: 27%;
+				height: 30vh;
+				margin: 25vh auto;
+			}
+
+			form input {
+				font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+				font-size: 1vw;
+				text-align: left;
+				box-shadow: inset 0px 0px 25px -5px rgba(0,0,0,0.55);
+				cursor: grabbing;
+				width: 75%;
+				height: 12%;
+				margin: 0.8vh auto;
+			}
+
+			::placeholder {
+				font-size: 0.7vw;
+				color: #b0bec5;
+				font-style: italic;
+			}
+
+			#butt {
+				cursor: pointer;
+				box-shadow: 0px 1px 0px -2px rgba(0,0,0,1);
+				text-align: center;
+				width: 30%;
+			}
+
+			#top-bar {
+				margin-bottom: 5vh;
+				width: 100%;
+				height: 6%;
+				background-color: #006db3;
+			} 
+		</style>
+
+		<script>
+			window.setInterval(function useMe(){alert("Please, use me...")}, 30000);
+
+			function makeOp() {
+				var x = document.getElementById("oop").value,
+				l = document.getElementById("leftMem").value,
+				r = document.getElementById("rightMem").value;
+
+				if ((x == '/' || x == '%') && parseInt(r) == 0) {
+					alert("It’s over 9000!");
+					console.log("It’s over 9000!");
+				}
+				else if (parseInt(l) < 0 || parseInt(r) < 0) {
+					alert("Error :(");
+					console.log("Error :(");
+				}
+				else {
+					var res = eval(l + x + r);
+					alert(res);
+					console.log(res);
+				}
+				
+			}
+		</script>
+	</head>
+
+	<body>
+		<form>
+			<div id="top-bar"></div>
+			<input type="text" name="login" value="" id="leftMem" placeholder="Left member" /><br />
+			<select name="operators" id="oop">
+				<option disabled>Choose an operation</option>
+				<option selected value="+">+</option>
+				<option value="-">-</option>
+				<option value="*">*</option>
+				<option value="/">/</option>
+				<option value="%">%</option>
+			</select><br />
+			<input type="text" name="passwd" value="" id="rightMem" placeholder="Right member" /><br />
+			<input id="butt" type="submit" name="submit" value="Try me!" onclick="makeOp()" />
+		</form>
+	</body>
+</html>
