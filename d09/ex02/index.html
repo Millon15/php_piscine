@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>TO DO list</title>
+
+		<style>
+			body {
+				background-color: #ffd149;
+			}
+
+			#ft_list {
+				position: relative;
+				font-family: Georgia, 'Times New Roman', Times, serif;
+				background-color: #039be5;
+				box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+				text-align: center;
+				width: 45%;
+				height: 90vh;
+				margin: 5vh auto;
+				border-radius: 2px;
+			}
+			/* #ft_list input {
+				font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+				font-size: 1vw;
+				text-align: left;
+				cursor: grabbing;
+				width: 75%;
+				height: 12%;
+				margin: 0.8vh auto;
+				border-bottom: 100% solid red;
+			} */
+			/* #ft_list input:hover {
+			} */
+
+			#new {
+				position: absolute;
+				bottom: 4%;
+				right: 5%;
+				padding: 10px 28px;
+				padding-bottom: 15px;
+				font-size: 55px;
+				background-color: #ffd149;
+				color: white;
+				cursor: pointer;
+				text-align: center;
+				width: auto;
+				border-radius: 100%;
+				border: none;
+			}
+			#new:hover {
+				background-color: #ffa000;
+			}
+
+			/* #new:focus {
+				background-color: #ffa000;
+				bottom: 3.8%;
+			} */
+
+			#top-bar {
+				margin-bottom: 5vh;
+				width: 100%;
+				height: 4%;
+				background-color: #006db3;
+			} 
+		</style>
+
+		<script src="todo.js"></script>
+	</head>
+
+	<body>
+		<div id="ft_list">
+			<div id="top-bar"></div>
+			<button name="new" id="new" onclick="document.getelementById('new').style.bottom = 3.8 + '%'">+</button>
+		</div>
+	</body>
+</html>
