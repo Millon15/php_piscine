@@ -18,7 +18,7 @@
 				background-color: #006db3;
 			}
 
-			#ft_list {
+			#container {
 				position: relative;
 				font-family: Georgia, 'Times New Roman', Times, serif;
 				background-color: #039be5;
@@ -31,7 +31,7 @@
 				overflow: auto;
 			}
 
-			#ft_list .to_do {
+			#container .to_do {
 				font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 				font-size: 25px;
 				color: #00202A;
@@ -42,7 +42,7 @@
 				border-radius: 2px;
 				word-wrap: break-word;
 			}
-			#ft_list .to_do:hover {
+			#container .to_do:hover {
 				cursor: pointer;
 				background-color: #0288d1;
 				box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
@@ -76,11 +76,9 @@
 	</head>
 
 	<body>
-		<div id="ft_list">
+		<div id="container">
 			<div id="top-bar">To do List by vbrazas</div>
-			<div class="to_do">ijirsjijiajgpadad</div>
-			<div class="to_do">ijirsjijiajgpadad</div>
-			<div class="to_do">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaassssssssssssssssssssssssssssssssssssssssss</div>
+			<div id="ft_list"></div>
 			<button name="new" type="submit" id="new_todo">+</button>
 		</div>
 	</body>
