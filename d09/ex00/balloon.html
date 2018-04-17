@@ -18,7 +18,7 @@
 	<script>
 		function balloonClick() {
 			var ballon = document.getElementById('balloon'),
-				curWidth = balloon.offsetWidth,
+				curRad = balloon.offsetWidth;
 				colors = ['red', 'green', 'blue'];
 			if (typeof balloonClick.c == 'undefied') {
 				balloonClick.c = 0;
@@ -32,9 +32,9 @@
 				ballon.style.backgroundColor = colors[balloonClick.c];
 			}
 
-			if (curWidth < 420) {
-				ballon.style.width = curWidth + 10;
-				ballon.style.height = curWidth + 10;
+			if (curRad < 420) {
+				ballon.style.width = String(curRad + 10) + 'px';
+				ballon.style.height = String(curRad + 10) + 'px';
 			}
 			else {
 				ballon.style.width = "200px";
@@ -44,7 +44,7 @@
 
 		function balloonHover() {
 			var ballon = document.getElementById('balloon'),
-				curWidth = balloon.offsetWidth,
+				curRad = balloon.offsetWidth,
 				colors = ['red', 'green', 'blue'];
 			if (typeof balloonHover.c == 'undefied') {
 				balloonHover.c = 3;
@@ -58,13 +58,9 @@
 				ballon.style.backgroundColor = colors[balloonHover.c];
 			}
 
-			if (curWidth > 200) {
-				ballon.style.width = curWidth - 5;
-				ballon.style.height = curWidth - 5;
-			}
-			else {
-				ballon.style.width = "200px";
-				ballon.style.height = "200px";
+			if (curRad > 200) {
+				ballon.style.width = String(curRad - 5) + 'px';
+				ballon.style.height = String(curRad - 5) + 'px';
 			}
 		}
 	</script>
