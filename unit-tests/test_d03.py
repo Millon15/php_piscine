@@ -8,7 +8,7 @@ from os.path import expanduser
 from os.path import isfile
 from os.path import isdir
 
-day_location = "http://localhost:8100/d03_corr"
+day_location = "http://localhost:8100/GAVNO"
 
 # START OF TESTS  START OF TESTS  START OF TESTS  START OF TESTS
 
