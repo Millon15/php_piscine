@@ -16,37 +16,55 @@
 		}
 	</style>
 
-		<script src="https://code.jquery.com/jquery-3.3.1.min.js"
-		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-		crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	crossorigin="anonymous"></script>
 
 	<script>
+		var i;
+		var j;
+		var colors = ['red', 'green', 'blue'];
+
 		$("document").ready(function() {
-			// var ballon = $('#baloon');
-			// var curRad = balloon.offsetWidth;
-			// var colors = ['red', 'green', 'blue'];
+			$('#balloon').click(function() {
+				if (typeof i == 'undefined') {
+					i = 0;
+				}
+				if (++i < 3) {
+					$('#balloon').css({'background-color': colors[i]});
+				}
+				else {
+					i = 0;
+					$('#balloon').css({'background-color': colors[i]});
+				}
 
-			$("#balloon").css({'background-color': 'black'});
-		// 	if (typeof balloonClick.c == 'undefied') {
-		// 		balloonClick.c = 0;
-		// 	}
+				if ($('#balloon').width() < 420) {
+					$('#balloon').css({'width': $('#balloon').width() + 10});
+					$('#balloon').css({'height': $('#balloon').height() + 10});
+				}
+				else {
+					$('#balloon').css({'width': '200px'});
+					$('#balloon').css({'height': '200px'});
+				}
+			});
 
-		// 	if (++balloonClick.c < 3) {
-		// 		ballon.style.backgroundColor = colors[balloonClick.c];
-		// 	}
-		// 	else {
-		// 		balloonClick.c = 0;
-		// 		ballon.style.backgroundColor = colors[balloonClick.c];
-		// 	}
+			$('#balloon').hover(function() {
+				if (typeof j == 'undefined') {
+					j = 3;
+				}
+				if (--j >= 0) {
+					$('#balloon').css({'background-color': colors[j]});
+				}
+				else {
+					j = 2;
+					$('#balloon').css({'background-color': colors[j]});
+				}
 
-		// 	if (curRad < 420) {
-		// 		ballon.style.width = String(curRad + 10) + 'px';
-		// 		ballon.style.height = String(curRad + 10) + 'px';
-		// 	}
-		// 	else {
-		// 		ballon.style.width = "200px";
-		// 		ballon.style.height = "200px";
-		// 	}
+				if ($('#balloon').width() > 200) {
+					$('#balloon').css({'width': $('#balloon').width() - 5});
+					$('#balloon').css({'height': $('#balloon').height() - 5});
+				}
+			});
 		});
 
 		// function balloonHover() {}
