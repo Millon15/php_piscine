@@ -55,27 +55,29 @@
 		crossorigin="anonymous"></script>
 
 		<script>
-			window.setInterval(function() {alert("Please, use me...")}, 30000);
+			setInterval(function() {alert("Please, use me...")}, 30000);
 
-			function makeOp() {
-				var $x = $("#oop").val(),
-				$l = $("#leftMem").val(),
-				$r = $("#rightMem").val();
+			$("document").ready(function() {
+				$('#butt').click(function() {
+						var $x = $("#oop").val(),
+						$l = $("#leftMem").val(),
+						$r = $("#rightMem").val();
 
-				if (($x == '/' || $x == '%') && parseInt($r) == 0) {
-					alert("It’s over 9000!");
-					console.log("It’s over 9000!");
-				}
-				else if (parseInt($l) < 0 || parseInt($r) < 0 || isNaN(parseInt($l)) || isNaN(parseInt($r))) {
-					alert("Error :(");
-					console.log("Error :(");
-				}
-				else {
-					var res = eval($l + $x + $r);
-					alert(res);
-					console.log(res);
-				}
-			}
+						if (isNaN($l) || isNaN($r) || parseInt($l) < 0 || parseInt($r) < 0) {
+							alert("Error :(");
+							console.log("Error :(");
+						}
+						else if (($x == '/' || $x == '%') && parseInt($r) == 0) {
+							alert("It's over 9000!");
+							console.log("It's over 9000!");
+						}
+						else {
+							var res = eval($l + $x + $r);
+							alert(res);
+							console.log(res);
+						}
+					});
+				});
 		</script>
 	</head>
 
@@ -92,7 +94,7 @@
 				<option value="%">%</option>
 			</select><br />
 			<input type="text" name="passwd" value="" id="rightMem" placeholder="Right member" /><br />
-			<input id="butt" type="submit" name="submit" value="Try me!" onclick="makeOp()" />
+			<input id="butt" type="submit" name="submit" value="Try me!" />
 		</form>
 	</body>
 </html>

@@ -58,13 +58,13 @@
 				l = document.getElementById("leftMem").value,
 				r = document.getElementById("rightMem").value;
 
-				if ((x == '/' || x == '%') && parseInt(r) == 0) {
-					alert("It’s over 9000!");
-					console.log("It’s over 9000!");
-				}
-				else if (parseInt(l) < 0 || parseInt(r) < 0 || isNaN(parseInt(l)) || isNaN(parseInt(r))) {
+				if (isNaN(l) || isNaN(r) || parseInt(l) < 0 || parseInt(r) < 0) {
 					alert("Error :(");
 					console.log("Error :(");
+				}
+				else if ((x == '/' || x == '%') && parseInt(r) == 0) {
+					alert("It's over 9000!");
+					console.log("It's over 9000!");
 				}
 				else {
 					var res = eval(l + x + r);
