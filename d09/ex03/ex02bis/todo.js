@@ -33,12 +33,12 @@ $('document').ready(function() {
 	}
 
 	// adding of the new to_do
-	document.getElementById('new_todo').onclick = function() {
+	$('#new_todo').click(function() {
 		var todo_str = prompt('Type some task!', '');
 
 		$('#ft_list').prepend('<div class="to_do" onclick="delete_todo(this)">' + todo_str + '</div>');
 
 		// Save changes to coockie
 		setCookie(getRndInteger(0, 100000), encodeURIComponent(todo_str), 2);
-	}
+	});
 });

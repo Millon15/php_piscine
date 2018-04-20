@@ -1,0 +1,89 @@
+`<!DOCTYPE html>
+<html>
+	<head>
+		<title>TO DO list</title>
+
+		<style>
+			body {
+				background-color: #ffd149;
+			}
+
+			#top-bar {
+				margin-bottom: 2vh;
+				color: white;
+				padding-top: 1.5vh;
+				font-size: 1vw;
+				width: 100%;
+				height: 4%;
+				background-color: #006db3;
+			}
+
+			#container {
+				position: relative;
+				font-family: Georgia, 'Times New Roman', Times, serif;
+				background-color: #039be5;
+				box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+				text-align: center;
+				width: 45%;
+				height: 90vh;
+				margin: 5vh auto;
+				border-radius: 2px;
+				overflow: auto;
+			}
+
+			#container .to_do {
+				font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+				font-size: 25px;
+				color: #00202A;
+				width: 85%;
+				height: auto;
+				padding: 25px 5px;
+				margin: 0 auto;
+				border-radius: 2px;
+				word-wrap: break-word;
+			}
+			#container .to_do:hover {
+				cursor: pointer;
+				background-color: #0288d1;
+				box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+			}
+
+			#new_todo {
+				position: absolute;
+				bottom: 4%;
+				right: 5%;
+				padding: 10px 28px;
+				padding-bottom: 15px;
+				font-size: 55px;
+				background-color: #ffd149;
+				color: white;
+				cursor: pointer;
+				text-align: center;
+				width: auto;
+				border-radius: 100%;
+				border: none;
+			}
+			#new_todo:hover {
+				background-color: #ffa000;
+			}
+			#new_todo:active {
+				background-color: #c67100;
+				bottom: 3.9%;
+			}
+		</style>
+
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+		crossorigin="anonymous"></script>
+
+		<script src="todo.js"></script>
+	</head>
+
+	<body>
+		<div id="container">
+			<div id="top-bar">To do List by vbrazas</div>
+			<div id="ft_list"></div>
+			<button name="new" type="submit" id="new_todo">+</button>
+		</div>
+	</body>
+</html>
