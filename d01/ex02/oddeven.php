@@ -4,9 +4,10 @@
 	while ($line = fgets(STDIN))
 	{
 		$line = substr($line, 0, -1);
-		if (strlen($line) > 0 && is_numeric($line))
+		$isoddeven = substr($line, -2);
+		if (is_numeric($line))
 		{
-			if (($line % 2) == 0)
+			if (($isoddeven % 2) == 0)
 				echo "The number $line is even\n";
 			else
 				echo "The number $line is odd\n";

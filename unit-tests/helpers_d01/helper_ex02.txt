@@ -1,0 +1,14 @@
+42
+0
+-0
+1
+2
+100000000000000000000000000000000000000000000
+-100
+
+toto
+99cosmos
+"Entrez un nombre: "
+"Le chiffre 42 est Pair"
+"Le chiffre 1 est Impair"
+"'99cosmos' n'est pas un chiffre"

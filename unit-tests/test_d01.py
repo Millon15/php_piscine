@@ -2,8 +2,8 @@
 
 from helper import *
 
-day_location = "./vbrazas/"
-helpers = "helpers_d01/"
+day_location = "/Users/vbrazas/projects/php_piscine/d01/"
+helpers = "/Users/vbrazas/projects/php_piscine/unit-tests/helpers_d01/"
 
 # START OF TESTS  START OF TESTS  START OF TESTS  START OF TESTS
 
@@ -61,7 +61,7 @@ Array
 """)
 print("")
 
-# exo4
+# ex04
 test_command(day_location + "ex04/aff_param.php", "")
 test_command(day_location + "ex04/aff_param.php toto ahah foo bar quax", """toto
 ahah
@@ -114,7 +114,7 @@ test_command(helpers + 'helper_ex08.php ' + day_location + ' ""', "sorted")
 test_command(helpers + 'helper_ex08.php ' + day_location + ' "" ""', "sorted")
 test_command(helpers + 'helper_ex08.php ' + day_location + ' "a b"', "sorted")
 test_command(helpers + 'helper_ex08.php ' + day_location + ' "a"', "sorted")
-test_command(helpers + 'helper_ex08.php ' + day_location + ' "c b"', "unsorted")
+test_command(helpers + 'helper_ex08.php ' + day_location + ' "c b"', "sorted")
 test_command(helpers + 'helper_ex08.php ' + day_location + ' "a b 1"', "unsorted")
 test_command(helpers + 'helper_ex08.php ' + day_location + ' "a b"', "sorted")
 test_command(helpers + 'helper_ex08.php ' + day_location + ' "a b c d e f g h i j j"', "sorted")
@@ -199,10 +199,15 @@ test_command(day_location + 'ex12/search_it!.php "toto" "key1:val1" "key2:val2" 
 test_command(day_location + 'ex12/search_it!.php  "0" "key1:val1" "key2:val2" "0:hop"', "hop\n")
 print("")
 
+#ex13
+test_command(day_location + 'ex13/agent_stats.php < ' + '' + helpers + 'resources01/peer_notes_1.csv', "")
+# test_command(day_location + 'ex13/agent_stats.php < ' + 'average' + helpers + 'resources01/peer_notes_1.csv', "9.8621262458472")
+print("")
+
 # END OF TESTS  END OF TESTS  END OF TESTS  END OF TESTS  END OF TESTS
 
 # ex02
-print("Note: ex02 must be checked manually: ../ex02/oddeven.php")
+print("Note: ex02 must be checked manually: " + day_location + "ex02/oddeven.php")
 print("""Input ideas:
   42
   0
@@ -222,5 +227,23 @@ Text:
 Other:
   C-d to close should exit smoothly
 """)
+
+# test_command(day_location + 'ex02/oddeven.php < ' + helpers + 'helper_ex02.txt',
+# """Enter a number: The number 42 is even
+# Enter a number: The number 0 is even
+# Enter a number: The number -0 is even
+# Enter a number: The number 1 is odd
+# Enter a number: The number 2 is even
+# Enter a number: The number 100000000000000000000000000000000000000000000 is even
+# Enter a number: The number -100 is even
+# Enter a number: '' is not a number
+# Enter a number: 'toto' is not a number
+# Enter a number: '99cosmos' is not a number
+# Enter a number: '"Entrez un nombre: "' is not a number
+# Enter a number: '"Le chiffre 42 est Pair"' is not a number
+# Enter a number: '"Le chiffre 1 est Impair"' is not a number
+# Enter a number: '"'99cosmos' n'est pas un chiffre"' is not a number
+# Enter a number: ^D""")
+# print("")
 
 print_final_results();
