@@ -1,0 +1,26 @@
+# ignore IDE/hidden/OS cache files
+_*
+.*
+*~
+nbproject
+nb-configuration.xml
+Session.vim
+*.tmproj
+*.tmproject
+tmtags
+Thumbs.db
+Desktop.ini
+
+# keep some hiddens
+!resouces
+!.htaccess
+!/.travis.yml
+
+# my addings
+resources*
+moul_git
+helper.pyc
+test
+log*
+dump*
+diff*
