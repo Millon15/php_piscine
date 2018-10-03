@@ -225,8 +225,7 @@ Text:
   "Le chiffre 1 est Impair"
   "'99cosmos' n'est pas un chiffre"
 Other:
-  C-d to close should exit smoothly
-""")
+  C-d to close should exit smoothly""")
 
 # test_command(day_location + 'ex02/oddeven.php < ' + helpers + 'helper_ex02.txt',
 # """Enter a number: The number 42 is even

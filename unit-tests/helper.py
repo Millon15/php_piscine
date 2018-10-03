@@ -5,6 +5,14 @@ from subprocess import Popen, PIPE
 # for expanding ~ in paths
 from os.path import expanduser
 
+def get_file_contents(filename):
+	to_open = expanduser(filename)
+	try:
+		return open(to_open, 'r').read()
+	except:
+		print("Tried to open a file but failed: " + str(to_open))
+		exit(1)
+
 def run_command(cmd):
 	"""
 	Execute the external command and get its exitcode, stdout and stderr.
@@ -19,27 +27,23 @@ def run_command(cmd):
 # count of things that didn't go so well
 failed_count = 0
 
-def get_file_contents(filename):
-	to_open = expanduser(filename)
-	try:
-		return open(to_open, 'r').read()
-	except:
-		print("Tried to open a file but failed: " + str(to_open))
-		exit(1)
-
-def test_command(command, expected, check_std_err = 1):
-	global failed_count
+def execcom(command):
 	try:
 		exitcode, out, err = run_command(command)
 	except:
-		print("""The program couldn't execute the command.
-Here's the command for debugging purposes:
-""")
+		print("The program couldn't execute the command.\n" +
+		"Here's the command for debugging purposes: ")
 		print(str(command))
 		exit(1)
+	return exitcode, out, err
+
+def test_command(command, expected, check_std_err = 1):
+	global failed_count
+
+	exitcode, out, err = execcom(command)
 	if (expected == out):
-		if (len(command) > 100):
-			command = command[:100] + "...";
+		# if (len(command) > 100):
+		# 	command = command[:100] + "...";
 		print("passed: " + str(command))
 	else:
 		print("FAILED: " + str(command))

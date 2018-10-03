@@ -1,16 +1,12 @@
 #!/usr/bin/php
 <?php
-	if ($argc != 3) {
+	if ($argc != 3
+	|| file_exists($argv[1]) === false
+	|| ($file = file_get_contents($argv[1])) === false) {
 		exit (1);
-	}
-	if (file_exists($argv[1]) === FALSE) {
-		exit (2);
 	}
 
 	$end = array();
-	if (($file = file_get_contents($argv[1])) === FALSE) {
-		exit (3);
-	}
 	$arr = explode("\n", $file);
 
 	$i = 0;
