@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link type="text/css" rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<div class="form ms-small">
+		<div class="top-bar">
+			<a href="index.html"><span class="">&#11013;</span></a>
+			Change password
+		</div>
+		<p class="main_text">Change password to your account!</p>
+		<p class="middle_text"></p>
+		<p class="error"></p>
+		<form action="modif.php" method="POST">
+			<input class="ms-small ms-hover-modal" type="login" name="login" placeholder="Login" required /><br />
+			<input class="ms-small ms-hover-modal" type="password" name="oldpw" value="" placeholder="Old password" required /><br />
+			<input class="ms-small ms-hover-modal" type="password" name="newpw" value="" placeholder="New password" required /><br />
+			<input class="ms-small ms-hover-modal" type="submit" name="submit" value="OK" /><br />
+		</form>
+	</div>
+</body>
+
+</html>

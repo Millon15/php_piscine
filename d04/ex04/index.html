@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link type="text/css" rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<div class="form ms-small">
+		<div class="top-bar">Login</div>
+		<p class="main_text">Login to your account!</p>
+		<p class="middle_text"></p>
+		<p class="error"></p>
+		<form action="login.php" method="POST">
+			<input class="ms-small ms-hover-modal" type="login" name="login" placeholder="Enter your login" required /><br />
+			<input class="ms-small ms-hover-modal" type="password" name="passwd" value="" placeholder="and password" required /><br />
+			<input class="ms-small ms-hover-modal" type="submit" name="submit" value="OK" /><br />
+		</form>
+		<div class="bottom-bar">
+			<h3>What you gonna do?</h3>
+			<a href="create.html"><button>Create an account</button></a>
+			<a href="chat.php"><button>Go to the Chat!</button></a>
+			<a href="modif.html"><button>Change password</button></a>
+		</div>
+	</div>
+</body>
+
+</html>

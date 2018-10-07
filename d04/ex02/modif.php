@@ -14,7 +14,7 @@
 	foreach ($to_put as $key => $val) {
 		if ($val['login'] == $_POST["login"] && $val['passwd'] == hash('whirlpool', $_POST["oldpw"])) {
 			$to_put[$key]['passwd'] = hash('whirlpool', $_POST["newpw"]);
-			file_put_contents($folder."/".$name, serialize($to_put));
+			file_put_contents($folder."/".$name, serialize($to_put), FILE_APPEND);
 			exit("OK\n");
 		}
 	}

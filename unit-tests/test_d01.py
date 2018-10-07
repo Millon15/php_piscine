@@ -8,11 +8,11 @@ helpers = "/Users/vbrazas/projects/php_piscine/unit-tests/helpers_d01/"
 # START OF TESTS  START OF TESTS  START OF TESTS  START OF TESTS
 
 # ex00
-test_command(day_location + "ex00/hw.php", """Hello World
-""")
+test_command(day_location + "ex00/hw.php", "Hello World\n")
 print("")
 
 # ex01
+# test_command(helpers + "helper_ex01.zsh '" + day_location + "ex01/mlx.php'", "")
 test_command(day_location + "ex01/mlx.php", "X" * 1000 + "\n")
 print("")
 

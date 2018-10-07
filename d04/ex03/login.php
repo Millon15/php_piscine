@@ -3,7 +3,7 @@
 		exit("ERROR\n");
 	}
 
-	include('auth.php');
+	require_once('auth.php');
 
 	if (auth($_GET['login'], $_GET['passwd']) === TRUE) {
 		session_start();
