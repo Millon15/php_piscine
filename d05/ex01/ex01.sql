@@ -1,1 +1,1 @@
-CREATE TABLE db_vbrazas.ft_table (`id` INT PRIMARY KEY UNIQUE NOT NULL AUTO_INCREMENT, `login` VARCHAR(8) NOT NULL DEFAULT 'toto', `group` ENUM('staff', 'student', 'other') NOT NULL, `creation_date` DATE NOT NULL);
+CREATE TABLE db_vbrazas.ft_table (`id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT, `login` VARCHAR(8) NOT NULL DEFAULT 'toto', `group` ENUM('staff', 'student', 'other') NOT NULL, `creation_date` DATE NOT NULL);
