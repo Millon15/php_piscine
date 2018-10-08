@@ -24,7 +24,7 @@ print( $cyan    . PHP_EOL );
 print( $magenta . PHP_EOL );
 print( $white   . PHP_EOL );
 
-Color::$verbose = False;
+Color::$verbose = false;
 
 // $black = $white->sub( $red )->sub( $green )->sub( $blue );
 // print( 'Black: ' . $black . PHP_EOL );

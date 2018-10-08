@@ -5,34 +5,34 @@
 	{
 		$i = ord($char);
 		if ($i >= 97 && $i <= 122)
-			return TRUE;
+			return true;
 		else
-			return FALSE;
+			return false;
 	}
 
 	function	is_num($char)
 	{
 		$i = ord($char);
 		if ($i >= 48 && $i <= 57)
-			return TRUE;
+			return true;
 		else
-			return FALSE;
+			return false;
 	}
 
 	function	is_letnum($char)
 	{
 		if (is_letter($char) || is_num($char))
-			return TRUE;
+			return true;
 		else
-			return FALSE;
+			return false;
 	}
 
 	function	is_notletnum($char)
 	{
 		if (!is_letter($char) && !is_num($char))
-			return TRUE;
+			return true;
 		else
-			return FALSE;
+			return false;
 	}
 
 	function	ascii_sort($a, $b)

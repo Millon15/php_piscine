@@ -35,7 +35,7 @@ day_location = "http://localhost:8100/php_piscine/d03"
 # print("cat " + day_location + " ex00/bitnami-apps-vhosts.conf")
 # print("cat ~/mamp/apache2/conf/bitnami/bitnami-apps-vhosts.conf")
 
-# START OF TRUE TESTS  START OF TRUE TESTS  START OF TRUE TESTS  START OF TRUE TESTS
+# START OF true TESTS  START OF true TESTS  START OF true TESTS  START OF true TESTS
 
 # ex01
 print("\nTests for ex01:")

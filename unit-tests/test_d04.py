@@ -36,7 +36,7 @@ location_of_private = "/Users/vbrazas/http/MyWebSite/php_piscine/d04/private"
 # print("cat " + day_on_server_location + " ex00/bitnami-apps-vhosts.conf")
 # print("cat ~/mamp/apache2/conf/bitnami/bitnami-apps-vhosts.conf")
 
-# START OF TRUE TESTS  START OF TRUE TESTS  START OF TRUE TESTS  START OF TRUE TESTS
+# START OF true TESTS  START OF true TESTS  START OF true TESTS  START OF true TESTS
 
 # ex00
 print("\nTests for ex00:")

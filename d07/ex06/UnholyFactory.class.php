@@ -19,10 +19,10 @@
 		}
 
 		public function fabricate($fighterToFabricate) {
-			$to_fabricate = FALSE;
+			$to_fabricate = false;
 			foreach ($this->fighters as $key => $val) {
 				if ($fighterToFabricate == $key) {
-					$to_fabricate = TRUE;
+					$to_fabricate = true;
 					break ;
 				}
 			}

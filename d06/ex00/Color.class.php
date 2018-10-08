@@ -4,7 +4,7 @@
 		public $green;
 		public $blue;
 
-		public static $verbose = FALSE;
+		public static $verbose = false;
 
 		public function __constructor($arr)
 		{

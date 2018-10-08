@@ -1,6 +1,3 @@
 [submodule "rush00"]
 	path = rush00
 	url = https://github.com/Millon15/php_rush00.git
-[submodule "rush00_old"]
-	path = rush00_old
-	url = https://github.com/Millon15/eshop.git

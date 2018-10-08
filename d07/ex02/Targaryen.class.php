@@ -2,7 +2,7 @@
 	class Targaryen
 	{
 		public function getBurned() {
-			if ($this->resistsFire() == FALSE) {
+			if ($this->resistsFire() == false) {
 				return "burns alive";
 			}
 			else {
@@ -11,7 +11,7 @@
 		}
 
 		public function resistsFire() {
-			return FALSE;
+			return false;
 		}
 	}
 ?>

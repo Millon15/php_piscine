@@ -5,15 +5,15 @@
 		$name = "passwd";
 
 		$file = file_get_contents($folder."/".$name);
-		if ($file === FALSE) {
-			return FALSE;
+		if ($file === false) {
+			return false;
 		}
 		$file = unserialize($file);
 		foreach ($file as $val) {
 			if ($val['login'] == $login && $val['passwd'] == hash('whirlpool', $passwd)) {
-				return TRUE;
+				return true;
 			}
 		}
-		return FALSE;
+		return false;
 	}
 ?>

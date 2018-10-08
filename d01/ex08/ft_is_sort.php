@@ -6,8 +6,8 @@
 		sort($ar_buf0);
 		rsort($ar_buf1);
 		if ($ar_buf0 === $array || $ar_buf1 === $array)
-			return TRUE;
+			return true;
 		else
-			return FALSE;
+			return false;
 	}
 ?>

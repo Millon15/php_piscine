@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	if ($_GET["submit"] == "OK" && $_GET["login"] != FALSE && $_GET["passwd"] != FALSE) {
+	if ($_GET["submit"] == "OK" && $_GET["login"] != false && $_GET["passwd"] != false) {
 		$_SESSION["login"] = $_GET["login"];
 		$_SESSION["passwd"] = $_GET["passwd"];
 	}

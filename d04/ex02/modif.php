@@ -1,5 +1,5 @@
 <?php
-	if ($_POST["login"] == FALSE || $_POST["oldpw"] == FALSE || $_POST["newpw"] == FALSE || $_POST["submit"] != "OK") {
+	if ($_POST["login"] == false || $_POST["oldpw"] == false || $_POST["newpw"] == false || $_POST["submit"] != "OK") {
 		exit("ERROR\n");
 	}
 
@@ -7,7 +7,7 @@
 	$name = "passwd";
 
 	$to_put = file_get_contents($folder."/".$name);
-	if ($to_put === FALSE) {
+	if ($to_put === false) {
 		exit("ERROR\n");
 	}
 	$to_put = unserialize($to_put);

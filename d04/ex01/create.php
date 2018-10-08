@@ -1,5 +1,5 @@
 <?php
-	if ($_POST["login"] == FALSE || $_POST["passwd"] == FALSE || $_POST["submit"] != "OK") {
+	if ($_POST["login"] == false || $_POST["passwd"] == false || $_POST["submit"] != "OK") {
 		exit("ERROR\n");
 	}
 	else {
@@ -12,11 +12,11 @@
 	$folder = "../private";
 	$name = "passwd";
 
-	if (file_exists($folder) === FALSE) {
-		mkdir($folder, 0755, TRUE);
+	if (file_exists($folder) === false) {
+		mkdir($folder, 0755, true);
 	}
 
-	if (file_exists($folder."/".$name) === FALSE) {
+	if (file_exists($folder."/".$name) === false) {
 		$to_put = array();
 		$to_put[] = $new_user;
 		file_put_contents($folder."/".$name, serialize($to_put));
