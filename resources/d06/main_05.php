@@ -77,8 +77,9 @@ $renderer = new Render( 640, 480, 'pic.png' );
 
 
 $origin = New Vertex( array( 'x' => 0.0, 'y' => 0.0, 'z' => 0.0 ) );
-
 $origin = $cam->watchVertex( $origin );
+
+
 $repere = makeRepere();
 $repere = $S->transformMesh( $repere );
 $repere = $cam->watchMesh( $repere );
