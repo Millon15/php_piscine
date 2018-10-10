@@ -61,5 +61,9 @@
 		{
 			return $this->_w;
 		}
+		public function getColor()
+		{
+			return $this->_color;
+		}
 	}
 ?>
