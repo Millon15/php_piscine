@@ -3,12 +3,13 @@
 from helper import *
 
 # for expanding the ~ in filenames; checking if a file exists
-import os
-from os.path import expanduser
-from os.path import isfile
-from os.path import isdir
+# import os
+# from os.path import expanduser
+# from os.path import isfile
+# from os.path import isdir
 
-day_location = "http://localhost:8100/php_piscine/d03"
+day_location = "http://localhost:8100/d03"
+# day_location = "http://localhost:8100/php_piscine/d03"
 
 # START OF TESTS  START OF TESTS  START OF TESTS  START OF TESTS
 

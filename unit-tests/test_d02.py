@@ -49,6 +49,24 @@ test_command(day_location + '/ex01/one_more_time.php "jeudi 9 April 2015 12:02:2
 test_command(day_location + '/ex01/one_more_time.php "Jeudi 9 Avril 2015 12:02:21"', "1428573741\n")
 test_command(day_location + '/ex01/one_more_time.php "Samedi 11 avril 2015 12:02:21"', "1428746541\n")
 test_command(day_location + '/ex01/one_more_time.php "samedi 16 novembre 2013 12:02:721"', "Wrong Format\n")
+
+test_command(day_location + '/ex01/one_more_time.php "Mercredi 6 Fevrier 2013 9:12:50"', "Wrong Format\n")
+test_command(day_location + '/ex01/one_more_time.php "Mercredi 7 Fevrier 2013 09:12:50"', "Wrong Format\n")
+test_command(day_location + '/ex01/one_more_time.php "Mercredi 6 Fevrier 2014 09:12:50"', "Wrong Format\n")
+test_command(day_location + '/ex01/one_more_time.php "Mercredi 46 Fevrier 2013 09:12:50"', "Wrong Format\n")
+test_command(day_location + '/ex01/one_more_time.php "Mercredi 6 Fevriers 2013 09:12:50"', "Wrong Format\n")
+test_command(day_location + '/ex01/one_more_time.php "Mercredis 6 Fevrier 2013 09:12:50"', "Wrong Format\n")
+test_command(day_location + '/ex01/one_more_time.php "Mercredi 6 Fevrier 2013 -09:12:50"', "Wrong Format\n")
+test_command(day_location + '/ex01/one_more_time.php "Mercredi 6 Fevrier 2013 09:-12:50"', "Wrong Format\n")
+test_command(day_location + '/ex01/one_more_time.php "Mercredi 6 Fevrier 2013 09:12:-50"', "Wrong Format\n")
+test_command(day_location + '/ex01/one_more_time.php "Mercredi 6 Fevrier 2013 09:12:501"', "Wrong Format\n")
+test_command(day_location + '/ex01/one_more_time.php "Mercredi 6 Fevrier 2013 09:001:50"', "Wrong Format\n")
+test_command(day_location + '/ex01/one_more_time.php "Mercredi 6 Fevrier 2013 09:12:001"', "Wrong Format\n")
+test_command(day_location + '/ex01/one_more_time.php "Mercredi 6 Fevrier 2013 001:12:50"', "Wrong Format\n")
+test_command(day_location + '/ex01/one_more_time.php "Mercredi 6 Fevrier 02013 09:12:50"', "Wrong Format\n")
+test_command(day_location + '/ex01/one_more_time.php "Mercredi 6 Fevrier 20130 09:12:50"', "Wrong Format\n")
+test_command(day_location + '/ex01/one_more_time.php "Mercredi -6 Fevrier 2013 09:12:50"', "Wrong Format\n")
+
 print("")
 
 # ex02

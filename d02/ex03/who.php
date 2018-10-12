@@ -7,7 +7,7 @@
 		if ($src[type] == 7) {
 			echo substr($src['user'], 0, strpos($src['user'], 0x0)) . '  ';
 			echo substr($src['line'], 0, strpos($src['line'], 0x0)) . '  ';
-			echo date("M  j H:i", $src[time]) . ' ' . PHP_EOL;
+			echo date("M j H:i", $src[time]) . ' ' . PHP_EOL;
 		}
 	}
 ?>

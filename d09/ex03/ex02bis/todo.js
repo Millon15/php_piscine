@@ -35,6 +35,9 @@ $('document').ready(function() {
 	// adding of the new to_do
 	$('#new_todo').click(function() {
 		var todo_str = prompt('Type some task!', '');
+		if (todo_str == null || todo_str == false) {
+			return ;
+		}
 
 		$('#ft_list').prepend('<div class="to_do" onclick="delete_todo(this)">' + todo_str + '</div>');
 

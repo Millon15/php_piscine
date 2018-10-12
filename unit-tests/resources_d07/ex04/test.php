@@ -13,17 +13,17 @@ class Cersei extends Lannister {
 class Sansa extends Stark {
 }
 
-$jamie = new Jaime();
-$cersei = new Cersei();
-$tyrion = new Tyrion();
-$sansa = new Sansa();
+$j = new Jaime();
+$c = new Cersei();
+$t = new Tyrion();
+$s = new Sansa();
 
-$jamie->sleepWith($tyrion);
-$jamie->sleepWith($sansa);
-$jamie->sleepWith($cersei);
+$j->sleepWith($t);
+$j->sleepWith($s);
+$j->sleepWith($c);
 
-$tyrion->sleepWith($jamie);
-$tyrion->sleepWith($sansa);
-$tyrion->sleepWith($cersei);
+$t->sleepWith($j);
+$t->sleepWith($s);
+$t->sleepWith($c);
 
 ?>

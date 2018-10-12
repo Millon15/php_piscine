@@ -22,7 +22,7 @@ function setCookie(cname, cvalue, exdays) {
 window.onload = function() {
 	// Load todos from coockie
 	var coo = document.cookie.split(';');
-	
+
 	// Put todos into DOM
 	if (coo[0]) {
 		var ft_list = document.getElementById('ft_list');
@@ -37,6 +37,9 @@ window.onload = function() {
 	// adding of the new to_do
 	document.getElementById('new_todo').onclick = function() {
 		var todo_str = prompt('Type some task!', '');
+		if (todo_str == null || todo_str == false) {
+			return ;
+		}
 		var ft_list = document.getElementById('ft_list');
 		var todos = document.getElementsByClassName("to_do");
 
