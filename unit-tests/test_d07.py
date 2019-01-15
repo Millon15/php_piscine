@@ -2,12 +2,12 @@
 
 from helper import *
 
-# for expanding the ~ in filenames; checking if a file exists
+# for expanding the ~ in filenames checking if a file exists
 # expanduser, isfile, isdir, chdir
 import os
 
-day_location = "/Users/vbrazas/projects/php_piscine/d07/"
-resources = "resources_d07/"
+day_location = "/Users/vbrazas/.Trash/vbrazas2/"
+resources = "/Users/vbrazas/projects/php_piscine/unit-tests/resources_d07/"
 tester_dir = os.getcwd()
 
 # START OF TESTS  START OF TESTS  START OF TESTS  START OF TESTS
@@ -37,7 +37,7 @@ NightsWatch.class.php
 Fighter.class.php
 UnholyFactory.class.php
 """
-test_boolean((after_grep == answer[:len(after_grep)]), "correct files");
+test_boolean((after_grep == answer[:len(after_grep)]), "correct files")
 
 
 # ex00

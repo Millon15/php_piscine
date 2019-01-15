@@ -1,10 +1,9 @@
 #!/bin/zsh
 
-
 #### ▼▼▼▼ Please insert global path to your day and resources folders below ▼▼▼▼ ####
-WORK_D='/Users/vbrazas/.Trash/d06/'
-# WORK_D='/Users/vbrazas/projects/php_piscine/d06/'
-RES_D='/Users/vbrazas/projects/php_piscine/resources/d06/'
+WORK_D="$HOME/.Trash/d06/"
+# WORK_D="$HOME/projects/php_piscine/d06/"
+RES_D="$HOME/projects/php_piscine/resources/d06/"
 
 
 # To use Single_checker© you need to be in the folder of the direct exersize
@@ -24,6 +23,7 @@ if [[ $1 ]]; then
 		sleep 2
 		less diffs.out
 	else
+	
 		rm -f main.out my.out diffs.out
 	fi
 	exit 1;

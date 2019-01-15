@@ -79,7 +79,7 @@ test_command(day_location + "/ex02/magnifying_glass.php " + helpers + "page.html
 print("")
 
 # ex03
-exitcode, out, err = execcom('who')
+exitcode, out, err = run_command('who')
 test_command(day_location + "/ex03/who.php", out)
 print("")
 
@@ -153,4 +153,4 @@ test
 
 # END OF TESTS  END OF TESTS  END OF TESTS  END OF TESTS  END OF TESTS
 
-print_final_results();
+print_final_results()

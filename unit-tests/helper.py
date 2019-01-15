@@ -27,23 +27,17 @@ def run_command(cmd):
 # count of things that didn't go so well
 failed_count = 0
 
-def execcom(command):
-	try:
-		exitcode, out, err = run_command(command)
-	except:
-		print("The program couldn't execute the command.\n" +
-		"Here's the command for debugging purposes: ")
-		print(str(command))
-		exit(1)
-	return exitcode, out, err
-
 def test_command(command, expected, check_std_err = 1):
 	global failed_count
 
-	exitcode, out, err = execcom(command)
+	exitcode, out, err = 0, 0, ""
+	try:
+		exitcode, out, err = run_command(command)
+	except:
+		print("")
 	if (expected == out):
 		# if (len(command) > 100):
-		# 	command = command[:100] + "...";
+		# 	command = command[:100] + "..."
 		print("passed: " + str(command))
 	else:
 		print("FAILED: " + str(command))
@@ -59,7 +53,7 @@ def test_boolean(boolean, string):
 		print("passed: " + str(string))
 	else:
 		print("FAILED: " + str(string))
-		failed_count += 1;
+		failed_count += 1
 
 def print_final_results():
 	print("")

@@ -2,13 +2,13 @@
 
 from helper import *
 
-# for expanding the ~ in filenames; checking if a file exists
+# for expanding the ~ in filenames checking if a file exists
 # import os
 # from os.path import expanduser
 # from os.path import isfile
 # from os.path import isdir
 
-day_location = "http://localhost:8100/d03"
+day_location = "http://localhost:8100/deleteme"
 # day_location = "http://localhost:8100/php_piscine/d03"
 
 # START OF TESTS  START OF TESTS  START OF TESTS  START OF TESTS
@@ -153,10 +153,10 @@ lynx_tests()
 print("\nTests for ex05:")
 def test_ex05():
     command = "curl --head " + day_location + "/ex05/read_img.php"
-    exitcode, out, err = run_command(command);
+    exitcode, out, err = run_command(command)
     test_boolean("Content-Type: image/png" in out, "content type test")
     command = "curl " + day_location + "/ex05/read_img.php"
-    exitcode, out, err = run_command(command);
+    exitcode, out, err = run_command(command)
     test_boolean(out == open((day_location + "/img/42.png"), 'r').read(), "image content test")
 
 # test_ex05()
@@ -173,9 +173,9 @@ test_boolean("WWW-Authenticate: Basic realm=''Member area''" in err, "English Ba
 test_boolean("<html><body>That area is accessible for members only</body></html>" in out, "actual body part for unauthorized page")
 exitcode, out, err = run_command("curl --user zaz:jaimelespetitsponeys " + day_location + "/ex06/members_only.php")
 test_boolean("<html><body>\nHello Zaz<br />" in out, "hello zaz")
-test_boolean("<img src='data:image/png;base64,iVBORw0KGgoAAAA" in out, "first image")
+test_boolean("<img src='data:image/pngbase64,iVBORw0KGgoAAAA" in out, "first image")
 test_boolean("6MIHnr2t+eeO4Fr+v/H80AmcVvzqAfAAAAAElFTkSuQmCC'>" in out, "second image")
 
 # END OF TESTS  END OF TESTS  END OF TESTS  END OF TESTS  END OF TESTS
 
-print_final_results();
+print_final_results()
