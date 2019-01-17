@@ -2,8 +2,8 @@
 
 from helper import *
 
-day_location = "/Users/vbrazas/projects/archive/php_piscine/d02/"
-helpers = "/Users/vbrazas/projects/archive/php_piscine/unit-tests/resources_d02/"
+day_location = '/Users/vbrazas/projects/archive/php_piscine/d02/'
+helpers = '/Users/vbrazas/projects/archive/php_piscine/unit-tests/helpers_d02/'
 
 # START OF TESTS  START OF TESTS  START OF TESTS  START OF TESTS
 

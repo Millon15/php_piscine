@@ -6,7 +6,7 @@ from helper import *
 # expanduser, isfile, isdir, chdir
 import os
 
-day_location = "/Users/vbrazas/.Trash/vbrazas2/"
+day_location = '/Users/vbrazas/projects/archive/php_piscine/d07/'
 resources = "/Users/vbrazas/projects/php_piscine/unit-tests/resources_d07/"
 tester_dir = os.getcwd()
 

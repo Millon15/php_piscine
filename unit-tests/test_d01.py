@@ -2,8 +2,8 @@
 
 from helper import *
 
-day_location = "/Users/vbrazas/projects/archive/php_piscine/d01/"
-helpers = "/Users/vbrazas/projects/archive/php_piscine/unit-tests/helpers_d01/"
+day_location = '/Users/vbrazas/projects/archive/php_piscine/d01/'
+helpers = '/Users/vbrazas/projects/archive/php_piscine/unit-tests/helpers_d01/'
 
 # START OF TESTS  START OF TESTS  START OF TESTS  START OF TESTS
 
@@ -124,7 +124,8 @@ test_command('php ' + helpers + 'helper_ex08.php ' + day_location + ' "b a c d e
 print("")
 
 test_command('php ' + day_location + 'ex09/ssap2.php', "")
-test_command('php ' + day_location + 'ex09/ssap2.php toto tutu 4234 "_hop XXX" "##" "1948372 AhAhAh"', """AhAhAh
+test_command('php ' + day_location + 'ex09/ssap2.php toto tutu 4234 "_hop XXX" "##" "1948372 AhAhAh"'
+, """AhAhAh
 toto
 tutu
 XXX
@@ -133,18 +134,27 @@ XXX
 ##
 _hop
 """)
+test_command('php ' + day_location + 'ex09/ssap2.php abcd# abcd1 abcdA abcda'
+, """abcdA
+abcda
+abcd1
+abcd#
+""")
 test_command('php ' + day_location + 'ex09/ssap2.php aaa aaaa', """aaa
 aaaa
 """)
 test_command('php ' + day_location + 'ex09/ssap2.php "aaa aaaa"', """aaa
 aaaa
 """)
-test_command('php ' + day_location + 'ex09/ssap2.php "hello               "', """hello
+test_command('php ' + day_location + 'ex09/ssap2.php "hello               "'
+, """hello
 """)
-test_command('php ' + day_location + 'ex09/ssap2.php "aaaa aaa"', """aaa
+test_command('php ' + day_location + 'ex09/ssap2.php "aaaa aaa"'
+, """aaa
 aaaa
 """)
-test_command('php ' + day_location + 'ex09/ssap2.php aaaa aaa', """aaa
+test_command('php ' + day_location + 'ex09/ssap2.php aaaa aaa'
+, """aaa
 aaaa
 """)
 # TODO: someone some tests here to test the ord thingy

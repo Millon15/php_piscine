@@ -8,8 +8,8 @@ from helper import *
 # from os.path import isfile
 # from os.path import isdir
 
-day_location = "http://localhost:8100/deleteme"
-# day_location = "http://localhost:8100/php_piscine/d03"
+day_location = '/Users/vbrazas/projects/archive/php_piscine/d03/'
+# day_location = '/Users/vbrazas/projects/archive/php_piscine/d03/'
 
 # START OF TESTS  START OF TESTS  START OF TESTS  START OF TESTS
 
