@@ -20,6 +20,7 @@
 			$iterator["$key"] = 1;
 		}
 	}
+
 	while ($line = fgets(STDIN)) {
 		$matches = explode(';', $line);
 		if ($matches[1] != "" && is_numeric($matches[1])) {
@@ -39,6 +40,7 @@
 			$keyvals["$key"] /= $iterator["$key"];
 		}
 	}
+
 	if ($argv[1] === "average") {
 		echo (array_sum($uservals) / array_sum($iuvals)) . PHP_EOL;
 	}

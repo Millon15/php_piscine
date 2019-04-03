@@ -68,15 +68,10 @@ body {
 	font-size: 1vw;
 }
 
-#legend {
-	padding: 0;
-	margin: 0;
-}
-
 #legend td {
-	font-size: 0.7vw;
-	height: 4vh;
-	margin: 0;
+	font-size: 10px;
+	height: 30px;
+	padding: 0 10px;
 }
 
 #legend td h2 {

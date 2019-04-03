@@ -1,0 +1,40 @@
+version: '3'
+services:
+  web:
+    build: ./
+    container_name: 'php-web'
+    ports:
+      - '8989:80'
+    expose:
+      - "80"
+    volumes:
+      - ./:/var/www/html/
+    links:
+      - mysql
+
+  mysql:
+    image: mysql:5.7
+    container_name: 'php-mysql'
+    restart: 'always'
+    ports:
+      - "3307:3306"
+    environment:
+      - MYSQL_DATABASE=sql42
+      - MYSQL_USER=sql42
+      - MYSQL_PASSWORD=sql42
+      - MYSQL_ROOT_PASSWORD=sql42
+    volumes:
+      - ./resources/d05/:/docker-entrypoint-initdb.d/
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: 'php-phpmyadmin'
+    links:
+      - mysql
+    environment:
+      - PMA_HOST=mysql
+      - PMA_PORT=3306
+    ports:
+      - '8181:80'
+    volumes:
+      - /sessions
